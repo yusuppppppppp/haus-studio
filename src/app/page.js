@@ -6,7 +6,6 @@ export default function Home() {
     <section id="section-hero" className="bg-background w-full">
       <div className="w-full">
         <div className="flex flex-col">
-          <div className="block">
             <div className="flex flex-row justify-between w-full gap-140 uppercase pt-2.5">
               <div className="flex flex-row items-start">
                 <h1 className=" font-primary text-[240px] leading-none">
@@ -26,7 +25,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 }
