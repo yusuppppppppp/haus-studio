@@ -1,14 +1,15 @@
 import "./globals.css";
 import Image from "next/image";
 import { Button } from "./components/ui/button";
+import { Collection_item } from "./components/ui/collection_item";
 
 export default function Home() {
   return (
-    
+
     // section hero
 
     <>
-      <section id="section-hero" className="bg-background w-full">
+      <section id="section_hero" className="bg-background w-full">
         <div className="w-full">
           <div className="flex flex-col">
             <div className="flex flex-row justify-between w-full gap-120 uppercase pt-2.5">
@@ -82,6 +83,8 @@ export default function Home() {
         </div>
       </section>
 
+      {/* section hero end */}
+
       {/* // section collection */}
 
       <section
@@ -138,23 +141,338 @@ export default function Home() {
 
         {/* collection main content */}
 
-        <div className="w-full h-full max-w-primary mx-auto flex flex-col justify-stretch gap-50 border pb-100">
+        <div className="w-full h-full max-w-primary mx-auto flex flex-col justify-stretch gap-50 border pb-80">
           <h6 className="font-primary font-heading text-h6 uppercase leading-tightest self-start">
             haus of [grid]
           </h6>
-          <div className="relative flex flex-row justify-center">
-            <div className="absolute w-55 h-85 skew-y-10">
-              <Image
-                src="/assets/images/item.png"
-                alt="item1"
-                objectFit="contain"
-                fill
-              />
+          <div className="relative flex flex-row justify-center items-center w-full max-w-450 h-40 -skew-y-15 -ml-65 pt-70">
+            <div className="absolute flex flex-row justify-stretch items-start ml-[100%] skew-y-30">
+              <Collection_item images_path="/assets/images/item.png" />
+            </div>
+            <div className="absolute flex flex-row justify-stretch items-start ml-[85%]  skew-y-30">
+              <Collection_item images_path="/assets/images/item.png" />
+            </div>
+            <div className="absolute flex flex-row justify-stretch items-start ml-[70%]  skew-y-30">
+              <Collection_item images_path="/assets/images/item.png" />
+            </div>
+            <div className="absolute flex flex-row justify-stretch items-start ml-[55%]  skew-y-30">
+              <Collection_item images_path="/assets/images/item.png" />
+            </div>
+            <div className="absolute flex flex-row justify-stretch items-start ml-[40%]  skew-y-30">
+              <Collection_item images_path="/assets/images/item.png" />
+            </div>
+            <div className="absolute flex flex-row justify-stretch items-start ml-[25%]  skew-y-30">
+              <Collection_item images_path="/assets/images/item.png" />
+            </div>
+            <div className="absolute flex flex-row justify-stretch items-start ml-[10%]  skew-y-30">
+              <Collection_item images_path="/assets/images/item.png" />
+            </div>
+            <div className="absolute flex flex-row justify-stretch items-start ml-[-5%]  skew-y-30">
+              <Collection_item images_path="/assets/images/item.png" />
+            </div>
+            <div className="absolute flex flex-row justify-stretch items-start ml-[-20%]  skew-y-30">
+              <Collection_item images_path="/assets/images/item.png" />
+            </div>
+            <div className="absolute flex flex-row justify-stretch items-start ml-[-35%]  skew-y-30">
+              <Collection_item images_path="/assets/images/item.png" />
             </div>
           </div>
         </div>
-
       </section>
+
+      {/* section collection end */}
+
+      {/* section lookbook */}
+
+      <section
+        id="section_lookbook"
+        className="bg-background overflow-hidden px-section pb-50"
+      >
+        <div className="w-full h-full mx-auto max-w-400 border flex flex-col justify-stretch items-start">
+          <div className="flex flex-col justify-stretch items-start self-center">
+            <div className="flex flex-col justify-stretch items-start gap-30 self-center">
+              <h2 className="font-primary font-heading text-h2 leading-tightest uppercase max-w-130 text-center">
+                Our lookbooks serve as a dialogue
+              </h2>
+              <div className="flex flex-col justify-stretch item-center gap-10 max-w-90 text-center self-center">
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed uppercase">
+                  We prioritize clarity, function, and the power of the grid to
+                  elevate global creative standards.
+                </p>
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed">
+                  Our lookbooks serve as a dialogue between the garment and the
+                  void. By prioritizing volume over traditional tailoring, each
+                  piece becomes a structural study. We invite you to explore the
+                  intersection of form and function through this curated visual
+                  sequence.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* section lookbook main content */}
+
+          <div className="w-full flex flex-col justify-stretch items-start border pt-60">
+            <div></div>
+          </div>
+        </div>
+      </section>
+
+      {/* section lookbook end */}
+
+      {/* section about */}
+
+      <section
+        id="section_about"
+        className="bg-foreground overflow-hidden px-section py-25 pb-50"
+      >
+        <div className="w-full h-full max-w-400 mx-auto">
+          <div className="flex flex-col justify-stretch items-start gap-60">
+            <div className="flex flex-row justify-stretch items-start self-end gap-5">
+              <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 max-w-114">
+                Haus exists at the intersection of garment and object. We reject
+                the cycle of seasonal trends in favor of permanent relevance.
+                Every piece is a result of rigorous pattern-making and
+                high-grade sourcing—designed for those who view fashion as
+                adeliberate expression of identity.
+              </p>
+              <div className="flex flex-col justify-stretch items-start max-w-114 self-end gap-3">
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100">
+                  Haus exists at the intersection of garment and object. We
+                  reject the cycle of seasonal trends in favor of permanent
+                  relevance. Every piece is a result of rigorous pattern-making
+                  and high-grade sourcing designed for those who view fashion as
+                  a deliberate expression of identity. Our practice is rooted in
+                  the belief that clothing should be as enduring as the
+                  structures we inhabit. By focusing on monochromatic depth and
+                  structural integrity, we create a uniform for the modern
+                  multidisciplinary thinker. the grid dictates the flow of every
+                  textile choice we make.
+                </p>
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 pl-30">
+                  We are not just making clothes; we are defining a new visual
+                  language for the digital and physical realm.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-row justify-between w-full">
+              <div className="flex flex-col justify-stretch items-start gap-5">
+                <p className="max-w-45 font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 pl-30">
+                  Season fall26
+                </p>
+                <h2 className="font-primary font-display text-fd-s leading-tightest text-n-100 uppercase">
+                  intention
+                </h2>
+                <div className="flex flex-row justify-start item-start self-end gap-70">
+                  <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 pl-12">
+                    We are all in.
+                  </p>
+                  <h2 className="font-primary font-display text-fd-s leading-tightest text-n-100 uppercase">
+                    on wear
+                  </h2>
+                </div>
+              </div>
+              <div className="flex flex-col justify-end items-start max-w-17.5 gap-8">
+                <p className="font-primary font-body-secondary text-b-l leading-normal text-n-100 uppercase text-right">
+                  Chapter 0.001
+                </p>
+                <p className="font-primary font-body-secondary text-b-l leading-normal text-n-100 uppercase text-right">
+                  index 2/2
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* section about end */}
+
+      {/* section stockists */}
+
+      <section
+        id="section_stockists"
+        className="bg-foreground px-section overflow-hidden pb-25"
+      >
+        <div className="w-full h-full max-w-400 mx-auto">
+          <div className="flex flex-row justify-between items-start w-full gap-40">
+            <div className="flex flex-col justify-end item-start max-w-75">
+              <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 text-end pl-10">
+                Our stockists are selected through a curated process
+              </p>
+              <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100">
+                Prioritizing alignment with our design philosophy, material
+                standards, and cultural positioning.
+              </p>
+            </div>
+            <div className="flex flex-row justify-stretch items-start gap-5">
+              <div className="flex flex-col justify-stretch items-start gap-7.5 w-50 overflow-hidden pt-10">
+                <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background h-110">
+                  <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
+                    paris, fr
+                  </p>
+                  <Image
+                    src="/assets/images/Vector@2x.png"
+                    alt="2"
+                    width={200}
+                    height={200}
+                    className="pr-10"
+                  />
+                </div>
+                <div className="flex flex-col justify-stretch items-start gap-5">
+                  <p className="font-secondary font-body-primary text-b-l leading-tight text-n-100">
+                    Concept Boutiques and Independent Fashion.
+                  </p>
+                  <div className="flex flex-col justify-stretch items-start gap-3.5">
+                    <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
+                      Paris serves as a primary reference point for contemporary
+                      fashion discourse. Our presence in the city is anchored
+                      through concept boutiques and independent retailers that
+                      emphasize editorial curation, craftsmanship, and
+                      experimental design.
+                    </p>
+                    <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
+                      These partners provide a refined environment where the
+                      collection is contextualized within broader narratives of
+                      fashion, art, and cultural production.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col justify-stretch items-start gap-7.5 w-53 overflow-hidden pt-40">
+                <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background h-110">
+                  <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
+                    tokyo, jp
+                  </p>
+                  <Image
+                    src="/assets/images/Vector@2x-1.png"
+                    alt="2"
+                    width={240}
+                    height={240}
+                    className="pl-10"
+                  />
+                </div>
+                <div className="flex flex-col justify-stretch items-start gap-5">
+                  <p className="font-secondary font-body-primary text-b-l leading-tight text-n-100">
+                    Avant-Garde Retail and Cultural Concept Stores
+                  </p>
+                  <div className="flex flex-col justify-stretch items-start gap-3.5">
+                    <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
+                      Tokyo represents a convergence of innovation, subculture,
+                      and precision. Our stockists in the city operate at the
+                      intersection of fashion, design, and technology,
+                      presenting the collection within spaces that prioritize
+                      experimentation and forward-thinking aesthetics.
+                    </p>
+                    <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
+                      These partners provide a refined environment where the
+                      collection is contextualized within broader narratives of
+                      fashion, art, and cultural production.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col justify-stretch items-start gap-7.5 w-53 overflow-hidden">
+                <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background h-110">
+                  <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
+                    berlin, de
+                  </p>
+                  <Image
+                    src="/assets/images/Vector@2x-2.png"
+                    alt="2"
+                    width={240}
+                    height={240}
+                    className="pl-10"
+                  />
+                </div>
+                <div className="flex flex-col justify-stretch items-start gap-5">
+                  <p className="font-secondary font-body-primary text-b-l leading-tight text-n-100">
+                    Concept Boutiques and Independent Fashion.
+                  </p>
+                  <div className="flex flex-col justify-stretch items-start gap-3.5">
+                    <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
+                      Paris serves as a primary reference point for contemporary
+                      fashion discourse. Our presence in the city is anchored
+                      through concept boutiques and independent retailers that
+                      emphasize editorial curation, craftsmanship, and
+                      experimental design.
+                    </p>
+                    <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
+                      These partners provide a refined environment where the
+                      collection is contextualized within broader narratives of
+                      fashion, art, and cultural production.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col justify-stretch items-start gap-7.5 w-53 overflow-hidden pt-85">
+                <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background h-110">
+                  <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
+                    new york, us
+                  </p>
+                  <Image
+                    src="/assets/images/Vector@2x-3.png"
+                    alt="2"
+                    width={240}
+                    height={240}
+                  />
+                </div>
+                <div className="flex flex-col justify-stretch items-start gap-5">
+                  <p className="font-secondary font-body-primary text-b-l leading-tight text-n-100">
+                    Global Flagship Partners and Multi-Brand Boutiques
+                  </p>
+                  <div className="flex flex-col justify-stretch items-start gap-3.5">
+                    <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
+                      New York functions as a global commercial and cultural
+                      hub. Our stockists range from flagship multi-brand
+                      retailers to specialized boutiques that prioritize
+                      editorial storytelling and spatial experience.
+                    </p>
+                    <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
+                      These locations bridge global audiences with the
+                      collection, situating it within a dynamic context of
+                      fashion, art, and urban culture.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* section stockists end */}
+
+      {/* section CTA */}
+
+      <section className="bg-background pt-50 overflow-hidden">
+        <div className="w-full h-full mx-auto border">
+          <div className="flex flex-col justify-stretch items-start">
+            <div className="flex flex-col justify-stretch items-stretch max-w-400 mx-section self-center gap-55 w-full">
+              <div className="flex flex-col justify-center items-center gap-10">
+                <p className="font-body-secondary font-secondary text-b-m leading-relaxed">
+                  Dialogue
+                </p>
+                <Button link="https://webflow.com/templates/html/hauss-website-template">
+                  contact studio
+                </Button>
+              </div>
+              <div className="flex flex-row justify-between w-full">
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed max-w-85">
+                  For showroom appointments, collection previews, or
+                  collaborative inquiries, please reach out to our studio.
+                </p>
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed max-w-85 text-end">
+                  Connect with our studio to schedule a private viewing, explore
+                  the new collection, or discuss creative synergies
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* section CTA end */}
+      
     </>
   );
 }

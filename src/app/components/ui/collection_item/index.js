@@ -1,0 +1,1 @@
+export { default as Collection_item } from "./collection_item"
