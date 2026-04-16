@@ -2,14 +2,17 @@ import "./globals.css";
 import Image from "next/image";
 import { Button } from "./components/ui/button";
 import { Collection_item } from "./components/ui/collection_item";
+import { Footer_nav } from "./components/ui/footer_nav";
 
 export default function Home() {
   return (
-
     // section hero
 
     <>
-      <section id="section_hero" className="bg-background w-full">
+      <section
+        id="section_hero"
+        className="bg-background w-full overflow-hidden"
+      >
         <div className="w-full">
           <div className="flex flex-col">
             <div className="flex flex-row justify-between w-full gap-120 uppercase pt-2.5">
@@ -30,9 +33,9 @@ export default function Home() {
               </h1>
             </div>
             <div className="max-w-400 w-full mx-auto px-section pt-5">
-              <div className="flex justify-between items-center relative">
+              <div className="flex justify-between items-center relative isolate">
                 <div className="flex flex-row mx-auto pl-[25%]">
-                  <div className="relative w-130 h-125 overflow-hidden mx-auto">
+                  <div className="relative w-130 h-125 mx-auto">
                     <Image
                       className="pr-23 object-cover absolute z-0 object-center"
                       src="/assets/images/hero-bg.png"
@@ -64,7 +67,7 @@ export default function Home() {
                           1/2
                         </p>
                       </div>
-                      <p className="text-n-500 font-secondary font-body-secondary text-b-m leading-relaxed">
+                      <p className="mix-blend-difference font-secondary font-body-secondary text-b-m leading-relaxed">
                         Our collections are studies in structure and contrast.
                         We work with architectural lines, raw materials, and
                         controlled volumes. Designed with intent, but open to
@@ -141,40 +144,40 @@ export default function Home() {
 
         {/* collection main content */}
 
-        <div className="w-full h-full max-w-primary mx-auto flex flex-col justify-stretch gap-50 border pb-80">
+        <div className="w-full h-full max-w-primary mx-auto flex flex-col justify-stretch gap-50 pb-80">
           <h6 className="font-primary font-heading text-h6 uppercase leading-tightest self-start">
             haus of [grid]
           </h6>
           <div className="relative flex flex-row justify-center items-center w-full max-w-450 h-40 -skew-y-15 -ml-65 pt-70">
             <div className="absolute flex flex-row justify-stretch items-start ml-[100%] skew-y-30">
-              <Collection_item images_path="/assets/images/item.png" />
+              <Collection_item images_path="/assets/images/item-10.png" />
             </div>
             <div className="absolute flex flex-row justify-stretch items-start ml-[85%]  skew-y-30">
-              <Collection_item images_path="/assets/images/item.png" />
+              <Collection_item images_path="/assets/images/item-9.png" />
             </div>
             <div className="absolute flex flex-row justify-stretch items-start ml-[70%]  skew-y-30">
-              <Collection_item images_path="/assets/images/item.png" />
+              <Collection_item images_path="/assets/images/item-8.png" />
             </div>
             <div className="absolute flex flex-row justify-stretch items-start ml-[55%]  skew-y-30">
-              <Collection_item images_path="/assets/images/item.png" />
+              <Collection_item images_path="/assets/images/item-7.png" />
             </div>
             <div className="absolute flex flex-row justify-stretch items-start ml-[40%]  skew-y-30">
-              <Collection_item images_path="/assets/images/item.png" />
+              <Collection_item images_path="/assets/images/item-6.png" />
             </div>
             <div className="absolute flex flex-row justify-stretch items-start ml-[25%]  skew-y-30">
-              <Collection_item images_path="/assets/images/item.png" />
+              <Collection_item images_path="/assets/images/item-5.png" />
             </div>
             <div className="absolute flex flex-row justify-stretch items-start ml-[10%]  skew-y-30">
-              <Collection_item images_path="/assets/images/item.png" />
+              <Collection_item images_path="/assets/images/item-4.png" />
             </div>
             <div className="absolute flex flex-row justify-stretch items-start ml-[-5%]  skew-y-30">
-              <Collection_item images_path="/assets/images/item.png" />
+              <Collection_item images_path="/assets/images/item-3.png" />
             </div>
             <div className="absolute flex flex-row justify-stretch items-start ml-[-20%]  skew-y-30">
-              <Collection_item images_path="/assets/images/item.png" />
+              <Collection_item images_path="/assets/images/item-2.png" />
             </div>
             <div className="absolute flex flex-row justify-stretch items-start ml-[-35%]  skew-y-30">
-              <Collection_item images_path="/assets/images/item.png" />
+              <Collection_item images_path="/assets/images/item-1.png" />
             </div>
           </div>
         </div>
@@ -312,7 +315,7 @@ export default function Home() {
                   </p>
                   <Image
                     src="/assets/images/Vector@2x.png"
-                    alt="2"
+                    alt="number_1"
                     width={200}
                     height={200}
                     className="pr-10"
@@ -345,7 +348,7 @@ export default function Home() {
                   </p>
                   <Image
                     src="/assets/images/Vector@2x-1.png"
-                    alt="2"
+                    alt="number_2"
                     width={240}
                     height={240}
                     className="pl-10"
@@ -378,7 +381,7 @@ export default function Home() {
                   </p>
                   <Image
                     src="/assets/images/Vector@2x-2.png"
-                    alt="2"
+                    alt="number_3"
                     width={240}
                     height={240}
                     className="pl-10"
@@ -411,7 +414,7 @@ export default function Home() {
                   </p>
                   <Image
                     src="/assets/images/Vector@2x-3.png"
-                    alt="2"
+                    alt="number_4"
                     width={240}
                     height={240}
                   />
@@ -444,11 +447,11 @@ export default function Home() {
 
       {/* section CTA */}
 
-      <section className="bg-background pt-50 overflow-hidden">
-        <div className="w-full h-full mx-auto border">
+      <section id="section_CTA" className="bg-background pt-50 pb-50 overflow-hidden">
+        <div className="w-full h-full mx-auto">
           <div className="flex flex-col justify-stretch items-start">
-            <div className="flex flex-col justify-stretch items-stretch max-w-400 mx-section self-center gap-55 w-full">
-              <div className="flex flex-col justify-center items-center gap-10">
+            <div className="flex flex-col justify-stretch items-stretch max-w-400 mx-section self-center gap-30 w-full pb-35">
+              <div className="flex flex-col justify-center items-center gap-8">
                 <p className="font-body-secondary font-secondary text-b-m leading-relaxed">
                   Dialogue
                 </p>
@@ -466,13 +469,111 @@ export default function Home() {
                   the new collection, or discuss creative synergies
                 </p>
               </div>
+              <h2 className="font-primary font-display text-fd-l leading-tightest text-center uppercase w-300 self-center">
+                press& whole sale
+              </h2>
+            </div>
+            <div className="relative w-full h-[200vh]">
+              <Image
+                src="/assets/images/cta-bg.png"
+                alt="cta-bg"
+                fill
+                objectFit="cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* section CTA end */}
-      
+
+      {/* section footer */}
+
+      <section id="section_footer" className="px-section overflow-hidden pb-7">
+        <div className="w-full h-full max-w-400 mx-auto">
+          <div className="flex flex-col justify-stretch items-stretch gap-10">
+            <Image
+              src="/assets/images/Logo.svg"
+              alt="logo"
+              width={55}
+              height={45}
+              className="self-center"
+            />
+            <div className="flex flex-row justify-between w-full gap-15">
+              <div className="flex flex-col justify-stretch items-start gap-10">
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed">
+                  Haus operates at the intersection of design, culture, and
+                  material exploration. Each collection is developed through a
+                  research-drivencess, prioritizing structural integrity,
+                  tactile experience, and conceptual clarity. Rather than
+                  following seasonal cycles. Designed to exist beyond
+                  trend-based frameworks.
+                </p>
+                <div className="flex flex-col justify-between items-start w-full h-150">
+                  <div className="flex flex-fow justify-between items-stretch w-full pt-25">
+                    <p className="font-body-secondary font-secondary text-b-m leading-relaxed capitalize">
+                      collection archive
+                    </p>
+                    <p className="font-body-secondary font-secondary text-b-m leading-relaxed capitalize">
+                      edition 026
+                    </p>
+                  </div>
+                  <div className="flex flex-row justify-end items-start gap-10 self-end">
+                    <p className="font-secondary font-body-secondary text-b-s leading-tight">
+                      (+)
+                    </p>
+                    <div className="flex flex-col justify-stretch items-end gap-1.5">
+                      <Footer_nav footer_nav_link="https://webflow.com/templates/html/hauss-website-template">
+                        license
+                      </Footer_nav>
+                      <Footer_nav footer_nav_link="https://webflow.com/templates/html/hauss-website-template">
+                        style guide
+                      </Footer_nav>
+                      <Footer_nav footer_nav_link="https://webflow.com/templates/html/hauss-website-template">
+                        changelog
+                      </Footer_nav>
+                      <Footer_nav footer_nav_link="https://webflow.com/templates/html/hauss-website-template">
+                        404
+                      </Footer_nav>
+                    </div>
+                  </div>
+                  <div className="flex flex-row justify-between items-end w-full">
+                    <Image
+                    src="/assets/images/footer-img-left.png"
+                    alt="footer-img-left"
+                    width={210}
+                    height={250}
+                    />
+                    <p className="font-secondary font-body-secondary text-b-s leading-tight text-end">
+                      © 2026 Haus Fashion. All Rights Reserved.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col justify-stretch items-start gap-10">
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed">
+                  The brand framework is built on restraint, precision, and
+                  spatial awareness. Every visual and physical output is
+                  structured through modular systems, allowing flexibility while
+                  maintaining coherence across mediums. Haus prioritizes clarity
+                  over noise, reduction over excess, and intentionality over
+                  mass production.
+                </p>
+                <div className="relative h-150 max-w-200 w-full">
+                  <Image
+                    src="/assets/images/footer-img-right.png"
+                    alt="footer-img-right"
+                    fill
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* section footer end */}
     </>
   );
 }

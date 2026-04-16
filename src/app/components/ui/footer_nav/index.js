@@ -1,0 +1,1 @@
+export { default as Footer_nav } from "./footer_nav"
