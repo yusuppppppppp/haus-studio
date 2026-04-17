@@ -191,7 +191,7 @@ export default function Home() {
         id="section_lookbook"
         className="bg-background overflow-hidden px-section pb-50"
       >
-        <div className="w-full h-full mx-auto max-w-400 border flex flex-col justify-stretch items-start">
+        <div className="w-full h-full mx-auto max-w-400 flex flex-col justify-stretch items-start">
           <div className="flex flex-col justify-stretch items-start self-center">
             <div className="flex flex-col justify-stretch items-start gap-30 self-center">
               <h2 className="font-primary font-heading text-h2 leading-tightest uppercase max-w-130 text-center">
@@ -215,8 +215,99 @@ export default function Home() {
 
           {/* section lookbook main content */}
 
-          <div className="w-full flex flex-col justify-stretch items-start border pt-60">
-            <div></div>
+          <div className="w-full flex flex-col justify-stretch items-start pt-60 overflow-hidden">
+            <div className="flex flex-col justify-stretch items-stretch">
+              <div className="grid grid-cols-4">
+                <div className="col-span-1 p-2 flex flex-col gap-13 justify-stretch items-start border-n-300 border">
+                  <div className="flex flex-col justify-stretch items-start gap-5">
+                    <div className="w-full h-100 overflow-hidden relative">
+                      <Image
+                        src="/assets/images/lookbook1.png"
+                        alt="lookbook-item"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <p className="font-secondary font-body-primary text-b-l leading-relaxed capitalize max-w-95">
+                      Olive Sculpted
+                      <span className="text-n-100">
+                        hidden text hidden text hidden text
+                      </span>
+                    </p>
+                  </div>
+                  <div className="bg-n-200 p-2.5 flex flex-row justify-between items-center w-full">
+                    <p className="font-secondary font-body-primary text-b-m leading-tight uppercase">
+                      studi form
+                    </p>
+                    <Image
+                      src="/assets/icons/icon-lookbook-btn.svg"
+                      alt="icon-lookbook-arrow"
+                      width={24}
+                      height={24}
+                    />
+                  </div>
+                </div>
+                <div className="col-span-1 p-2 flex flex-col gap-13 justify-stretch items-start border-n-300 border">
+                  <div className="flex flex-col justify-stretch items-start gap-5">
+                    <div className="w-full h-100 overflow-hidden relative">
+                      <Image
+                        src="/assets/images/lookbook1.png"
+                        alt="lookbook-item"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <p className="font-secondary font-body-primary text-b-l leading-relaxed capitalize max-w-95">
+                      Olive Sculpted
+                      <span className="text-n-100">
+                        hidden text hidden text hidden text
+                      </span>
+                    </p>
+                  </div>
+                  <div className="bg-n-200 p-2.5 flex flex-row justify-between items-center w-full">
+                    <p className="font-secondary font-body-primary text-b-m leading-tight uppercase">
+                      studi form
+                    </p>
+                    <Image
+                      src="/assets/icons/icon-lookbook-btn.svg"
+                      alt="icon-lookbook-arrow"
+                      width={24}
+                      height={24}
+                    />
+                  </div>
+                </div>
+                <div className="bg-background col-span-1 h-130 w-100 "></div>
+                <div className="col-span-1 p-2 flex flex-col gap-13 justify-stretch items-start border-n-300 border">
+                  <div className="flex flex-col justify-stretch items-start gap-5">
+                    <div className="w-full h-100 overflow-hidden relative">
+                      <Image
+                        src="/assets/images/lookbook1.png"
+                        alt="lookbook-item"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <p className="font-secondary font-body-primary text-b-l leading-relaxed capitalize max-w-95">
+                      Olive Sculpted
+                      <span className="text-n-100">
+                        hidden text hidden text hidden text
+                      </span>
+                    </p>
+                  </div>
+                  <div className="bg-n-200 p-2.5 flex flex-row justify-between items-center w-full">
+                    <p className="font-secondary font-body-primary text-b-m leading-tight uppercase">
+                      studi form
+                    </p>
+                    <Image
+                      src="/assets/icons/icon-lookbook-btn.svg"
+                      alt="icon-lookbook-arrow"
+                      width={24}
+                      height={24}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -447,7 +538,10 @@ export default function Home() {
 
       {/* section CTA */}
 
-      <section id="section_CTA" className="bg-background pt-50 pb-50 overflow-hidden">
+      <section
+        id="section_CTA"
+        className="bg-background pt-50 pb-50 overflow-hidden"
+      >
         <div className="w-full h-full mx-auto">
           <div className="flex flex-col justify-stretch items-start">
             <div className="flex flex-col justify-stretch items-stretch max-w-400 mx-section self-center gap-30 w-full pb-35">
@@ -459,7 +553,7 @@ export default function Home() {
                   contact studio
                 </Button>
               </div>
-              <div className="flex flex-row justify-between w-full">
+              <div className="flex flex-row justify-between w-full px-section">
                 <p className="font-secondary font-body-secondary text-b-m leading-relaxed max-w-85">
                   For showroom appointments, collection previews, or
                   collaborative inquiries, please reach out to our studio.
@@ -539,10 +633,10 @@ export default function Home() {
                   </div>
                   <div className="flex flex-row justify-between items-end w-full">
                     <Image
-                    src="/assets/images/footer-img-left.png"
-                    alt="footer-img-left"
-                    width={210}
-                    height={250}
+                      src="/assets/images/footer-img-left.png"
+                      alt="footer-img-left"
+                      width={210}
+                      height={250}
                     />
                     <p className="font-secondary font-body-secondary text-b-s leading-tight text-end">
                       © 2026 Haus Fashion. All Rights Reserved.
