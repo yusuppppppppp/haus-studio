@@ -1,4 +1,4 @@
-export default function Lookbook_item(lookbook_image, lookbook_name, lookbook_link) {
+export default function Lookbook_item({lookbook_image, lookbook_name, lookbook_link}) {
   return (
     <div className="col-span-1 p-2 flex flex-col gap-13 justify-stretch items-start border-n-300 border">
       <div className="flex flex-col justify-stretch items-start gap-5">

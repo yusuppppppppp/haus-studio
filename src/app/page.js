@@ -15,35 +15,39 @@ export default function Home() {
       >
         <div className="w-full">
           <div className="flex flex-col">
-            <div className="flex flex-row justify-between w-full gap-120 uppercase pt-2.5">
+            <div className="flex flex-row justify-between w-full uppercase 2xl:gap-120 xl:gap-100 lg:gap-100 md:gap-0 sm:gap-0 gap-10 2xl:pt-2.5 xl:pt-2.5 lg:pt-2.5 md:pt-4.5 pt-4.5 ">
               <div className="flex flex-row items-start">
                 <h1 className=" font-primary font-display text-fd-l leading-tightest">
                   haus
                 </h1>
-                <Image
-                  className="pt-3"
-                  src="/assets/images/®.svg"
-                  alt="®"
-                  width={80}
-                  height={80}
-                />
+                <div className="relative 2xl:w-20 xl:w-20 lg:w-20 md:w-15 sm:w-10 w-10 2xl:h-20 xl:h-20 lg:h-20 md:h-15 sm:h-10 h-10">
+                  <Image
+                    className="object-contain 2xl:pt-3 xl:pt-3 lg:pt-3 md:pt-2 sm:pt-2 pt-2"
+                    src="/assets/images/®.svg"
+                    alt="®"
+                    fill
+                  />
+                </div>
               </div>
               <h1 className=" font-primary font-display text-fd-l leading-tightest">
                 studio
               </h1>
             </div>
-            <div className="max-w-400 w-full mx-auto px-section pt-5">
-              <div className="flex justify-between items-center relative isolate">
-                <div className="flex flex-row mx-auto pl-[25%]">
-                  <div className="relative w-130 h-125 mx-auto">
+            <div className="max-w-400 w-full mx-auto px-section 2xl:pt-5 xl:pt-5 lg:pt-5 md:pt-40 sm:pt-10 pt-10">
+              <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-col flex-col-reverse gap-15 justify-between items-center relative isolate">
+                <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row sm:flex-row flex-col 2xl:self-center xl:self-center lg:self-center md:self-center sm:self-center self-start 2xl:pl-[33%] xl:pl-[32%] lg:pl-[30%] md:pl-[30%] sm:pl-[35%] pl-[0%] w-full 2xl:gap-0 xl:gap-0 lg:gap-0 md:gap-0 sm:gap-0 gap-5">
+                  <p className="font-primary font-body-secondary text-b-l leading-tight uppercase text-end 2xl:max-w-47.5 xl:max-w-47.5 lg:max-w-47.5 md:max-w-47.5 sm:max-w-30 max-w-30 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden block 2xl:self-center xl:self-center lg:self-center md:self-center sm:self-center self-end">
+                    this is a space for discovery
+                  </p>
+                  <div className="relative 2xl:w-130 xl:w-130 lg:w-130 md:w-100 sm:w-60 w-65 2xl:h-125 xl:h-125 lg:h-125 md:h-125 sm:h-80 h-120 2xl:self-center xl:self-center lg:self-center md:self-center sm:self-center self-start ">
                     <Image
-                      className="pr-23 object-cover absolute z-0 object-center"
+                      className="2xl:pr-23 xl:pr-10 lg:pr-20 md:pr-10 sm:pr-5 pr-0 object-cover 2xl:absolute xl:absolute lg:absolute md:absolute sm:absolute block 2xl:z-0 xl:z-0 lg:z-0 md:z-0 sm:z-0 z-0 object-center"
                       src="/assets/images/hero-bg.png"
                       alt="hero_image"
                       fill
                     />
                   </div>
-                  <div className="flex flex-col justify-end items-start max-w-92 gap-5">
+                  <div className="2xl:flex xl:flex lg:flex md:flex sm:flex hidden flex-col justify-end items-start 2xl:max-w-92 xl:max-w-92 lg:max-w-92 md:max-w-45 sm:max-w-45 max-w-45 gap-5">
                     <p className="font-primary font-body-secondary text-b-l leading-tight uppercase">
                       about haus
                     </p>
@@ -53,13 +57,13 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="w-full flex flex-row justify-between z-1 absolute pr-40">
-                  <div className="flex flex-col justify-start items-start gap-40">
-                    <p className="font-primary font-body-secondary text-b-l leading-tight uppercase max-w-47.5 ">
+                <div className="w-full flex flex-row justify-between z-1 2xl:absolute xl:absolute lg:absolute md:absolute sm:absolute ">
+                  <div className="flex flex-col justify-start items-start 2xl:gap-40 xl:gap-35 lg:gap-35 md:gap-28 sm:gap-13 gap-13">
+                    <p className="font-primary font-body-secondary text-b-l leading-tight uppercase 2xl:max-w-47.5 xl:max-w-47.5 lg:max-w-47.5 md:max-w-47.5 sm:max-w-30 max-w-30 2xl:block xl:block lg:block md:block sm:block hidden">
                       this is a space for discovery
                     </p>
-                    <div className="flex flex-col justify-center gap-5 max-w-165">
-                      <div className="flex flex-row justify-between w-120">
+                    <div className="flex flex-col justify-center 2xl:gap-5 xl:gap-5 lg:gap-5 md:gap-5 sm:gap-3 gap-3 2xl:max-w-165 xl:max-w-130 lg:max-w-130 md:max-w-73 sm:max-w-73">
+                      <div className="flex flex-row justify-between 2xl:w-120 xl:w-90 lg:w-90 md:w-50 sm:w-55 w-">
                         <p className="font-primary font-body-secondary text-b-l leading-tight uppercase max-w-47.5 ">
                           index
                         </p>
@@ -75,9 +79,11 @@ export default function Home() {
                         material, and presence.
                       </p>
                     </div>
-                    <Button link="https://webflow.com/templates/html/hauss-website-template">
-                      explore page
-                    </Button>
+                    <div className="2xl:block xl:block lg:block md:block sm:block hidden">
+                      <Button link="https://webflow.com/templates/html/hauss-website-template">
+                        explore page
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -95,20 +101,20 @@ export default function Home() {
         className="bg-background px-section pt-50 pb-50"
       >
         <div className="w-full h-full mx-auto max-w-400">
-          <div className="max-w-205 flex flex-col gap-45 mx-auto pb-50 ">
+          <div className="max-w-205 flex flex-col 2xl:gap-45 xl:gap-45 lg:gap-45 md:gap-25 sm:gap-25 gap-15  mx-auto pb-50 ">
             <div className="flex flex-col justify-center">
               <div className="flex flex-col justify-center">
-                <p className="font-secondary font-body-secondary text-b-m leading-relaxed max-w-100 uppercase">
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed 2xl:max-w-100 xl:max-w-100 lg:max-w-100 md:max-w-100 sm:max-w-100 max-w-65 uppercase">
                   Each piece is presented as form, material, and movement in
                   dialogue with the body.
                 </p>
-                <p className="font-secondary font-body-secondary text-b-m leading-relaxed max-w-150 uppercase pl-25">
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed 2xl:max-w-150 xl:max-w-150 lg:max-w-150 md:max-w-150 sm:max-w-150 max-w-65 uppercase 2xl:pl-25 xl:pl-25 lg:pl-25 md:pl-25 sm:pl-25 pl-0">
                   ach collection explores silhouette, texture, and the
                   relationship between body and space.
                 </p>
               </div>
             </div>
-            <div className="flex flex-row gap-25 justify-end">
+            <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row sm:flex-row flex-col 2xl:gap-25 xl:gap-25 lg:gap-25 md:gap-25 sm:gap-25 gap-5 justify-end 2xl:pl-0 xl:pl-0 lg:pl-0 md:pl-0 sm:pl-0 pl-20">
               <p className="font-secondary font-body-secondary text-b-m leading-relaxed uppercase">
                 collection
               </p>
@@ -593,8 +599,8 @@ export default function Home() {
               height={45}
               className="self-center"
             />
-            <div className="flex flex-row justify-between w-full gap-15">
-              <div className="flex flex-col justify-stretch items-start gap-10">
+            <div className="flex flex-row justify-between w-full 2xl:gap-10 xl:gap-10 lg:gap-10 md:gap-5 sm:gap-5 gap-5">
+              <div className="flex flex-col justify-stretch items-end gap-10">
                 <p className="font-secondary font-body-secondary text-b-m leading-relaxed">
                   Haus operates at the intersection of design, culture, and
                   material exploration. Each collection is developed through a
@@ -603,12 +609,12 @@ export default function Home() {
                   following seasonal cycles. Designed to exist beyond
                   trend-based frameworks.
                 </p>
-                <div className="flex flex-col justify-between items-start w-full h-150">
-                  <div className="flex flex-fow justify-between items-stretch w-full pt-25">
-                    <p className="font-body-secondary font-secondary text-b-m leading-relaxed capitalize">
+                <div className="flex flex-col justify-between items-end w-full 2xl:h-150 xl:h-150 lg:h-150 md:h-150 sm:h-150 h-180">
+                  <div className="flex flex-fow justify-between items-stretch w-full 2xl:pt-25 xl:pt-25 lg:pt-25 md:pt-70 sm:pt-70 pt-20">
+                    <p className="font-body-secondary font-secondary text-b-m leading-relaxed capitalize 2xl:block xl:block lg:block md:block sm:block hidden">
                       collection archive
                     </p>
-                    <p className="font-body-secondary font-secondary text-b-m leading-relaxed capitalize">
+                    <p className="font-body-secondary font-secondary text-b-m leading-relaxed capitalize 2xl:block xl:block lg:block md:block sm:block hidden">
                       edition 026
                     </p>
                   </div>
@@ -631,20 +637,31 @@ export default function Home() {
                       </Footer_nav>
                     </div>
                   </div>
+                  <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-col flex-col-reverse w-full gap-5">
+                  <div className="relative 2xl:h-150 xl:h-150 lg:h-150 md:h-150 sm:h-150 h-110 max-w-200 w-full 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden block">
+                    <Image
+                      src="/assets/images/footer-img-right.png"
+                      alt="footer-img-right"
+                      fill
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <div className="flex flex-row justify-between items-end w-full">
                     <Image
                       src="/assets/images/footer-img-left.png"
                       alt="footer-img-left"
                       width={210}
                       height={250}
+                      className="2xl:flex xl:flex lg:flex md:hidden sm:hidden hidden"
                     />
-                    <p className="font-secondary font-body-secondary text-b-s leading-tight text-end">
+                    <p className="font-secondary font-body-secondary text-b-s leading-tight text-end w-full">
                       © 2026 Haus Fashion. All Rights Reserved.
                     </p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col justify-stretch items-start gap-10">
+              <div className="2xl:flex xl:flex lg:flex md:flex sm:flex hidden flex-col justify-stretch items-start gap-10">
                 <p className="font-secondary font-body-secondary text-b-m leading-relaxed">
                   The brand framework is built on restraint, precision, and
                   spatial awareness. Every visual and physical output is
@@ -658,7 +675,7 @@ export default function Home() {
                     src="/assets/images/footer-img-right.png"
                     alt="footer-img-right"
                     fill
-                    className="w-full h-full"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
