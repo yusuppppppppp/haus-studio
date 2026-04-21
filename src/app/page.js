@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "./components/ui/button";
 import { Collection_item } from "./components/ui/collection_item";
 import { Footer_nav } from "./components/ui/footer_nav";
+import Script from "next/script";
 
 export default function Home() {
   return (
@@ -324,11 +325,11 @@ export default function Home() {
 
       <section
         id="section_about"
-        className="bg-foreground overflow-hidden px-section py-25 pb-50"
+        className="bg-foreground overflow-hidden px-section py-25 2xl:pb-50 xl:pb-30 lg:pb-30 md:pb-30 sm:pb-25 pb-30"
       >
         <div className="w-full h-full max-w-400 mx-auto">
-          <div className="flex flex-col justify-stretch items-start 2xl:gap-60 xl:gap-60 lg:gap-60 md:gap-60 sm:gap-20 gap-20">
-            <div className="flex flex-row justify-stretch items-start self-end 2xl:gap-5 xl:gap-5 lg:gap-5 md:gap-10 sm:gap-10 gap-10">
+          <div className="flex flex-col justify-stretch items-start 2xl:gap-60 xl:gap-60 lg:gap-60 md:gap-60 sm:gap-20 gap-30">
+            <div className="flex flex-row justify-stretch items-start self-end 2xl:gap-5 xl:gap-5 lg:gap-5 md:gap-10 sm:gap-10 gap-7">
               <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 max-w-114">
                 Haus exists at the intersection of garment and object. We reject
                 the cycle of seasonal trends in favor of permanent relevance.
@@ -336,7 +337,7 @@ export default function Home() {
                 high-grade sourcing—designed for those who view fashion as
                 adeliberate expression of identity.
               </p>
-              <div className="flex flex-col justify-stretch items-start 2xl:max-w-114 xl:max-w-114 lg:max-w-114 md:max-w-100 sm:max-w-80 max-w-80 self-end gap-3">
+              <div className="flex flex-col justify-stretch items-start 2xl:max-w-114 xl:max-w-114 lg:max-w-114 md:max-w-100 sm:max-w-80 max-w-40 self-end gap-3">
                 <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100">
                   Haus exists at the intersection of garment and object. We
                   reject the cycle of seasonal trends in favor of permanent
@@ -349,7 +350,7 @@ export default function Home() {
                   multidisciplinary thinker. the grid dictates the flow of every
                   textile choice we make.
                 </p>
-                <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 pl-30">
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 2xl:pl-30 xl:pl-30 lg:pl-30 md:pl-30 sm:pl-30 pl-0">
                   We are not just making clothes; we are defining a new visual
                   language for the digital and physical realm.
                 </p>
@@ -357,13 +358,13 @@ export default function Home() {
             </div>
             <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col justify-between w-full 2xl:gap-0 xl:gap-0 lg:gap-0 md:gap-15 sm:gap-15 gap-15 ">
               <div className="flex flex-col justify-stretch items-start gap-5">
-                <p className="max-w-45 font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 pl-30">
+                <p className="2xl:max-w-45 xl:max-w-45 lg:max-w-45 md:max-w-45 sm:max-w-45 max-w-25 font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 2xl:pl-30 xl:pl-30 lg:pl-30 md:pl-30 sm:pl-30 pl-12">
                   Season fall26
                 </p>
-                <h2 className="font-primary font-display text-fd-s leading-tightest text-n-100 uppercase">
+                <h2 className="font-primary font-display text-fd-s leading-tightest text-n-100 uppercase break-all 2xl:max-w-full xl:max-w-full lg:max-w-full md:max-w-full sm:max-w-full max-w-40">
                   intention
                 </h2>
-                <div className="flex flex-row justify-start item-start 2xl:self-end xl:self-end lg:self-end md:self-end sm:self-start self-start 2xl:gap-70 xl:gap-70 lg:gap-70 md:gap-35 sm:gap-22 gap-22">
+                <div className="flex flex-row justify-start item-start 2xl:self-end xl:self-end lg:self-end md:self-end sm:self-start self-start 2xl:gap-70 xl:gap-70 lg:gap-70 md:gap-35 sm:gap-22 gap-10">
                   <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 2xl:pl-12 xl:pl-12 lg:pl-12 md:pl-0 sm:pl-0 pl-0">
                     We are all in.
                   </p>
@@ -393,9 +394,9 @@ export default function Home() {
         id="section_stockists"
         className="bg-foreground px-section overflow-hidden pb-25"
       >
-        <div className="w-full h-full max-w-400 mx-auto">
-          <div className="flex flex-row justify-between items-start w-full gap-40">
-            <div className="flex flex-col justify-end item-start max-w-75">
+        <div className="w-full h-full max-w-400 mx-auto ">
+          <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col justify-between items-start w-full 2xl:gap-40 xl:gap-40 lg:gap-40 md:gap-30 sm:gap-30 gap-30">
+            <div className="flex flex-col justify-end item-start 2xl:max-w-75 xl:max-w-75 lg:max-w-75 md:max-w-75 sm:max-w-65 max-w-65">
               <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 text-end pl-10">
                 Our stockists are selected through a curated process
               </p>
@@ -404,9 +405,9 @@ export default function Home() {
                 standards, and cultural positioning.
               </p>
             </div>
-            <div className="flex flex-row justify-stretch items-start gap-5">
-              <div className="flex flex-col justify-stretch items-start gap-7.5 w-50 overflow-hidden pt-10">
-                <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background h-110">
+            <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col justify-stretch items-start gap-5 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-auto w-full">
+              <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-row flex-col justify-stretch items-start gap-7.5 2xl:w-50 xl:w-50 lg:w-50 md:w-full sm:w-full w-full overflow-hidden 2xl:pt-10 xl:pt-10 lg:pt-10 md:pt-10 sm:pt-0 pt-0">
+                <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-70 h-50 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-85 w-full pb-5">
                   <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
                     paris, fr
                   </p>
@@ -415,7 +416,7 @@ export default function Home() {
                     alt="number_1"
                     width={200}
                     height={200}
-                    className="pr-10"
+                    className="2xl:pr-10 xl:pr-10 lg:pr-10 md:pr-10 sm:pr-0 pr-0 2xl:pl-0 xl:pl-0 lg:pl-0 md:pl-0 sm:pl-10 pl-0 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-full w-15 self-end"
                   />
                 </div>
                 <div className="flex flex-col justify-stretch items-start gap-5">
@@ -438,8 +439,8 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col justify-stretch items-start gap-7.5 w-53 overflow-hidden pt-40">
-                <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background h-110">
+              <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-row flex-col justify-stretch items-start gap-7.5 2xl:w-53 xl:w-53 lg:w-53 md:w-full sm:w-full w-full overflow-hidden 2xl:pt-40 xl:pt-40 lg:pt-40 md:pt-40 sm:pt-0 pt-10">
+                <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-auto h-50 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-92 w-full pb-5">
                   <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
                     tokyo, jp
                   </p>
@@ -448,7 +449,7 @@ export default function Home() {
                     alt="number_2"
                     width={240}
                     height={240}
-                    className="pl-10"
+                    className="2xl:pl-10 xl:pl-10 lg:pl-10 md:pl-10 sm:pl-10 pl-0 self-end 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-full w-15"
                   />
                 </div>
                 <div className="flex flex-col justify-stretch items-start gap-5">
@@ -471,8 +472,8 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col justify-stretch items-start gap-7.5 w-53 overflow-hidden">
-                <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background h-110">
+              <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-row flex-col justify-stretch items-start gap-7.5 2xl:w-53 xl:w-53 lg:w-53 md:w-full sm:w-full w-full overflow-hidden 2xl:pt-0 xl:pt-0 lg:pt-0 md:pt-0 sm:pt-0 pt-10">
+                <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-auto h-50 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-85 w-full pb-5">
                   <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
                     berlin, de
                   </p>
@@ -481,7 +482,7 @@ export default function Home() {
                     alt="number_3"
                     width={240}
                     height={240}
-                    className="pl-10"
+                    className="2xl:pl-10 xl:pl-10 lg:pl-10 md:pl-10 sm:pl-10 pl-0 self-end 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-full w-15"
                   />
                 </div>
                 <div className="flex flex-col justify-stretch items-start gap-5">
@@ -504,8 +505,8 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col justify-stretch items-start gap-7.5 w-53 overflow-hidden pt-85">
-                <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background h-110">
+              <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-row flex-col justify-stretch items-start gap-7.5 2xl:w-53 xl:w-53 lg:w-53 md:w-full sm:w-full w-full overflow-hidden 2xl:pt-85 xl:pt-85 lg:pt-85 md:pt-85 sm:pt-0 pt-10">
+                <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-auto h-auto 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-70 w-full pb-5">
                   <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
                     new york, us
                   </p>
@@ -514,6 +515,7 @@ export default function Home() {
                     alt="number_4"
                     width={240}
                     height={240}
+                    className="2xl:pl-0 xl:pl-0 lg:pl-0 md:pl-0 sm:pl-10 pl-0 self-end 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-full w-15"
                   />
                 </div>
                 <div className="flex flex-col justify-stretch items-start gap-5">
@@ -688,3 +690,5 @@ export default function Home() {
     </>
   );
 }
+
+
