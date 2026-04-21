@@ -327,8 +327,8 @@ export default function Home() {
         className="bg-foreground overflow-hidden px-section py-25 pb-50"
       >
         <div className="w-full h-full max-w-400 mx-auto">
-          <div className="flex flex-col justify-stretch items-start gap-60">
-            <div className="flex flex-row justify-stretch items-start self-end gap-5">
+          <div className="flex flex-col justify-stretch items-start 2xl:gap-60 xl:gap-60 lg:gap-60 md:gap-60 sm:gap-20 gap-20">
+            <div className="flex flex-row justify-stretch items-start self-end 2xl:gap-5 xl:gap-5 lg:gap-5 md:gap-10 sm:gap-10 gap-10">
               <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 max-w-114">
                 Haus exists at the intersection of garment and object. We reject
                 the cycle of seasonal trends in favor of permanent relevance.
@@ -336,7 +336,7 @@ export default function Home() {
                 high-grade sourcing—designed for those who view fashion as
                 adeliberate expression of identity.
               </p>
-              <div className="flex flex-col justify-stretch items-start max-w-114 self-end gap-3">
+              <div className="flex flex-col justify-stretch items-start 2xl:max-w-114 xl:max-w-114 lg:max-w-114 md:max-w-100 sm:max-w-80 max-w-80 self-end gap-3">
                 <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100">
                   Haus exists at the intersection of garment and object. We
                   reject the cycle of seasonal trends in favor of permanent
@@ -355,7 +355,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="flex flex-row justify-between w-full">
+            <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col justify-between w-full 2xl:gap-0 xl:gap-0 lg:gap-0 md:gap-15 sm:gap-15 gap-15 ">
               <div className="flex flex-col justify-stretch items-start gap-5">
                 <p className="max-w-45 font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 pl-30">
                   Season fall26
@@ -363,8 +363,8 @@ export default function Home() {
                 <h2 className="font-primary font-display text-fd-s leading-tightest text-n-100 uppercase">
                   intention
                 </h2>
-                <div className="flex flex-row justify-start item-start self-end gap-70">
-                  <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 pl-12">
+                <div className="flex flex-row justify-start item-start 2xl:self-end xl:self-end lg:self-end md:self-end sm:self-start self-start 2xl:gap-70 xl:gap-70 lg:gap-70 md:gap-35 sm:gap-22 gap-22">
+                  <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 2xl:pl-12 xl:pl-12 lg:pl-12 md:pl-0 sm:pl-0 pl-0">
                     We are all in.
                   </p>
                   <h2 className="font-primary font-display text-fd-s leading-tightest text-n-100 uppercase">
@@ -372,11 +372,11 @@ export default function Home() {
                   </h2>
                 </div>
               </div>
-              <div className="flex flex-col justify-end items-start max-w-17.5 gap-8">
-                <p className="font-primary font-body-secondary text-b-l leading-normal text-n-100 uppercase text-right">
+              <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-row sm:flex-row flex-row justify-end 2xl:items-start xl:items-start lg:items-start md:items-end sm:items-end items-end 2xl:gap-8 xl:gap-8 lg:gap-8 md:gap-5 sm:gap-5 gap-5">
+                <p className="font-primary font-body-secondary text-b-l leading-normal text-n-100 uppercase text-right 2xl:max-w-17.5 xl:max-w-17.5 lg:max-w-17.5 md:max-w-17.5 sm:max-w-14 max-w-14">
                   Chapter 0.001
                 </p>
-                <p className="font-primary font-body-secondary text-b-l leading-normal text-n-100 uppercase text-right">
+                <p className="font-primary font-body-secondary text-b-l leading-normal text-n-100 uppercase text-right 2xl:max-w-17.5 xl:max-w-17.5 lg:max-w-17.5 md:max-w-17.5 sm:max-w-14 max-w-14">
                   index 2/2
                 </p>
               </div>
@@ -550,35 +550,35 @@ export default function Home() {
       >
         <div className="w-full h-full mx-auto">
           <div className="flex flex-col justify-stretch items-start">
-            <div className="flex flex-col justify-stretch items-stretch max-w-400 mx-section self-center gap-30 w-full pb-35">
+            <div className="flex flex-col justify-stretch items-stretch max-w-400 mx-section self-center 2xl:gap-30 xl:gap-30 lg:gap-30 md:gap-45 sm:gap-10 gap-25 w-full pb-35">
               <div className="flex flex-col justify-center items-center gap-8">
-                <p className="font-body-secondary font-secondary text-b-m leading-relaxed">
+                <p className="font-body-secondary font-secondary text-b-m leading-relaxed 2xl:block xl:block lg:block md:hidden sm:hidden hidden">
                   Dialogue
                 </p>
                 <Button link="https://webflow.com/templates/html/hauss-website-template">
                   contact studio
                 </Button>
               </div>
-              <div className="flex flex-row justify-between w-full px-section">
-                <p className="font-secondary font-body-secondary text-b-m leading-relaxed max-w-85">
+              <div className="flex flex-row 2xl:justify-between xl:justify-between lg:justify-between md:justify-between sm:justify-between justify-center w-full px-section">
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed 2xl:max-w-85 xl:max-w-85 lg:max-w-85 md:max-w-60 sm:max-w-60 max-w-60 2xl:text-start xl:text-start lg:text-start md:text-start sm:text-start text-center">
                   For showroom appointments, collection previews, or
                   collaborative inquiries, please reach out to our studio.
                 </p>
-                <p className="font-secondary font-body-secondary text-b-m leading-relaxed max-w-85 text-end">
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed 2xl:max-w-85 xl:max-w-85 lg:max-w-85 md:max-w-60 sm:max-w-60 max-w-60 text-end 2xl:block xl:block lg:block md:block sm:block hidden">
                   Connect with our studio to schedule a private viewing, explore
                   the new collection, or discuss creative synergies
                 </p>
               </div>
-              <h2 className="font-primary font-display text-fd-l leading-tightest text-center uppercase w-300 self-center">
+              <h2 className="font-primary font-display text-fd-l leading-tightest text-center uppercase 2xl:w-300 xl:w-300 lg:w-300 md:w-100 sm:w-100 w-100 self-center">
                 press& whole sale
               </h2>
             </div>
-            <div className="relative w-full h-[200vh]">
+            <div className="relative w-full 2xl:h-[150vh] xl:h-[130vh] lg:h-[130vh] md:h-[70vh] sm:h-[150vh] h-[110vh]">
               <Image
                 src="/assets/images/cta-bg.png"
                 alt="cta-bg"
                 fill
-                objectFit="cover"
+                className="object-cover 2xl:object-center xl:object-center lg:object-center md:object-center sm:object-center object-[15%_50%]"
               />
             </div>
           </div>
