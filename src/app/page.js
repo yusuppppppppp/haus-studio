@@ -3,13 +3,16 @@ import Image from "next/image";
 import { Button } from "./components/ui/button";
 import { Collection_item } from "./components/ui/collection_item";
 import { Footer_nav } from "./components/ui/footer_nav";
-import Script from "next/script";
+import Lookbook_item from "./components/ui/lookbook_item/lookbook_item";
+import Navbar from "./components/layout/navbar/navbar";
+
 
 export default function Home() {
   return (
     // section hero
 
     <>
+      {/* <Navbar/> */}
       <section
         id="section_hero"
         className="bg-background w-full overflow-hidden"
@@ -151,39 +154,39 @@ export default function Home() {
 
         {/* collection main content */}
 
-        <div className="w-full h-full max-w-primary mx-auto flex flex-col justify-stretch gap-50 pb-80">
+        <div className="w-full h-full max-w-primary mx-auto flex flex-col justify-stretch 2xl:gap-50 xl:gap-50 lg:gap-50 md:gap-30 sm:gap-30 gap-20 2xl:pb-80 xl:pb-80 lg:pb-80 md:pb-0 sm:pb-0 pb-0">
           <h6 className="font-primary font-heading text-h6 uppercase leading-tightest self-start">
             haus of [grid]
           </h6>
-          <div className="relative flex flex-row justify-center items-center w-full max-w-450 h-40 -skew-y-15 -ml-65 pt-70">
-            <div className="absolute flex flex-row justify-stretch items-start ml-[100%] skew-y-30">
+          <div className="relative 2xl:flex xl:flex lg:flex md:grid sm:grid grid 2xl:flex-row xl:flex-row lg:flex-row md:grid-cols-2 sm:grid-cols-2 grid-cols-1 justify-center items-center 2xl:w-full xl:w-[115%] lg:w-[110%] md:w-full sm:w-full w-full 2xl:max-w-450 xl:max-w-450 lg:max-w-450 md:max-w-full sm:max-w-full max-w-full 2xl:h-40 xl:h-40 lg:h-40 md:h-auto sm:h-auto h-auto 2xl:-skew-y-15 xl:-skew-y-15 lg:-skew-y-15 md:skew-y-0 sm:skew-y-0 skew-y-0 2xl:-ml-65 xl:-ml-80 lg:-ml-85 md:ml-0 sm:ml-0 ml-0 2xl:pt-70 xl:pt-70 lg:pt-70 md:pt-0 sm:pt-0 pt-0 2xl:gap-y-8 xl:gap-y-8 lg:gap-y-8 md:gap-y-8 sm:gap-y-8 gap-y-5">
+            <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[100%] xl:ml-[100%] lg:ml-[100%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
               <Collection_item images_path="/assets/images/item-10.png" />
             </div>
-            <div className="absolute flex flex-row justify-stretch items-start ml-[85%]  skew-y-30">
+            <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[85%] xl:ml-[85%] lg:ml-[85%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
               <Collection_item images_path="/assets/images/item-9.png" />
             </div>
-            <div className="absolute flex flex-row justify-stretch items-start ml-[70%]  skew-y-30">
+            <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[70%] xl:ml-[70%] lg:ml-[70%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
               <Collection_item images_path="/assets/images/item-8.png" />
             </div>
-            <div className="absolute flex flex-row justify-stretch items-start ml-[55%]  skew-y-30">
+            <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[55%] xl:ml-[55%] lg:ml-[55%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
               <Collection_item images_path="/assets/images/item-7.png" />
             </div>
-            <div className="absolute flex flex-row justify-stretch items-start ml-[40%]  skew-y-30">
+            <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[40%] xl:ml-[40%] lg:ml-[40%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
               <Collection_item images_path="/assets/images/item-6.png" />
             </div>
-            <div className="absolute flex flex-row justify-stretch items-start ml-[25%]  skew-y-30">
+            <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[25%] xl:ml-[25%] lg:ml-[25%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
               <Collection_item images_path="/assets/images/item-5.png" />
             </div>
-            <div className="absolute flex flex-row justify-stretch items-start ml-[10%]  skew-y-30">
+            <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[10%] xl:ml-[10%] lg:ml-[10%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
               <Collection_item images_path="/assets/images/item-4.png" />
             </div>
-            <div className="absolute flex flex-row justify-stretch items-start ml-[-5%]  skew-y-30">
+            <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[-5%] xl:ml-[-5%] lg:ml-[-5%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
               <Collection_item images_path="/assets/images/item-3.png" />
             </div>
-            <div className="absolute flex flex-row justify-stretch items-start ml-[-20%]  skew-y-30">
+            <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[-20%] xl:ml-[-20%] lg:ml-[-20%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
               <Collection_item images_path="/assets/images/item-2.png" />
             </div>
-            <div className="absolute flex flex-row justify-stretch items-start ml-[-35%]  skew-y-30">
+            <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[-35%] xl:ml-[-35%] lg:ml-[-35%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
               <Collection_item images_path="/assets/images/item-1.png" />
             </div>
           </div>
@@ -196,12 +199,12 @@ export default function Home() {
 
       <section
         id="section_lookbook"
-        className="bg-background overflow-hidden px-section pb-50"
+        className="bg-background overflow-hidden px-section"
       >
         <div className="w-full h-full mx-auto max-w-400 flex flex-col justify-stretch items-start">
           <div className="flex flex-col justify-stretch items-start self-center">
-            <div className="flex flex-col justify-stretch items-start gap-30 self-center">
-              <h2 className="font-primary font-heading text-h2 leading-tightest uppercase max-w-130 text-center">
+            <div className="flex flex-col justify-stretch items-start 2xl:gap-30 xl:gap-30 lg:gap-30 md:gap-30 sm:gap-20 gap-15 self-center">
+              <h2 className="font-primary font-heading text-h2 leading-tightest uppercase 2xl:max-w-130 xl:max-w-130 lg:max-w-130 md:max-w-150 sm:max-w-90 max-w-50 self-center text-center">
                 Our lookbooks serve as a dialogue
               </h2>
               <div className="flex flex-col justify-stretch item-center gap-10 max-w-90 text-center self-center">
@@ -222,96 +225,124 @@ export default function Home() {
 
           {/* section lookbook main content */}
 
-          <div className="w-full flex flex-col justify-stretch items-start pt-60 overflow-hidden">
-            <div className="flex flex-col justify-stretch items-stretch">
-              <div className="grid grid-cols-4">
-                <div className="col-span-1 p-2 flex flex-col gap-13 justify-stretch items-start border-n-300 border">
-                  <div className="flex flex-col justify-stretch items-start gap-5">
-                    <div className="w-full h-100 overflow-hidden relative">
-                      <Image
-                        src="/assets/images/lookbook1.png"
-                        alt="lookbook-item"
-                        fill
-                        className="object-cover"
+          <div className="w-full flex flex-col justify-stretch items-start 2xl:pt-60 xl:pt-45 lg:pt-45 md:pt-40 sm:pt-35 pt-30 overflow-hidden">
+            <div className="flex flex-col justify-stretch items-stretch w-full">
+              <div className="grid 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-4 grid-cols-1">
+                <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
+                  <Lookbook_item
+                    variant="span-1"
+                    lookbook_image="/assets/images/lookbook1.png"
+                    lookbook_name="olive sculptedh"
+                    lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                  />
+                </div>
+                <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
+                  <Lookbook_item
+                    variant="span-1"
+                    lookbook_image="/assets/images/lookbook2.png"
+                    lookbook_name="Mahogany Oversized Jumpsuit"
+                    lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                  />
+                </div>
+                <div className="bg-background col-span-1 h-130 w-100 2xl:block xl:block lg:block md:hidden sm:hidden hidden"></div>
+                <div className="col-span-1 p-2 2xl:flex xl:flex lg:flex md:hidden sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border">
+                  <Lookbook_item
+                    variant="span-1"
+                    lookbook_image="/assets/images/lookbook3.png"
+                    lookbook_name="Sandstone Fleece Co-ord"
+                    lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                  />
+                </div>
+              </div>
+              <div className="grid 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-4 grid-cols-1">
+                <div className="col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
+                  <Lookbook_item
+                    variant="span-2"
+                    lookbook_image="/assets/images/lookbook4.png"
+                    lookbook_name="Champagne Crinkle Sculpture"
+                    lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                  />
+                </div>
+                <div className="col-span-2 flex flex-col justify-stretch items-stretch">
+                  <div className="w-full h-full grid grid-cols-2">
+                    <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
+                      <Lookbook_item
+                        variant="span-1"
+                        lookbook_image="/assets/images/lookbook5.png"
+                        lookbook_name="Cocoa cocoon Hood"
+                        lookbook_link="https://webflow.com/templates/html/hauss-website-template"
                       />
                     </div>
-                    <p className="font-secondary font-body-primary text-b-l leading-relaxed capitalize max-w-95">
-                      Olive Sculpted
-                      <span className="text-n-100">
-                        hidden text hidden text hidden text
-                      </span>
-                    </p>
-                  </div>
-                  <div className="bg-n-200 p-2.5 flex flex-row justify-between items-center w-full">
-                    <p className="font-secondary font-body-primary text-b-m leading-tight uppercase">
-                      studi form
-                    </p>
-                    <Image
-                      src="/assets/icons/icon-lookbook-btn.svg"
-                      alt="icon-lookbook-arrow"
-                      width={24}
-                      height={24}
-                    />
+                    <div className="bg-background col-span-1 h-130 w-100 2xl:block xl:block lg:block md:block sm:hidden hidden"></div>
+                    <div className="bg-background col-span-1 h-130 w-100 2xl:block xl:block lg:block md:block sm:hidden hidden"></div>
+                    <div className="col-span-1 p-2 2xl:flex xl:flex lg:flex md:flex sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border">
+                      <Lookbook_item
+                        variant="span-1"
+                        lookbook_image="/assets/images/lookbook6.png"
+                        lookbook_name="Sage Volume Bomber"
+                        lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                      />
+                    </div>
                   </div>
                 </div>
-                <div className="col-span-1 p-2 flex flex-col gap-13 justify-stretch items-start border-n-300 border">
-                  <div className="flex flex-col justify-stretch items-start gap-5">
-                    <div className="w-full h-100 overflow-hidden relative">
-                      <Image
-                        src="/assets/images/lookbook1.png"
-                        alt="lookbook-item"
-                        fill
-                        className="object-cover"
+              </div>
+              <div className="grid 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-4 grid-cols-1">
+                <div className="col-span-1 p-2 2xl:flex xl:flex lg:flex md:hidden sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border">
+                  <Lookbook_item
+                    variant="span-1"
+                    lookbook_image="/assets/images/lookbook7.png"
+                    lookbook_name="Crimson Chunky Knit"
+                    lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                  />
+                </div>
+                <div className="bg-background col-span-1 h-130 w-100 2xl:block xl:block lg:block md:hidden sm:hidden hidden"></div>
+                <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
+                  <Lookbook_item
+                    variant="span-1"
+                    lookbook_image="/assets/images/lookbook8.png"
+                    lookbook_name="Graphite Boxy Tee-Dress"
+                    lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                  />
+                </div>
+                <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
+                  <Lookbook_item
+                    variant="span-1"
+                    lookbook_image="/assets/images/lookbook9.png"
+                    lookbook_name="Lavender Oversized Pullover"
+                    lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                  />
+                </div>
+              </div>
+              <div className="grid 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-4 grid-cols-1">
+                <div className="col-span-2 flex flex-col justify-stretch items-stretch">
+                  <div className="w-full h-full grid grid-cols-2">
+                    <div className="bg-background col-span-1 h-130 w-100 2xl:block xl:block lg:block md:block sm:hidden hidden"></div>
+                    <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
+                      <Lookbook_item
+                        variant="span-1"
+                        lookbook_image="/assets/images/lookbook11.png"
+                        lookbook_name="Obsidian Quilted Parka"
+                        lookbook_link="https://webflow.com/templates/html/hauss-website-template"
                       />
                     </div>
-                    <p className="font-secondary font-body-primary text-b-l leading-relaxed capitalize max-w-95">
-                      Olive Sculpted
-                      <span className="text-n-100">
-                        hidden text hidden text hidden text
-                      </span>
-                    </p>
-                  </div>
-                  <div className="bg-n-200 p-2.5 flex flex-row justify-between items-center w-full">
-                    <p className="font-secondary font-body-primary text-b-m leading-tight uppercase">
-                      studi form
-                    </p>
-                    <Image
-                      src="/assets/icons/icon-lookbook-btn.svg"
-                      alt="icon-lookbook-arrow"
-                      width={24}
-                      height={24}
-                    />
+                    <div className="col-span-1 p-2 2xl:flex xl:flex lg:flex md:flex sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border">
+                      <Lookbook_item
+                        variant="span-1"
+                        lookbook_image="/assets/images/lookbook10.png"
+                        lookbook_name="Espresso Leather Column"
+                        lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                      />
+                    </div>
+                    <div className="bg-background col-span-1 h-130 w-100 2xl:block xl:block lg:block md:block sm:hidden hidden"></div>
                   </div>
                 </div>
-                <div className="bg-background col-span-1 h-130 w-100 "></div>
-                <div className="col-span-1 p-2 flex flex-col gap-13 justify-stretch items-start border-n-300 border">
-                  <div className="flex flex-col justify-stretch items-start gap-5">
-                    <div className="w-full h-100 overflow-hidden relative">
-                      <Image
-                        src="/assets/images/lookbook1.png"
-                        alt="lookbook-item"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <p className="font-secondary font-body-primary text-b-l leading-relaxed capitalize max-w-95">
-                      Olive Sculpted
-                      <span className="text-n-100">
-                        hidden text hidden text hidden text
-                      </span>
-                    </p>
-                  </div>
-                  <div className="bg-n-200 p-2.5 flex flex-row justify-between items-center w-full">
-                    <p className="font-secondary font-body-primary text-b-m leading-tight uppercase">
-                      studi form
-                    </p>
-                    <Image
-                      src="/assets/icons/icon-lookbook-btn.svg"
-                      alt="icon-lookbook-arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </div>
+                <div className="col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
+                  <Lookbook_item
+                    variant="span-2"
+                    lookbook_image="/assets/images/lookbook12.png"
+                    lookbook_name="Midnight Asymmetric Gown"
+                    lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                  />
                 </div>
               </div>
             </div>
@@ -320,6 +351,28 @@ export default function Home() {
       </section>
 
       {/* section lookbook end */}
+
+      {/* lookbook to about transition section */}
+
+      <section className="bg-background overflow-hidden px-section h-screen">
+        <div className="w-full h-full mx-auto max-w-400">
+          <div className="flex flex-col justify-center items-center w-full h-full gap-20">
+            <div className="flex flex-col justify-center items-center gap-10">
+              <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-center 2xl:max-w-125 xl:max-w-125 lg:max-w-125 md:max-w-125 sm:max-w-110 max-w-110">
+                Haus continues to define the space between architectural intent
+                and human motion, leaving a permanent imprint on the modern
+                grid.
+              </p>
+              <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-center">
+                This sequence is merely the foundation for what follows.
+              </p>
+            </div>
+            <Button link="https://webflow.com/templates/html/hauss-website-template">explore the archive</Button>
+          </div>
+        </div>
+      </section>
+
+      {/* lookbook to about transition section end */}
 
       {/* section about */}
 
@@ -640,25 +693,25 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-col flex-col-reverse w-full gap-5">
-                  <div className="relative 2xl:h-150 xl:h-150 lg:h-150 md:h-150 sm:h-150 h-110 max-w-200 w-full 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden block">
-                    <Image
-                      src="/assets/images/footer-img-right.png"
-                      alt="footer-img-right"
-                      fill
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-row justify-between items-end w-full">
-                    <Image
-                      src="/assets/images/footer-img-left.png"
-                      alt="footer-img-left"
-                      width={210}
-                      height={250}
-                      className="2xl:flex xl:flex lg:flex md:hidden sm:hidden hidden"
-                    />
-                    <p className="font-secondary font-body-secondary text-b-s leading-tight text-end w-full">
-                      © 2026 Haus Fashion. All Rights Reserved.
-                    </p>
+                    <div className="relative 2xl:h-150 xl:h-150 lg:h-150 md:h-150 sm:h-150 h-110 max-w-200 w-full 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden block">
+                      <Image
+                        src="/assets/images/footer-img-right.png"
+                        alt="footer-img-right"
+                        fill
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="flex flex-row justify-between items-end w-full">
+                      <Image
+                        src="/assets/images/footer-img-left.png"
+                        alt="footer-img-left"
+                        width={210}
+                        height={250}
+                        className="2xl:flex xl:flex lg:flex md:hidden sm:hidden hidden"
+                      />
+                      <p className="font-secondary font-body-secondary text-b-s leading-tight text-end w-full">
+                        © 2026 Haus Fashion. All Rights Reserved.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -690,5 +743,3 @@ export default function Home() {
     </>
   );
 }
-
-
