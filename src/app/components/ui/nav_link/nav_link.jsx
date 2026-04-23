@@ -24,7 +24,7 @@ export default function Nav_link({
         )}
 
         {(variant === "icon" || variant === "text-icon") && nav_icon && (
-          <Image src={nav_icon} alt="icon_nav" width={10} height={10} />
+          <Image src={nav_icon} alt="icon_nav" width={12} height={12} />
         )}
       </div>
     </a>
