@@ -53,14 +53,15 @@ export default function Navbar() {
                 variant="text"
               />
             </div>
-            <div className="flex flex-col justify-stretch items-start gap-5">
+            <div className="flex flex-col justify-stretch items-start 2xl:gap-5 xl:gap-5 lg:gap-5 md:gap-5 sm:gap-1.5 gap-5">
               <div className="flex flex-row justify-between items-end w-full">
+                <div className="relative 2xl:w-40 xl:w-40 lg:w-40 md:w-40 sm:w-20 w-40 2xl:h-15 xl:h-15 lg:h-15 md:h-15 sm:h-8 h-15">
                 <Image
                   src="/assets/icons/nav_logo.svg"
                   alt="nav_logo"
-                  width={140}
-                  height={40}
+                  fill
                 />
+                </div>
                 <div className="flex flex-row justify-center items-end gap-2">
                   <Nav_link
                     nav_link="https://webflow.com/templates/html/hauss-website-template"

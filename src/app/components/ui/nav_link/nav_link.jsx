@@ -9,7 +9,7 @@ export default function Nav_link({
   const baseStyle =
     "flex flex-row justify-start items-end overflow-hidden bg-n-200 rounded-sm border border-n-300";
 
-  const sizeStyle = variant === "icon" ? "p-1.5" : "p-2.5 w-90 h-20";
+  const sizeStyle = variant === "icon" ? "p-1.5" : "p-2.5 2xl:w-90 xl:w-90 lg:w-90 md:w-90 sm:w-90 w-74 2xl:h-20 xl:h-20 lg:h-20 md:h-20 sm:h-12 h-20";
 
   return (
     <a
