@@ -35,7 +35,7 @@ export default function Lookbook_item({
               studi form
             </p>
             <Image
-              src="/assets/icons/icon-lookbook-btn.svg"
+              src="/assets/icons/arrow.svg"
               alt="icon-lookbook-arrow"
               width={24}
               height={24}

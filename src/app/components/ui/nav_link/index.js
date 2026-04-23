@@ -1,0 +1,1 @@
+export { default as Nav_link } from "./nav_link"

@@ -12,7 +12,7 @@ export default function Home() {
     // section hero
 
     <>
-      {/* <Navbar/> */}
+      <Navbar/>
       <section
         id="section_hero"
         className="bg-background w-full overflow-hidden"
