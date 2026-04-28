@@ -27,7 +27,7 @@ export default function Home() {
                 <div className="relative 2xl:w-20 xl:w-20 lg:w-20 md:w-15 sm:w-10 w-10 2xl:h-20 xl:h-20 lg:h-20 md:h-15 sm:h-10 h-10">
                   <Image
                     className="object-contain 2xl:pt-3 xl:pt-3 lg:pt-3 md:pt-2 sm:pt-2 pt-2"
-                    src="/assets/images/®.svg"
+                    src="/assets/icons/®.svg"
                     alt="®"
                     fill
                   />
@@ -46,7 +46,7 @@ export default function Home() {
                   <div className="relative 2xl:w-130 xl:w-130 lg:w-130 md:w-100 sm:w-60 w-65 2xl:h-125 xl:h-125 lg:h-125 md:h-125 sm:h-80 h-120 2xl:self-center xl:self-center lg:self-center md:self-center sm:self-center self-start ">
                     <Image
                       className="2xl:pr-23 xl:pr-10 lg:pr-20 md:pr-10 sm:pr-5 pr-0 object-cover 2xl:absolute xl:absolute lg:absolute md:absolute sm:absolute block 2xl:z-0 xl:z-0 lg:z-0 md:z-0 sm:z-0 z-0 object-center"
-                      src="/assets/images/hero-bg.png"
+                      src="/assets/images/hero-bg.webp"
                       alt="hero_image"
                       fill
                     />
@@ -160,34 +160,34 @@ export default function Home() {
           </h6>
           <div className="relative 2xl:flex xl:flex lg:flex md:grid sm:grid grid 2xl:flex-row xl:flex-row lg:flex-row md:grid-cols-2 sm:grid-cols-2 grid-cols-1 justify-center items-center 2xl:w-full xl:w-[115%] lg:w-[110%] md:w-full sm:w-full w-full 2xl:max-w-450 xl:max-w-450 lg:max-w-450 md:max-w-full sm:max-w-full max-w-full 2xl:h-40 xl:h-40 lg:h-40 md:h-auto sm:h-auto h-auto 2xl:-skew-y-15 xl:-skew-y-15 lg:-skew-y-15 md:skew-y-0 sm:skew-y-0 skew-y-0 2xl:-ml-65 xl:-ml-80 lg:-ml-85 md:ml-0 sm:ml-0 ml-0 2xl:pt-70 xl:pt-70 lg:pt-70 md:pt-0 sm:pt-0 pt-0 2xl:gap-y-8 xl:gap-y-8 lg:gap-y-8 md:gap-y-8 sm:gap-y-8 gap-y-5">
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[100%] xl:ml-[100%] lg:ml-[100%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item images_path="/assets/images/item-10.png" />
+              <Collection_item images_path="/assets/images/item-10.webp" />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[85%] xl:ml-[85%] lg:ml-[85%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item images_path="/assets/images/item-9.png" />
+              <Collection_item images_path="/assets/images/item-9.webp" />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[70%] xl:ml-[70%] lg:ml-[70%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item images_path="/assets/images/item-8.png" />
+              <Collection_item images_path="/assets/images/item-8.webp" />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[55%] xl:ml-[55%] lg:ml-[55%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item images_path="/assets/images/item-7.png" />
+              <Collection_item images_path="/assets/images/item-7.webp" />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[40%] xl:ml-[40%] lg:ml-[40%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item images_path="/assets/images/item-6.png" />
+              <Collection_item images_path="/assets/images/item-6.webp" />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[25%] xl:ml-[25%] lg:ml-[25%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item images_path="/assets/images/item-5.png" />
+              <Collection_item images_path="/assets/images/item-5.webp" />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[10%] xl:ml-[10%] lg:ml-[10%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item images_path="/assets/images/item-4.png" />
+              <Collection_item images_path="/assets/images/item-4.webp" />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[-5%] xl:ml-[-5%] lg:ml-[-5%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item images_path="/assets/images/item-3.png" />
+              <Collection_item images_path="/assets/images/item-3.webp" />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[-20%] xl:ml-[-20%] lg:ml-[-20%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item images_path="/assets/images/item-2.png" />
+              <Collection_item images_path="/assets/images/item-2.webp" />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[-35%] xl:ml-[-35%] lg:ml-[-35%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item images_path="/assets/images/item-1.png" />
+              <Collection_item images_path="/assets/images/item-1.webp" />
             </div>
           </div>
         </div>
@@ -231,7 +231,7 @@ export default function Home() {
                 <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
                   <Lookbook_item
                     variant="span-1"
-                    lookbook_image="/assets/images/lookbook1.png"
+                    lookbook_image="/assets/images/lookbook1.webp"
                     lookbook_name="olive sculptedh"
                     lookbook_link="https://webflow.com/templates/html/hauss-website-template"
                   />
@@ -239,7 +239,7 @@ export default function Home() {
                 <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
                   <Lookbook_item
                     variant="span-1"
-                    lookbook_image="/assets/images/lookbook2.png"
+                    lookbook_image="/assets/images/lookbook2.webp"
                     lookbook_name="Mahogany Oversized Jumpsuit"
                     lookbook_link="https://webflow.com/templates/html/hauss-website-template"
                   />
@@ -248,7 +248,7 @@ export default function Home() {
                 <div className="col-span-1 p-2 2xl:flex xl:flex lg:flex md:hidden sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border">
                   <Lookbook_item
                     variant="span-1"
-                    lookbook_image="/assets/images/lookbook3.png"
+                    lookbook_image="/assets/images/lookbook3.webp"
                     lookbook_name="Sandstone Fleece Co-ord"
                     lookbook_link="https://webflow.com/templates/html/hauss-website-template"
                   />
@@ -258,7 +258,7 @@ export default function Home() {
                 <div className="col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
                   <Lookbook_item
                     variant="span-2"
-                    lookbook_image="/assets/images/lookbook4.png"
+                    lookbook_image="/assets/images/lookbook4.webp"
                     lookbook_name="Champagne Crinkle Sculpture"
                     lookbook_link="https://webflow.com/templates/html/hauss-website-template"
                   />
@@ -268,7 +268,7 @@ export default function Home() {
                     <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
                       <Lookbook_item
                         variant="span-1"
-                        lookbook_image="/assets/images/lookbook5.png"
+                        lookbook_image="/assets/images/lookbook5.webp"
                         lookbook_name="Cocoa cocoon Hood"
                         lookbook_link="https://webflow.com/templates/html/hauss-website-template"
                       />
@@ -278,7 +278,7 @@ export default function Home() {
                     <div className="col-span-1 p-2 2xl:flex xl:flex lg:flex md:flex sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border">
                       <Lookbook_item
                         variant="span-1"
-                        lookbook_image="/assets/images/lookbook6.png"
+                        lookbook_image="/assets/images/lookbook6.webp"
                         lookbook_name="Sage Volume Bomber"
                         lookbook_link="https://webflow.com/templates/html/hauss-website-template"
                       />
@@ -290,7 +290,7 @@ export default function Home() {
                 <div className="col-span-1 p-2 2xl:flex xl:flex lg:flex md:hidden sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border">
                   <Lookbook_item
                     variant="span-1"
-                    lookbook_image="/assets/images/lookbook7.png"
+                    lookbook_image="/assets/images/lookbook7.webp"
                     lookbook_name="Crimson Chunky Knit"
                     lookbook_link="https://webflow.com/templates/html/hauss-website-template"
                   />
@@ -299,7 +299,7 @@ export default function Home() {
                 <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
                   <Lookbook_item
                     variant="span-1"
-                    lookbook_image="/assets/images/lookbook8.png"
+                    lookbook_image="/assets/images/lookbook8.webp"
                     lookbook_name="Graphite Boxy Tee-Dress"
                     lookbook_link="https://webflow.com/templates/html/hauss-website-template"
                   />
@@ -307,7 +307,7 @@ export default function Home() {
                 <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
                   <Lookbook_item
                     variant="span-1"
-                    lookbook_image="/assets/images/lookbook9.png"
+                    lookbook_image="/assets/images/lookbook9.webp"
                     lookbook_name="Lavender Oversized Pullover"
                     lookbook_link="https://webflow.com/templates/html/hauss-website-template"
                   />
@@ -320,7 +320,7 @@ export default function Home() {
                     <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
                       <Lookbook_item
                         variant="span-1"
-                        lookbook_image="/assets/images/lookbook11.png"
+                        lookbook_image="/assets/images/lookbook11.webp"
                         lookbook_name="Obsidian Quilted Parka"
                         lookbook_link="https://webflow.com/templates/html/hauss-website-template"
                       />
@@ -328,7 +328,7 @@ export default function Home() {
                     <div className="col-span-1 p-2 2xl:flex xl:flex lg:flex md:flex sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border">
                       <Lookbook_item
                         variant="span-1"
-                        lookbook_image="/assets/images/lookbook10.png"
+                        lookbook_image="/assets/images/lookbook10.webp"
                         lookbook_name="Espresso Leather Column"
                         lookbook_link="https://webflow.com/templates/html/hauss-website-template"
                       />
@@ -339,7 +339,7 @@ export default function Home() {
                 <div className="col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
                   <Lookbook_item
                     variant="span-2"
-                    lookbook_image="/assets/images/lookbook12.png"
+                    lookbook_image="/assets/images/lookbook12.webp"
                     lookbook_name="Midnight Asymmetric Gown"
                     lookbook_link="https://webflow.com/templates/html/hauss-website-template"
                   />
@@ -465,7 +465,7 @@ export default function Home() {
                     paris, fr
                   </p>
                   <Image
-                    src="/assets/images/Vector@2x.png"
+                    src="/assets/images/Vector@2x.webp"
                     alt="number_1"
                     width={200}
                     height={200}
@@ -498,7 +498,7 @@ export default function Home() {
                     tokyo, jp
                   </p>
                   <Image
-                    src="/assets/images/Vector@2x-1.png"
+                    src="/assets/images/Vector@2x-1.webp"
                     alt="number_2"
                     width={240}
                     height={240}
@@ -531,7 +531,7 @@ export default function Home() {
                     berlin, de
                   </p>
                   <Image
-                    src="/assets/images/Vector@2x-2.png"
+                    src="/assets/images/Vector@2x-2.webp"
                     alt="number_3"
                     width={240}
                     height={240}
@@ -564,7 +564,7 @@ export default function Home() {
                     new york, us
                   </p>
                   <Image
-                    src="/assets/images/Vector@2x-3.png"
+                    src="/assets/images/Vector@2x-3.webp"
                     alt="number_4"
                     width={240}
                     height={240}
@@ -630,7 +630,7 @@ export default function Home() {
             </div>
             <div className="relative w-full 2xl:h-[150vh] xl:h-[130vh] lg:h-[130vh] md:h-[70vh] sm:h-[150vh] h-[110vh]">
               <Image
-                src="/assets/images/cta-bg.png"
+                src="/assets/images/cta-bg.webp"
                 alt="cta-bg"
                 fill
                 className="object-cover 2xl:object-center xl:object-center lg:object-center md:object-center sm:object-center object-[15%_50%]"
@@ -648,7 +648,7 @@ export default function Home() {
         <div className="w-full h-full max-w-400 mx-auto">
           <div className="flex flex-col justify-stretch items-stretch gap-10">
             <Image
-              src="/assets/images/Logo.svg"
+              src="/assets/icons/Logo.svg"
               alt="logo"
               width={55}
               height={45}
@@ -703,7 +703,7 @@ export default function Home() {
                     </div>
                     <div className="flex flex-row justify-between items-end w-full">
                       <Image
-                        src="/assets/images/footer-img-left.png"
+                        src="/assets/images/footer-img-left.webp"
                         alt="footer-img-left"
                         width={210}
                         height={250}
@@ -727,7 +727,7 @@ export default function Home() {
                 </p>
                 <div className="relative h-150 max-w-200 w-full">
                   <Image
-                    src="/assets/images/footer-img-right.png"
+                    src="/assets/images/footer-img-right.webp"
                     alt="footer-img-right"
                     fill
                     className="w-full h-full object-cover"
