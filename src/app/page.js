@@ -445,7 +445,7 @@ export default function Home() {
 
       <section
         id="section_stockists"
-        className="bg-foreground px-section overflow-hidden pb-25"
+        className="bg-foreground px-section overflow-hidden pb-25 pt-5"
       >
         <div className="w-full h-full max-w-400 mx-auto ">
           <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col justify-between items-start w-full 2xl:gap-40 xl:gap-40 lg:gap-40 md:gap-30 sm:gap-30 gap-30">

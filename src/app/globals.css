@@ -134,3 +134,7 @@ body {
   background-color: var(--color-background);
   font-family: var(--font-primary), var(--font-secondary);
 }
+
+html {
+  scroll-behavior: smooth;
+}

@@ -33,24 +33,28 @@ export default function Navbar() {
           <div className="border border-l-2 border-n-300 h-screen p-section flex flex-col justify-between items-stretch bg-background">
             <div className="flex flex-col justify-start items-stretch gap-3">
               <Nav_link
-                nav_link="https://webflow.com/templates/html/hauss-website-template"
+                nav_link="/#section_hero"
                 nav_text="home"
                 variant="text"
+                setOpen={setOpen}
               />
               <Nav_link
-                nav_link="https://webflow.com/templates/html/hauss-website-template"
+                nav_link="/#section_collection"
                 nav_text="collections"
                 variant="text"
+                setOpen={setOpen}
               />
               <Nav_link
-                nav_link="https://webflow.com/templates/html/hauss-website-template"
+                nav_link="/#section_about"
                 nav_text="About"
                 variant="text"
+                setOpen={setOpen}
               />
               <Nav_link
-                nav_link="https://webflow.com/templates/html/hauss-website-template"
+                nav_link="/#section_stockists"
                 nav_text="Stockists"
                 variant="text"
+                setOpen={setOpen}
               />
             </div>
             <div className="flex flex-col justify-stretch items-start 2xl:gap-5 xl:gap-5 lg:gap-5 md:gap-5 sm:gap-1.5 gap-5">
@@ -67,16 +71,19 @@ export default function Navbar() {
                     nav_link="https://webflow.com/templates/html/hauss-website-template"
                     nav_icon="/assets/icons/In.svg"
                     variant="icon"
+                    setOpen={setOpen}
                   />
                   <Nav_link
                     nav_link="https://webflow.com/templates/html/hauss-website-template"
                     nav_icon="/assets/icons/x.svg"
                     variant="icon"
+                    setOpen={setOpen}
                   />
                   <Nav_link
                     nav_link="https://webflow.com/templates/html/hauss-website-template"
                     nav_icon="/assets/icons/ig.svg"
                     variant="icon"
+                    setOpen={setOpen}
                   />
                 </div>
               </div>
@@ -85,6 +92,7 @@ export default function Navbar() {
                 nav_icon="/assets/icons/arrow.svg"
                 nav_text="inquired"
                 variant="text-icon"
+                setOpen={setOpen}
               />
             </div>
           </div>

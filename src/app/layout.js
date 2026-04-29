@@ -1,6 +1,6 @@
 import { Anton, Archivo } from "next/font/google";
 import "./globals.css";
-import Smooth_scroll from "./components/layout/smooth_scroll/smooth_scroll"
+import Smooth_scroll from "./components/layout/smooth_scroll/smooth_scroll";
 
 const anton = Anton({
   variable: "--font-anton",
@@ -16,10 +16,11 @@ const archivo = Archivo({
 
 export const metadata = {
   title: "Haus Studio",
-  description: "Haus Portfolio Website",
+  description:
+    "Haus operates at the intersection of design, culture, and material exploration. Discover lookbooks, collections, and editorial fashion built on restraint, precision, and intentionality.",
   icons: {
-    icon: "/assets/icons/favicon.ico"
-  }
+    icon: "/assets/icons/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -29,10 +30,8 @@ export default function RootLayout({ children }) {
       className={`${anton.variable} ${archivo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Smooth_scroll>
-        {children}
-        </Smooth_scroll>
-        </body>
+        <Smooth_scroll>{children}</Smooth_scroll>
+      </body>
     </html>
   );
 }
