@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <motion.section
+    <motion.nav
       initial={{ x: "89%" }}
       animate={{ x: open ? "0%" : "89%" }}
       transition={{
@@ -98,6 +98,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </motion.nav>
   );
 }
