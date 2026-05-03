@@ -155,9 +155,9 @@ export default function Home() {
         {/* collection main content */}
 
         <div className="w-full h-full max-w-primary mx-auto flex flex-col justify-stretch 2xl:gap-50 xl:gap-50 lg:gap-50 md:gap-30 sm:gap-30 gap-20 2xl:pb-80 xl:pb-80 lg:pb-80 md:pb-0 sm:pb-0 pb-0">
-          <h6 className="font-primary font-heading text-h6 uppercase leading-tightest self-start">
+          <h2 className="font-primary font-heading text-h6 uppercase leading-tightest self-start">
             haus of [grid]
-          </h6>
+          </h2>
           <div className="relative 2xl:flex xl:flex lg:flex md:grid sm:grid grid 2xl:flex-row xl:flex-row lg:flex-row md:grid-cols-2 sm:grid-cols-2 grid-cols-1 justify-center items-center 2xl:w-full xl:w-[109%] lg:w-[115%] md:w-full sm:w-full w-full 2xl:max-w-450 xl:max-w-450 lg:max-w-450 md:max-w-full sm:max-w-full max-w-full 2xl:h-40 xl:h-40 lg:h-40 md:h-auto sm:h-auto h-auto 2xl:-skew-y-15 xl:-skew-y-15 lg:-skew-y-15 md:skew-y-0 sm:skew-y-0 skew-y-0 2xl:-ml-65 xl:-ml-80 lg:-ml-85 md:ml-0 sm:ml-0 ml-0 2xl:pt-70 xl:pt-70 lg:pt-70 md:pt-0 sm:pt-0 pt-0 2xl:gap-y-8 xl:gap-y-8 lg:gap-y-8 md:gap-y-8 sm:gap-y-8 gap-y-5">
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[100%] xl:ml-[100%] lg:ml-[100%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
               <Collection_item 
