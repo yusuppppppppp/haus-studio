@@ -1,4 +1,6 @@
+"use client"
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Lookbook_item({
   variant = "span-1",
@@ -29,19 +31,35 @@ export default function Lookbook_item({
         </p>
       </div>
       <div className="w-full">
-        <a href={lookbook_link}>
-          <div className="bg-n-200 p-2.5 flex flex-row 2xl:justify-between xl:justify-between lg:justify-between md:justify-between sm:justify-between justify-end">
-            <p className="font-secondary font-body-primary text-b-m leading-tight uppercase 2xl:block xl:block lg:block md:block sm:block hidden">
+        <motion.a
+          href={lookbook_link}
+          initial="rest"
+          whileHover="hover"
+          animate="rest"
+        >
+          <div className="relative isolate bg-n-200 p-2.5 flex flex-row 2xl:justify-between xl:justify-between lg:justify-between md:justify-between sm:justify-between justify-end">
+            <motion.div
+              variants={{
+                rest: { width: "0%" },
+                hover: { width: "100%" },
+              }}
+              transition={{
+                duration: 0.6,
+                ease: [0.65, 0, 0.35, 1],
+              }}
+              className="inset-0 z-0 absolute bg-n-500"></motion.div>
+            <p className="font-secondary font-body-primary text-b-m leading-tight uppercase 2xl:block xl:block lg:block md:block sm:block hidden mix-blend-difference text-n-100 relative  z-10">
               studi form
             </p>
-            <Image
+            <img
               src="/assets/icons/arrow.svg"
               alt="icon-lookbook-arrow"
               width={24}
               height={24}
+              className="relative z-10 mix-blend-difference invert"
             />
           </div>
-        </a>
+        </motion.a>
       </div>
     </>
   );

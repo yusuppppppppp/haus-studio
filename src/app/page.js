@@ -102,7 +102,7 @@ export default function Home() {
 
       <section
         id="section_collection"
-        className="bg-background px-section pt-50 pb-50"
+        className="bg-background px-section pt-50 pb-50 overflow-hidden"
       >
         <div className="w-full h-full mx-auto max-w-400">
           <div className="max-w-205 flex flex-col 2xl:gap-45 xl:gap-45 lg:gap-45 md:gap-25 sm:gap-25 gap-15  mx-auto pb-50 ">
