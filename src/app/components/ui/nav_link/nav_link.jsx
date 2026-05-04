@@ -1,6 +1,5 @@
-"use client"
+"use client";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Nav_link({
@@ -35,17 +34,15 @@ export default function Nav_link({
   };
 
   return (
-
-    <motion.div 
-    className="relative flex flex-col justify-end"
-    initial="rest"
-    whileHover="hover"
-    animate="rest"
+    <motion.a
+      href={nav_link}
+      onClick={handleClick}
+      className="relative flex flex-col justify-end"
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
     >
-      <Link
-        href={nav_link}
-        onClick={handleClick}
-        className={`${baseStyle} ${sizeStyle}`}>
+      <div className={`${baseStyle} ${sizeStyle}`}>
         <div className="flex flex-row justify-start items-center gap-2">
           {(variant === "text" || variant === "text-icon") && nav_text && (
             <h2 className="font-secondary font-body-primary text-h6 leading-tight capitalize relative z-10 text-n-100 mix-blend-difference">
@@ -54,22 +51,27 @@ export default function Nav_link({
           )}
 
           {(variant === "icon" || variant === "text-icon") && nav_icon && (
-            <Image src={nav_icon} alt="icon_nav" width={12} height={12} className="relative z-10 mix-blend-difference invert" />
+            <Image
+              src={nav_icon}
+              alt="icon_nav"
+              width={12}
+              height={12}
+              className="relative z-10 mix-blend-difference invert"
+            />
           )}
         </div>
-      </Link>
-      <motion.div 
-      className="z-0 absolute bg-n-500 w-full"
-      variants={{
-        rest: { height: "0%" },
-        hover: { height: "100%" }
-      }}
-      transition={{
-        duration: 0.5,
-        ease: [0.65, 0, 0.35, 1],
-      }}
+      </div>
+      <motion.div
+        className="z-0 absolute bg-n-500 w-full"
+        variants={{
+          rest: { height: "0%" },
+          hover: { height: "100%" },
+        }}
+        transition={{
+          duration: 0.5,
+          ease: [0.65, 0, 0.35, 1],
+        }}
       ></motion.div>
-    </motion.div>
-
+    </motion.a>
   );
 }
