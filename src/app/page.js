@@ -707,7 +707,7 @@ export default function Home() {
                     <p className="font-secondary font-body-secondary text-b-s leading-tight">
                       (+)
                     </p>
-                    <div className="flex flex-col justify-stretch items-end gap-1.5">
+                    <div className="flex flex-col justify-stretch items-end gap-2.5">
                       <Footer_nav footer_nav_link="https://webflow.com/templates/html/hauss-website-template">
                         license
                       </Footer_nav>
