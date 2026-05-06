@@ -37,7 +37,7 @@ export default function Nav_link({
     <motion.a
       href={nav_link}
       onClick={handleClick}
-      className="relative flex flex-col justify-end"
+      className={`${baseStyle} relative flex flex-col justify-end`}
       initial="rest"
       whileHover="hover"
       animate="rest"

@@ -6,13 +6,12 @@ import { Footer_nav } from "./components/ui/footer_nav";
 import Lookbook_item from "./components/ui/lookbook_item/lookbook_item";
 import Navbar from "./components/layout/navbar/navbar";
 
-
 export default function Home() {
   return (
     // section hero
 
     <>
-      <Navbar/>
+      <Navbar />
       <section
         id="section_hero"
         className="bg-background w-full overflow-hidden"
@@ -84,7 +83,7 @@ export default function Home() {
                       </p>
                     </div>
                     <div className="2xl:block xl:block lg:block md:block sm:block hidden">
-                      <Button link="https://webflow.com/templates/html/hauss-website-template">
+                      <Button link="#section_lookbook" target="_self">
                         explore page
                       </Button>
                     </div>
@@ -102,7 +101,7 @@ export default function Home() {
 
       <section
         id="section_collection"
-        className="bg-background px-section pt-50 pb-50 overflow-hidden"
+        className="bg-background px-section pt-50 pb-40 overflow-hidden"
       >
         <div className="w-full h-full mx-auto max-w-400">
           <div className="max-w-205 flex flex-col 2xl:gap-45 xl:gap-45 lg:gap-45 md:gap-25 sm:gap-25 gap-15  mx-auto pb-50 ">
@@ -154,69 +153,72 @@ export default function Home() {
 
         {/* collection main content */}
 
-        <div className="w-full h-full max-w-primary mx-auto flex flex-col justify-stretch 2xl:gap-50 xl:gap-50 lg:gap-50 md:gap-30 sm:gap-30 gap-20 2xl:pb-80 xl:pb-80 lg:pb-80 md:pb-0 sm:pb-0 pb-0">
+        <div
+          id="collection_main"
+          className="w-full h-full max-w-primary mx-auto flex flex-col justify-stretch 2xl:gap-50 xl:gap-50 lg:gap-50 md:gap-30 sm:gap-30 gap-20 2xl:pb-80 xl:pb-80 lg:pb-80 md:pb-0 sm:pb-0 pb-0 pt-10"
+        >
           <h2 className="font-primary font-heading text-h6 uppercase leading-tightest self-start">
             haus of [grid]
           </h2>
           <div className="relative 2xl:flex xl:flex lg:flex md:grid sm:grid grid 2xl:flex-row xl:flex-row lg:flex-row md:grid-cols-2 sm:grid-cols-2 grid-cols-1 justify-center items-center 2xl:w-full xl:w-[109%] lg:w-[115%] md:w-full sm:w-full w-full 2xl:max-w-450 xl:max-w-450 lg:max-w-450 md:max-w-full sm:max-w-full max-w-full 2xl:h-40 xl:h-40 lg:h-40 md:h-auto sm:h-auto h-auto 2xl:-skew-y-15 xl:-skew-y-15 lg:-skew-y-15 md:skew-y-0 sm:skew-y-0 skew-y-0 2xl:-ml-65 xl:-ml-80 lg:-ml-85 md:ml-0 sm:ml-0 ml-0 2xl:pt-70 xl:pt-70 lg:pt-70 md:pt-0 sm:pt-0 pt-0 2xl:gap-y-8 xl:gap-y-8 lg:gap-y-8 md:gap-y-8 sm:gap-y-8 gap-y-5">
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[100%] xl:ml-[100%] lg:ml-[100%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item 
-              images_path="/assets/images/item-10.webp" 
-              collection_name="CHAMPAGNE FRINGE BLAZER"
+              <Collection_item
+                images_path="/assets/images/item-10.webp"
+                collection_name="CHAMPAGNE FRINGE BLAZER"
               />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[85%] xl:ml-[85%] lg:ml-[85%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item 
-              images_path="/assets/images/item-9.webp" 
-              collection_name="ECRU TAILORED SLACKS"
+              <Collection_item
+                images_path="/assets/images/item-9.webp"
+                collection_name="ECRU TAILORED SLACKS"
               />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[70%] xl:ml-[70%] lg:ml-[70%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item 
-              images_path="/assets/images/item-8.webp" 
-              collection_name="CANDY FLOSS FAUX FUR"
+              <Collection_item
+                images_path="/assets/images/item-8.webp"
+                collection_name="CANDY FLOSS FAUX FUR"
               />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[55%] xl:ml-[55%] lg:ml-[55%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item 
-              images_path="/assets/images/item-7.webp" 
-              collection_name="TWEED UTILITY TRUCKER"
+              <Collection_item
+                images_path="/assets/images/item-7.webp"
+                collection_name="TWEED UTILITY TRUCKER"
               />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[40%] xl:ml-[40%] lg:ml-[40%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item 
-              images_path="/assets/images/item-6.webp" 
-              collection_name="GOLDEN LOAF PUFFER"
+              <Collection_item
+                images_path="/assets/images/item-6.webp"
+                collection_name="GOLDEN LOAF PUFFER"
               />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[25%] xl:ml-[25%] lg:ml-[25%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item 
-              images_path="/assets/images/item-5.webp" 
-              collection_name="WINTER COLLECTION 2025"
+              <Collection_item
+                images_path="/assets/images/item-5.webp"
+                collection_name="WINTER COLLECTION 2025"
               />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[10%] xl:ml-[10%] lg:ml-[10%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item 
-              images_path="/assets/images/item-4.webp" 
-              collection_name="OATMEAL OVERSIZED CARDIGAN"
+              <Collection_item
+                images_path="/assets/images/item-4.webp"
+                collection_name="OATMEAL OVERSIZED CARDIGAN"
               />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[-5%] xl:ml-[-5%] lg:ml-[-5%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item 
-              images_path="/assets/images/item-3.webp" 
-              collection_name="HERITAGE TEAL PONCHO"
+              <Collection_item
+                images_path="/assets/images/item-3.webp"
+                collection_name="HERITAGE TEAL PONCHO"
               />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[-20%] xl:ml-[-20%] lg:ml-[-20%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item 
-              images_path="/assets/images/item-2.webp" 
-              collection_name="ACID NEON BOMBER"
+              <Collection_item
+                images_path="/assets/images/item-2.webp"
+                collection_name="ACID NEON BOMBER"
               />
             </div>
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[-35%] xl:ml-[-35%] lg:ml-[-35%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
-              <Collection_item 
-              images_path="/assets/images/item-1.webp" 
-              collection_name="COBALT GLAZE TRENCH"
+              <Collection_item
+                images_path="/assets/images/item-1.webp"
+                collection_name="COBALT GLAZE TRENCH"
               />
             </div>
           </div>
@@ -229,7 +231,7 @@ export default function Home() {
 
       <section
         id="section_lookbook"
-        className="bg-background overflow-hidden px-section"
+        className="bg-background overflow-hidden px-section pt-10"
       >
         <div className="w-full h-full mx-auto max-w-400 flex flex-col justify-stretch items-start">
           <div className="flex flex-col justify-stretch items-start self-center">
@@ -384,23 +386,27 @@ export default function Home() {
 
       {/* lookbook to about transition section */}
 
-      <section className="bg-background overflow-hidden px-section h-screen">
-        <div className="w-full h-full mx-auto max-w-400">
-          <div className="flex flex-col justify-center items-center w-full h-full gap-20">
-            <div className="flex flex-col justify-center items-center gap-10">
-              <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-center 2xl:max-w-125 xl:max-w-125 lg:max-w-125 md:max-w-125 sm:max-w-110 max-w-110">
-                Haus continues to define the space between architectural intent
-                and human motion, leaving a permanent imprint on the modern
-                grid.
-              </p>
-              <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-center">
-                This sequence is merely the foundation for what follows.
-              </p>
+      <div className="relative w-full h-[300vh]">
+        <section className="sticky top-0 overflow-hidden px-section h-screen">
+          <div className="w-full h-full mx-auto max-w-400">
+            <div className="flex flex-col justify-center items-center w-full h-full gap-20">
+              <div className="flex flex-col justify-center items-center gap-10">
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-center 2xl:max-w-125 xl:max-w-125 lg:max-w-125 md:max-w-125 sm:max-w-110 max-w-110">
+                  Haus continues to define the space between architectural
+                  intent and human motion, leaving a permanent imprint on the
+                  modern grid.
+                </p>
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-center">
+                  This sequence is merely the foundation for what follows.
+                </p>
+              </div>
+              <Button link="https://webflow.com/templates/html/hauss-website-template">
+                explore the archive
+              </Button>
             </div>
-            <Button link="https://webflow.com/templates/html/hauss-website-template">explore the archive</Button>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* lookbook to about transition section end */}
 

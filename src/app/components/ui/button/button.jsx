@@ -2,9 +2,9 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export default function Button({ children, link }) {
+export default function Button({ children, link, target }) {
   return (
-    <Link href={link} target="_blank">
+    <Link href={link} target={target}>
       <motion.div
         className="flex flex-row justify-start items-start gap-1.5 overflow-hidden h-5"
         initial="rest"
