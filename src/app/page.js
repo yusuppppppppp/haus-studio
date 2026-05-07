@@ -1,3 +1,4 @@
+"use client";
 import "./globals.css";
 import Image from "next/image";
 import { Button } from "./components/ui/button";
@@ -5,6 +6,7 @@ import { Collection_item } from "./components/ui/collection_item";
 import { Footer_nav } from "./components/ui/footer_nav";
 import Lookbook_item from "./components/ui/lookbook_item/lookbook_item";
 import Navbar from "./components/layout/navbar/navbar";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -18,23 +20,48 @@ export default function Home() {
       >
         <div className="w-full">
           <div className="flex flex-col">
-            <div className="flex flex-row justify-between w-full uppercase 2xl:gap-120 xl:gap-100 lg:gap-100 md:gap-0 sm:gap-0 gap-10 2xl:pt-2.5 xl:pt-2.5 lg:pt-2.5 md:pt-4.5 pt-4.5 ">
-              <div className="flex flex-row items-start">
-                <h1 className=" font-primary font-display text-fd-l leading-tightest">
-                  haus
-                </h1>
-                <div className="relative 2xl:w-20 xl:w-20 lg:w-20 md:w-15 sm:w-10 w-10 2xl:h-20 xl:h-20 lg:h-20 md:h-15 sm:h-10 h-10">
-                  <Image
-                    className="object-contain 2xl:pt-3 xl:pt-3 lg:pt-3 md:pt-2 sm:pt-2 pt-2"
-                    src="/assets/icons/®.svg"
-                    alt="®"
-                    fill
-                  />
-                </div>
+            <div className="flex flex-row justify-between w-full uppercase 2xl:gap-120 xl:gap-100 lg:gap-100 md:gap-0 sm:gap-0 gap-0 2xl:pt-2.5 xl:pt-2.5 lg:pt-2.5 md:pt-4.5 pt-4.5 ">
+              <div className="flex flex-row items-start overflow-hidden 2xl:w-auto xl:w-full lg:w-full md:w-auto sm:w-auto w-full 2xl:h-65 xl:h-65 lg:h-65">
+                <motion.div
+                  initial={{ y: "130%", rotate: 20 }}
+                  whileInView={{ y: "0%", rotate: 0 }}
+                  viewport={{
+                    once: true,
+                  }}
+                  transition={{
+                    duration: 0.8,
+                    ease: [0.65, 0, 0.35, 1],
+                  }}
+                  className="flex flex-row items-start"
+                >
+                  <h1 className=" font-primary font-display text-fd-l leading-tightest">
+                    haus
+                  </h1>
+                  <div className="relative 2xl:w-20 xl:w-20 lg:w-20 md:w-15 sm:w-10 w-10 2xl:h-20 xl:h-20 lg:h-20 md:h-15 sm:h-10 h-10">
+                    <Image
+                      className="object-contain 2xl:pt-3 xl:pt-3 lg:pt-3 md:pt-2 sm:pt-2 pt-2"
+                      src="/assets/icons/®.svg"
+                      alt="®"
+                      fill
+                    />
+                  </div>
+                </motion.div>
               </div>
-              <h1 className=" font-primary font-display text-fd-l leading-tightest">
+              <div className="flex flex-row items-start overflow-hidden 2xl:h-65 xl:h-65 lg:h-65">
+              <motion.h1 
+              initial={{ y: "130%", rotate: 20 }}
+              whileInView={{ y: "0%", rotate: 0 }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                duration: 0.8,
+                ease: [0.65, 0, 0.35, 1],
+              }}
+              className=" font-primary font-display text-fd-l leading-tightest">
                 studio
-              </h1>
+              </motion.h1>
+              </div>
             </div>
             <div className="max-w-400 w-full mx-auto px-section 2xl:pt-5 xl:pt-5 lg:pt-5 md:pt-40 sm:pt-10 pt-10">
               <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-col flex-col-reverse gap-15 justify-between items-center relative isolate">
@@ -160,7 +187,7 @@ export default function Home() {
           <h2 className="font-primary font-heading text-h6 uppercase leading-tightest self-start">
             haus of [grid]
           </h2>
-          <div className="relative 2xl:flex xl:flex lg:flex md:grid sm:grid grid 2xl:flex-row xl:flex-row lg:flex-row md:grid-cols-2 sm:grid-cols-2 grid-cols-1 justify-center items-center 2xl:w-full xl:w-[109%] lg:w-[115%] md:w-full sm:w-full w-full 2xl:max-w-450 xl:max-w-450 lg:max-w-450 md:max-w-full sm:max-w-full max-w-full 2xl:h-40 xl:h-40 lg:h-40 md:h-auto sm:h-auto h-auto 2xl:-skew-y-15 xl:-skew-y-15 lg:-skew-y-15 md:skew-y-0 sm:skew-y-0 skew-y-0 2xl:-ml-65 xl:-ml-80 lg:-ml-85 md:ml-0 sm:ml-0 ml-0 2xl:pt-70 xl:pt-70 lg:pt-70 md:pt-0 sm:pt-0 pt-0 2xl:gap-y-8 xl:gap-y-8 lg:gap-y-8 md:gap-y-8 sm:gap-y-8 gap-y-5">
+          <div className="relative 2xl:flex xl:flex lg:flex md:grid sm:grid grid 2xl:flex-row xl:flex-row lg:flex-row md:grid-cols-2 sm:grid-cols-2 grid-cols-1 justify-center items-center 2xl:w-full xl:w-[115%] lg:w-[115%] md:w-full sm:w-full w-full 2xl:max-w-450 xl:max-w-450 lg:max-w-450 md:max-w-full sm:max-w-full max-w-full 2xl:h-40 xl:h-40 lg:h-40 md:h-auto sm:h-auto h-auto 2xl:-skew-y-15 xl:-skew-y-15 lg:-skew-y-15 md:skew-y-0 sm:skew-y-0 skew-y-0 2xl:-ml-65 xl:-ml-80 lg:-ml-85 md:ml-0 sm:ml-0 ml-0 2xl:pt-70 xl:pt-70 lg:pt-70 md:pt-0 sm:pt-0 pt-0 2xl:gap-y-8 xl:gap-y-8 lg:gap-y-8 md:gap-y-8 sm:gap-y-8 gap-y-5">
             <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[100%] xl:ml-[100%] lg:ml-[100%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
               <Collection_item
                 images_path="/assets/images/item-10.webp"
