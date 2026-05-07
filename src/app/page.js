@@ -20,8 +20,8 @@ export default function Home() {
       >
         <div className="w-full">
           <div className="flex flex-col">
-            <div className="flex flex-row justify-between w-full uppercase 2xl:gap-120 xl:gap-100 lg:gap-100 md:gap-0 sm:gap-0 gap-0 2xl:pt-2.5 xl:pt-2.5 lg:pt-2.5 md:pt-4.5 pt-4.5 ">
-              <div className="flex flex-row items-start overflow-hidden 2xl:w-auto xl:w-full lg:w-full md:w-auto sm:w-auto w-full 2xl:h-65 xl:h-65 lg:h-65">
+            <div className="flex flex-row justify-between w-full uppercase 2xl:gap-120 xl:gap-100 lg:gap-60 md:gap-0 sm:gap-0 gap-0 2xl:pt-2.5 xl:pt-2.5 lg:pt-2.5 md:pt-4.5 pt-4.5 ">
+              <div className="flex flex-row items-start overflow-hidden 2xl:w-auto xl:w-full lg:w-full md:w-auto sm:w-auto w-full 2xl:h-65 xl:h-65 lg:h-65 2xl:pr-0 xl:pr-0 lg:pr-10 md:pr-0 sm:pr-0 pr-25">
                 <motion.div
                   initial={{ y: "130%", rotate: 20 }}
                   whileInView={{ y: "0%", rotate: 0 }}
