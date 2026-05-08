@@ -1,0 +1,159 @@
+import Image from "next/image";
+
+export default function Section_stockists() {
+  return (
+    <>
+      <section
+        id="section_stockists"
+        className="bg-foreground px-section overflow-hidden pb-25 pt-5"
+      >
+        <div className="w-full h-full max-w-400 mx-auto ">
+          <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col justify-between items-start w-full 2xl:gap-40 xl:gap-40 lg:gap-40 md:gap-30 sm:gap-30 gap-30">
+            <div className="flex flex-col justify-end item-start 2xl:max-w-75 xl:max-w-75 lg:max-w-75 md:max-w-75 sm:max-w-65 max-w-65">
+              <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 text-end pl-10">
+                Our stockists are selected through a curated process
+              </p>
+              <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100">
+                Prioritizing alignment with our design philosophy, material
+                standards, and cultural positioning.
+              </p>
+            </div>
+            <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col justify-stretch items-start gap-5 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-auto w-full">
+              <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-row flex-col justify-stretch items-start gap-7.5 2xl:w-50 xl:w-50 lg:w-50 md:w-full sm:w-full w-full overflow-hidden 2xl:pt-10 xl:pt-10 lg:pt-10 md:pt-10 sm:pt-0 pt-0">
+                <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-70 h-50 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-85 w-full pb-5">
+                  <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
+                    paris, fr
+                  </p>
+                  <Image
+                    src="/assets/images/Vector@2x.webp"
+                    alt="number_1"
+                    width={200}
+                    height={200}
+                    className="2xl:pr-10 xl:pr-10 lg:pr-10 md:pr-10 sm:pr-0 pr-0 2xl:pl-0 xl:pl-0 lg:pl-0 md:pl-0 sm:pl-10 pl-0 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-full w-15 self-end"
+                  />
+                </div>
+                <div className="flex flex-col justify-stretch items-start gap-5">
+                  <p className="font-secondary font-body-primary text-b-l leading-tight text-n-100">
+                    Concept Boutiques and Independent Fashion.
+                  </p>
+                  <div className="flex flex-col justify-stretch items-start gap-3.5">
+                    <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
+                      Paris serves as a primary reference point for contemporary
+                      fashion discourse. Our presence in the city is anchored
+                      through concept boutiques and independent retailers that
+                      emphasize editorial curation, craftsmanship, and
+                      experimental design.
+                    </p>
+                    <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
+                      These partners provide a refined environment where the
+                      collection is contextualized within broader narratives of
+                      fashion, art, and cultural production.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-row flex-col justify-stretch items-start gap-7.5 2xl:w-53 xl:w-53 lg:w-53 md:w-full sm:w-full w-full overflow-hidden 2xl:pt-40 xl:pt-40 lg:pt-40 md:pt-40 sm:pt-0 pt-10">
+                <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-auto h-50 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-92 w-full pb-5">
+                  <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
+                    tokyo, jp
+                  </p>
+                  <Image
+                    src="/assets/images/Vector@2x-1.webp"
+                    alt="number_2"
+                    width={240}
+                    height={240}
+                    className="2xl:pl-10 xl:pl-10 lg:pl-10 md:pl-10 sm:pl-10 pl-0 self-end 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-full w-15"
+                  />
+                </div>
+                <div className="flex flex-col justify-stretch items-start gap-5">
+                  <p className="font-secondary font-body-primary text-b-l leading-tight text-n-100">
+                    Avant-Garde Retail and Cultural Concept Stores
+                  </p>
+                  <div className="flex flex-col justify-stretch items-start gap-3.5">
+                    <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
+                      Tokyo represents a convergence of innovation, subculture,
+                      and precision. Our stockists in the city operate at the
+                      intersection of fashion, design, and technology,
+                      presenting the collection within spaces that prioritize
+                      experimentation and forward-thinking aesthetics.
+                    </p>
+                    <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
+                      These partners provide a refined environment where the
+                      collection is contextualized within broader narratives of
+                      fashion, art, and cultural production.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-row flex-col justify-stretch items-start gap-7.5 2xl:w-53 xl:w-53 lg:w-53 md:w-full sm:w-full w-full overflow-hidden 2xl:pt-0 xl:pt-0 lg:pt-0 md:pt-0 sm:pt-0 pt-10">
+                <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-auto h-50 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-85 w-full pb-5">
+                  <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
+                    berlin, de
+                  </p>
+                  <Image
+                    src="/assets/images/Vector@2x-2.webp"
+                    alt="number_3"
+                    width={240}
+                    height={240}
+                    className="2xl:pl-10 xl:pl-10 lg:pl-10 md:pl-10 sm:pl-10 pl-0 self-end 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-full w-15"
+                  />
+                </div>
+                <div className="flex flex-col justify-stretch items-start gap-5">
+                  <p className="font-secondary font-body-primary text-b-l leading-tight text-n-100">
+                    Concept Boutiques and Independent Fashion.
+                  </p>
+                  <div className="flex flex-col justify-stretch items-start gap-3.5">
+                    <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
+                      Paris serves as a primary reference point for contemporary
+                      fashion discourse. Our presence in the city is anchored
+                      through concept boutiques and independent retailers that
+                      emphasize editorial curation, craftsmanship, and
+                      experimental design.
+                    </p>
+                    <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
+                      These partners provide a refined environment where the
+                      collection is contextualized within broader narratives of
+                      fashion, art, and cultural production.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-row flex-col justify-stretch items-start gap-7.5 2xl:w-53 xl:w-53 lg:w-53 md:w-full sm:w-full w-full overflow-hidden 2xl:pt-85 xl:pt-85 lg:pt-85 md:pt-85 sm:pt-0 pt-10">
+                <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-auto h-auto 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-70 w-full pb-5">
+                  <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
+                    new york, us
+                  </p>
+                  <Image
+                    src="/assets/images/Vector@2x-3.webp"
+                    alt="number_4"
+                    width={240}
+                    height={240}
+                    className="2xl:pl-0 xl:pl-0 lg:pl-0 md:pl-0 sm:pl-10 pl-0 self-end 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-full w-15"
+                  />
+                </div>
+                <div className="flex flex-col justify-stretch items-start gap-5">
+                  <p className="font-secondary font-body-primary text-b-l leading-tight text-n-100">
+                    Global Flagship Partners and Multi-Brand Boutiques
+                  </p>
+                  <div className="flex flex-col justify-stretch items-start gap-3.5">
+                    <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
+                      New York functions as a global commercial and cultural
+                      hub. Our stockists range from flagship multi-brand
+                      retailers to specialized boutiques that prioritize
+                      editorial storytelling and spatial experience.
+                    </p>
+                    <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
+                      These locations bridge global audiences with the
+                      collection, situating it within a dynamic context of
+                      fashion, art, and urban culture.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

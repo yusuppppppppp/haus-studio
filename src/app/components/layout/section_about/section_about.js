@@ -1,0 +1,1 @@
+export { default as Section_about } from "./section_about"

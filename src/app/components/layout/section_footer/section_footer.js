@@ -1,0 +1,1 @@
+export { default as Section_footer } from "./section_footer"
