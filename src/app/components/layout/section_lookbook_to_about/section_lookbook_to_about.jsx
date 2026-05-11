@@ -1,69 +1,36 @@
 "use client";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useMotionTemplate,
-} from "framer-motion";
-import { useRef } from "react";
-import { Button } from "../../ui/button";
+import { supabase } from "@/lib/supabase";
+import { useEffect, useState } from "react";
+import Section_scroll from "./scroll_section"
 
 export default function Lookbook_to_about() {
-  const ref = useRef(null);
+  const [lookbook_to_about, setLookbook_to_about] = useState(null);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
+  useEffect(() => {
+    async function fetchData() {
+      const { data, error } = await supabase
+        .from("lookbooktoabout")
+        .select("*")
+        .single();
 
-  const backgroundColor = useTransform(
-    scrollYProgress,
-    [0, 0.5],
-    ["#F5F5F5", "#000000"],
-  );
+      if (error) {
+        console.log(error);
+        return;
+      }
 
-  const invert = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+      setLookbook_to_about(data);
+    }
 
-  const filter = useMotionTemplate`
-  invert(${invert})`;
-  return (
-    <>
-      <motion.div
-        ref={ref}
-        style={{ backgroundColor }}
-        transition={{
-          ease: [0.65, 0, 0.35, 1],
-        }}
-        className="relative w-full h-[300vh]"
-      >
-        <section className="sticky top-0 overflow-hidden px-section h-screen">
-          <div className="w-full h-full mx-auto max-w-400">
-            <motion.div
-              style={{
-                filter,
-              }}
-              transition={{
-                ease: [0.65, 0, 0.35, 1],
-              }}
-              className="flex flex-col justify-center items-center w-full h-full gap-20"
-            >
-              <div className="flex flex-col justify-center items-center gap-10">
-                <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-center 2xl:max-w-125 xl:max-w-125 lg:max-w-125 md:max-w-125 sm:max-w-110 max-w-110">
-                  Haus continues to define the space between architectural
-                  intent and human motion, leaving a permanent imprint on the
-                  modern grid.
-                </p>
-                <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-center">
-                  This sequence is merely the foundation for what follows.
-                </p>
-              </div>
-              <Button link="https://webflow.com/templates/html/hauss-website-template">
-                explore the archive
-              </Button>
-            </motion.div>
-          </div>
-        </section>
-      </motion.div>
-    </>
-  );
+    fetchData();
+  }, []);
+
+  if (!lookbook_to_about) {
+    return (
+      <div className="w-full h-screen flex flex-row justify-center items-center">
+        <h2 className="font-body-secondary font-primary text-h5">Loading...</h2>
+      </div>
+    );
+  }
+
+  return <Section_scroll data={lookbook_to_about}/>
 }

@@ -1,6 +1,37 @@
-import Lookbook_item from "../../ui/lookbook_item/lookbook_item"
+"use client";
+import Lookbook_item from "../../ui/lookbook_item/lookbook_item";
+import { supabase } from "@/lib/supabase";
+import { useEffect, useState } from "react";
 
 export default function Section_lookbook() {
+  const [lookbook, setLookbook] = useState(null);
+
+  useEffect(() => {
+  async function fetchData() {
+    const { data, error } = await supabase
+      .from("sectionlookbook")
+      .select("*")
+      .single();
+
+    if (error) {
+      console.log(error);
+      return;
+    }
+
+    setLookbook(data);
+  }
+
+  fetchData();
+}, []);
+
+  if (!lookbook) {
+    return (
+      <div className="w-full h-screen flex flex-row justify-center items-center">
+        <h2 className="font-body-secondary font-primary text-h5">Loading...</h2>
+      </div>
+    );
+  }
+
   return (
     <>
       <section
@@ -11,19 +42,14 @@ export default function Section_lookbook() {
           <div className="flex flex-col justify-stretch items-start self-center">
             <div className="flex flex-col justify-stretch items-start 2xl:gap-30 xl:gap-30 lg:gap-30 md:gap-30 sm:gap-20 gap-15 self-center">
               <h2 className="font-primary font-heading text-h2 leading-tightest uppercase 2xl:max-w-130 xl:max-w-130 lg:max-w-130 md:max-w-150 sm:max-w-90 max-w-50 self-center text-center">
-                Our lookbooks serve as a dialogue
+                {lookbook.lookbook_heading}
               </h2>
               <div className="flex flex-col justify-stretch item-center gap-10 max-w-90 text-center self-center">
                 <p className="font-secondary font-body-secondary text-b-m leading-relaxed uppercase">
-                  We prioritize clarity, function, and the power of the grid to
-                  elevate global creative standards.
+                  {lookbook.lookbook_subheading}
                 </p>
                 <p className="font-secondary font-body-secondary text-b-m leading-relaxed">
-                  Our lookbooks serve as a dialogue between the garment and the
-                  void. By prioritizing volume over traditional tailoring, each
-                  piece becomes a structural study. We invite you to explore the
-                  intersection of form and function through this curated visual
-                  sequence.
+                  {lookbook.lookbook_paragraph}
                 </p>
               </div>
             </div>
@@ -37,26 +63,26 @@ export default function Section_lookbook() {
                 <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
                   <Lookbook_item
                     variant="span-1"
-                    lookbook_image="/assets/images/lookbook1.webp"
-                    lookbook_name="olive sculptedh"
-                    lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                    lookbook_image={lookbook.lookbook_image1}
+                    lookbook_name={lookbook.lookbook_name1}
+                    lookbook_link={lookbook.lookbook_link1}
                   />
                 </div>
                 <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
                   <Lookbook_item
                     variant="span-1"
-                    lookbook_image="/assets/images/lookbook2.webp"
-                    lookbook_name="Mahogany Oversized Jumpsuit"
-                    lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                    lookbook_image={lookbook.lookbook_image2}
+                    lookbook_name={lookbook.lookbook_name2}
+                    lookbook_link={lookbook.lookbook_link2}
                   />
                 </div>
                 <div className="bg-background col-span-1 h-130 w-100 2xl:block xl:block lg:block md:hidden sm:hidden hidden"></div>
                 <div className="col-span-1 p-2 2xl:flex xl:flex lg:flex md:hidden sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border">
                   <Lookbook_item
                     variant="span-1"
-                    lookbook_image="/assets/images/lookbook3.webp"
-                    lookbook_name="Sandstone Fleece Co-ord"
-                    lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                    lookbook_image={lookbook.lookbook_image3}
+                    lookbook_name={lookbook.lookbook_name3}
+                    lookbook_link={lookbook.lookbook_link3}
                   />
                 </div>
               </div>
@@ -64,9 +90,9 @@ export default function Section_lookbook() {
                 <div className="col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
                   <Lookbook_item
                     variant="span-2"
-                    lookbook_image="/assets/images/lookbook4.webp"
-                    lookbook_name="Champagne Crinkle Sculpture"
-                    lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                    lookbook_image={lookbook.lookbook_image4}
+                    lookbook_name={lookbook.lookbook_name4}
+                    lookbook_link={lookbook.lookbook_link4}
                   />
                 </div>
                 <div className="col-span-2 flex flex-col justify-stretch items-stretch">
@@ -74,9 +100,9 @@ export default function Section_lookbook() {
                     <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
                       <Lookbook_item
                         variant="span-1"
-                        lookbook_image="/assets/images/lookbook5.webp"
-                        lookbook_name="Cocoa cocoon Hood"
-                        lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                        lookbook_image={lookbook.lookbook_image5}
+                        lookbook_name={lookbook.lookbook_name5}
+                        lookbook_link={lookbook.lookbook_link5}
                       />
                     </div>
                     <div className="bg-background col-span-1 h-130 w-100 2xl:block xl:block lg:block md:block sm:hidden hidden"></div>
@@ -84,9 +110,9 @@ export default function Section_lookbook() {
                     <div className="col-span-1 p-2 2xl:flex xl:flex lg:flex md:flex sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border">
                       <Lookbook_item
                         variant="span-1"
-                        lookbook_image="/assets/images/lookbook6.webp"
-                        lookbook_name="Sage Volume Bomber"
-                        lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                        lookbook_image={lookbook.lookbook_image6}
+                        lookbook_name={lookbook.lookbook_name6}
+                        lookbook_link={lookbook.lookbook_link6}
                       />
                     </div>
                   </div>
@@ -96,26 +122,26 @@ export default function Section_lookbook() {
                 <div className="col-span-1 p-2 2xl:flex xl:flex lg:flex md:hidden sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border">
                   <Lookbook_item
                     variant="span-1"
-                    lookbook_image="/assets/images/lookbook7.webp"
-                    lookbook_name="Crimson Chunky Knit"
-                    lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                    lookbook_image={lookbook.lookbook_image7}
+                    lookbook_name={lookbook.lookbook_name7}
+                    lookbook_link={lookbook.lookbook_link7}
                   />
                 </div>
                 <div className="bg-background col-span-1 h-130 w-100 2xl:block xl:block lg:block md:hidden sm:hidden hidden"></div>
                 <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
                   <Lookbook_item
                     variant="span-1"
-                    lookbook_image="/assets/images/lookbook8.webp"
-                    lookbook_name="Graphite Boxy Tee-Dress"
-                    lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                    lookbook_image={lookbook.lookbook_image8}
+                    lookbook_name={lookbook.lookbook_name8}
+                    lookbook_link={lookbook.lookbook_link8}
                   />
                 </div>
                 <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
                   <Lookbook_item
                     variant="span-1"
-                    lookbook_image="/assets/images/lookbook9.webp"
-                    lookbook_name="Lavender Oversized Pullover"
-                    lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                    lookbook_image={lookbook.lookbook_image9}
+                    lookbook_name={lookbook.lookbook_name9}
+                    lookbook_link={lookbook.lookbook_link9}
                   />
                 </div>
               </div>
@@ -126,17 +152,17 @@ export default function Section_lookbook() {
                     <div className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
                       <Lookbook_item
                         variant="span-1"
-                        lookbook_image="/assets/images/lookbook11.webp"
-                        lookbook_name="Obsidian Quilted Parka"
-                        lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                        lookbook_image={lookbook.lookbook_image10}
+                        lookbook_name={lookbook.lookbook_name10}
+                        lookbook_link={lookbook.lookbook_link10}
                       />
                     </div>
                     <div className="col-span-1 p-2 2xl:flex xl:flex lg:flex md:flex sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border">
                       <Lookbook_item
                         variant="span-1"
-                        lookbook_image="/assets/images/lookbook10.webp"
-                        lookbook_name="Espresso Leather Column"
-                        lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                        lookbook_image={lookbook.lookbook_image11}
+                        lookbook_name={lookbook.lookbook_name11}
+                        lookbook_link={lookbook.lookbook_link11}
                       />
                     </div>
                     <div className="bg-background col-span-1 h-130 w-100 2xl:block xl:block lg:block md:block sm:hidden hidden"></div>
@@ -145,9 +171,9 @@ export default function Section_lookbook() {
                 <div className="col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border">
                   <Lookbook_item
                     variant="span-2"
-                    lookbook_image="/assets/images/lookbook12.webp"
-                    lookbook_name="Midnight Asymmetric Gown"
-                    lookbook_link="https://webflow.com/templates/html/hauss-website-template"
+                    lookbook_image={lookbook.lookbook_image12}
+                    lookbook_name={lookbook.lookbook_name12}
+                    lookbook_link={lookbook.lookbook_link12}
                   />
                 </div>
               </div>

@@ -1,6 +1,36 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 export default function Section_stockists() {
+  const [stockists, setStockists] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      const { data, error } = await supabase
+        .from("sectionstockists")
+        .select("*")
+        .single();
+
+      if (error) {
+        console.log(error);
+        return;
+      }
+
+      setStockists(data);
+    }
+
+    fetchData();
+  }, []);
+
+  if (!stockists) {
+    return (
+      <div className="w-full h-screen flex flex-row justify-center items-center">
+        <h2 className="font-body-secondary font-primary text-h5">Loading...</h2>
+      </div>
+    );
+  }
+
   return (
     <>
       <section
@@ -11,21 +41,20 @@ export default function Section_stockists() {
           <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col justify-between items-start w-full 2xl:gap-40 xl:gap-40 lg:gap-40 md:gap-30 sm:gap-30 gap-30">
             <div className="flex flex-col justify-end item-start 2xl:max-w-75 xl:max-w-75 lg:max-w-75 md:max-w-75 sm:max-w-65 max-w-65">
               <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 text-end pl-10">
-                Our stockists are selected through a curated process
+                {stockists.stockists_label1}
               </p>
               <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100">
-                Prioritizing alignment with our design philosophy, material
-                standards, and cultural positioning.
+                {stockists.stockists_label2}
               </p>
             </div>
             <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col justify-stretch items-start gap-5 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-auto w-full">
               <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-row flex-col justify-stretch items-start gap-7.5 2xl:w-50 xl:w-50 lg:w-50 md:w-full sm:w-full w-full overflow-hidden 2xl:pt-10 xl:pt-10 lg:pt-10 md:pt-10 sm:pt-0 pt-0">
                 <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-70 h-50 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-85 w-full pb-5">
                   <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
-                    paris, fr
+                    {stockists.stockists_item_label1}
                   </p>
                   <Image
-                    src="/assets/images/Vector@2x.webp"
+                    src={stockists.stockists_number1}
                     alt="number_1"
                     width={200}
                     height={200}
@@ -34,20 +63,14 @@ export default function Section_stockists() {
                 </div>
                 <div className="flex flex-col justify-stretch items-start gap-5">
                   <p className="font-secondary font-body-primary text-b-l leading-tight text-n-100">
-                    Concept Boutiques and Independent Fashion.
+                    {stockists.stockists_heading1}
                   </p>
                   <div className="flex flex-col justify-stretch items-start gap-3.5">
                     <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
-                      Paris serves as a primary reference point for contemporary
-                      fashion discourse. Our presence in the city is anchored
-                      through concept boutiques and independent retailers that
-                      emphasize editorial curation, craftsmanship, and
-                      experimental design.
+                      {stockists.stockists_item1_paragraph1}
                     </p>
                     <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
-                      These partners provide a refined environment where the
-                      collection is contextualized within broader narratives of
-                      fashion, art, and cultural production.
+                      {stockists.stockists_item1_paragraph2}
                     </p>
                   </div>
                 </div>
@@ -55,10 +78,10 @@ export default function Section_stockists() {
               <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-row flex-col justify-stretch items-start gap-7.5 2xl:w-53 xl:w-53 lg:w-53 md:w-full sm:w-full w-full overflow-hidden 2xl:pt-40 xl:pt-40 lg:pt-40 md:pt-40 sm:pt-0 pt-10">
                 <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-auto h-50 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-92 w-full pb-5">
                   <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
-                    tokyo, jp
+                    {stockists.stockists_item_label2}
                   </p>
                   <Image
-                    src="/assets/images/Vector@2x-1.webp"
+                    src={stockists.stockists_number2}
                     alt="number_2"
                     width={240}
                     height={240}
@@ -67,20 +90,14 @@ export default function Section_stockists() {
                 </div>
                 <div className="flex flex-col justify-stretch items-start gap-5">
                   <p className="font-secondary font-body-primary text-b-l leading-tight text-n-100">
-                    Avant-Garde Retail and Cultural Concept Stores
+                    {stockists.stockists_heading2}
                   </p>
                   <div className="flex flex-col justify-stretch items-start gap-3.5">
                     <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
-                      Tokyo represents a convergence of innovation, subculture,
-                      and precision. Our stockists in the city operate at the
-                      intersection of fashion, design, and technology,
-                      presenting the collection within spaces that prioritize
-                      experimentation and forward-thinking aesthetics.
+                      {stockists.stockists_item2_paragraph1}
                     </p>
                     <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
-                      These partners provide a refined environment where the
-                      collection is contextualized within broader narratives of
-                      fashion, art, and cultural production.
+                      {stockists.stockists_item2_paragraph2}
                     </p>
                   </div>
                 </div>
@@ -88,10 +105,10 @@ export default function Section_stockists() {
               <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-row flex-col justify-stretch items-start gap-7.5 2xl:w-53 xl:w-53 lg:w-53 md:w-full sm:w-full w-full overflow-hidden 2xl:pt-0 xl:pt-0 lg:pt-0 md:pt-0 sm:pt-0 pt-10">
                 <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-auto h-50 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-85 w-full pb-5">
                   <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
-                    berlin, de
+                    {stockists.stockists_item_label3}
                   </p>
                   <Image
-                    src="/assets/images/Vector@2x-2.webp"
+                    src={stockists.stockists_number3}
                     alt="number_3"
                     width={240}
                     height={240}
@@ -100,20 +117,14 @@ export default function Section_stockists() {
                 </div>
                 <div className="flex flex-col justify-stretch items-start gap-5">
                   <p className="font-secondary font-body-primary text-b-l leading-tight text-n-100">
-                    Concept Boutiques and Independent Fashion.
+                    {stockists.stockists_heading3}
                   </p>
                   <div className="flex flex-col justify-stretch items-start gap-3.5">
                     <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
-                      Paris serves as a primary reference point for contemporary
-                      fashion discourse. Our presence in the city is anchored
-                      through concept boutiques and independent retailers that
-                      emphasize editorial curation, craftsmanship, and
-                      experimental design.
+                      {stockists.stockists_item3_paragraph1}
                     </p>
                     <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
-                      These partners provide a refined environment where the
-                      collection is contextualized within broader narratives of
-                      fashion, art, and cultural production.
+                      {stockists.stockists_item3_paragraph2}
                     </p>
                   </div>
                 </div>
@@ -121,10 +132,10 @@ export default function Section_stockists() {
               <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-row flex-col justify-stretch items-start gap-7.5 2xl:w-53 xl:w-53 lg:w-53 md:w-full sm:w-full w-full overflow-hidden 2xl:pt-85 xl:pt-85 lg:pt-85 md:pt-85 sm:pt-0 pt-10">
                 <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-auto h-auto 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-70 w-full pb-5">
                   <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
-                    new york, us
+                    {stockists.stockists_item_label4}
                   </p>
                   <Image
-                    src="/assets/images/Vector@2x-3.webp"
+                    src={stockists.stockists_number4}
                     alt="number_4"
                     width={240}
                     height={240}
@@ -133,19 +144,14 @@ export default function Section_stockists() {
                 </div>
                 <div className="flex flex-col justify-stretch items-start gap-5">
                   <p className="font-secondary font-body-primary text-b-l leading-tight text-n-100">
-                    Global Flagship Partners and Multi-Brand Boutiques
+                    {stockists.stockists_heading4}
                   </p>
                   <div className="flex flex-col justify-stretch items-start gap-3.5">
                     <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
-                      New York functions as a global commercial and cultural
-                      hub. Our stockists range from flagship multi-brand
-                      retailers to specialized boutiques that prioritize
-                      editorial storytelling and spatial experience.
+                      {stockists.stockists_item4_paragraph1}
                     </p>
                     <p className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80">
-                      These locations bridge global audiences with the
-                      collection, situating it within a dynamic context of
-                      fashion, art, and urban culture.
+                      {stockists.stockists_item4_paragraph2}
                     </p>
                   </div>
                 </div>
