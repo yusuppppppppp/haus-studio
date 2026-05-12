@@ -1,36 +1,6 @@
-"use client";
 import Lookbook_item from "../../ui/lookbook_item/lookbook_item";
-import { supabase } from "@/lib/supabase";
-import { useEffect, useState } from "react";
 
-export default function Section_lookbook() {
-  const [lookbook, setLookbook] = useState(null);
-
-  useEffect(() => {
-  async function fetchData() {
-    const { data, error } = await supabase
-      .from("sectionlookbook")
-      .select("*")
-      .single();
-
-    if (error) {
-      console.log(error);
-      return;
-    }
-
-    setLookbook(data);
-  }
-
-  fetchData();
-}, []);
-
-  if (!lookbook) {
-    return (
-      <div className="w-full h-screen flex flex-row justify-center items-center">
-        <h2 className="font-body-secondary font-primary text-h5">Loading...</h2>
-      </div>
-    );
-  }
+export default function Section_lookbook({ lookbook }) {
 
   return (
     <>

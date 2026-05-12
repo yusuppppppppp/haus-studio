@@ -9,6 +9,8 @@ export default function Smooth_scroll({ children }) {
     smoothWheel: true,
   });
 
+  window.lenis = lenis;
+
   let frame;
 
   function raf(time) {
@@ -17,6 +19,8 @@ export default function Smooth_scroll({ children }) {
   }
 
   frame = requestAnimationFrame(raf);
+
+  lenis.stop();
 
   return () => {
     cancelAnimationFrame(frame);

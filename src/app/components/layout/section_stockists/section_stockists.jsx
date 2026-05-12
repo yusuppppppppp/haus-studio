@@ -1,35 +1,6 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabase";
 
-export default function Section_stockists() {
-  const [stockists, setStockists] = useState(null);
-
-  useEffect(() => {
-    async function fetchData() {
-      const { data, error } = await supabase
-        .from("sectionstockists")
-        .select("*")
-        .single();
-
-      if (error) {
-        console.log(error);
-        return;
-      }
-
-      setStockists(data);
-    }
-
-    fetchData();
-  }, []);
-
-  if (!stockists) {
-    return (
-      <div className="w-full h-screen flex flex-row justify-center items-center">
-        <h2 className="font-body-secondary font-primary text-h5">Loading...</h2>
-      </div>
-    );
-  }
+export default function Section_stockists({ stockists }) {
 
   return (
     <>

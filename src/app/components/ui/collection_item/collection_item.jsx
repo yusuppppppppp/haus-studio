@@ -18,25 +18,26 @@ export default function Collection_item({ images_path, collection_name }) {
 
   return (
     <motion.div
-      className="2xl:w-55 xl:w-55 lg:w-55 md:w-70 sm:w-70 w-70 2xl:h-85 xl:h-85 lg:h-85 md:h-130 sm:h-110 h-110"
+      className="2xl:w-55 xl:w-55 lg:w-55 md:w-full sm:w-full w-full 2xl:h-85 xl:h-85 lg:h-85 md:h-130 sm:h-110 h-110 will-change-transform"
       initial="rest"
       animate="rest"
       whileHover={isDesktop ? "hover" : undefined}
     >
       <motion.div
-        className="w-full h-full"
+        className="relative w-full h-full"
         variants={{
           rest: { x: 0, y: 0 },
           hover: { x: 80, y: -10 },
         }}
         transition={{ type: "spring", stiffness: 200, damping: 20 }}
       >
-        <Image
-          className="object-contain"
-          src={images_path}
-          alt="collection_item_image"
-          fill
-        />
+          <Image
+            className="object-contain"
+            src={images_path}
+            alt="collection_item_image"
+            fill
+            sizes="(max-width: 1024px) 280px, 220px"
+          />
       </motion.div>
       <motion.div
         className="absolute flex items-end justify-end ml-45 -mt-40 "

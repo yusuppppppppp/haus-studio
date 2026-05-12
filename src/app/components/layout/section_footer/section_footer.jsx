@@ -1,37 +1,7 @@
-"use client";
 import Image from "next/image";
 import { Footer_nav } from "../../ui/footer_nav";
-import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabase";
 
-export default function Section_footer() {
-  const [footer, setFooter] = useState(null);
-
-  useEffect(() => {
-    async function fetchData() {
-      const { data, error } = await supabase
-        .from("sectionfooter")
-        .select("*")
-        .single();
-
-      if (error) {
-        console.log(error);
-        return;
-      }
-
-      setFooter(data);
-    }
-
-    fetchData();
-  }, []);
-
-  if (!footer) {
-    return (
-      <div className="w-full h-screen flex flex-row justify-center items-center">
-        <h2 className="font-body-secondary font-primary text-h5">Loading...</h2>
-      </div>
-    );
-  }
+export default function Section_footer({ footer }) {
 
   return (
     <>
@@ -85,6 +55,7 @@ export default function Section_footer() {
                         alt="footer-img-right"
                         fill
                         className="w-full h-full object-cover"
+                        sizes="(max-width: 800px) 100vw, 800px"
                       />
                     </div>
                     <div className="flex flex-row justify-between items-end w-full">
@@ -112,6 +83,7 @@ export default function Section_footer() {
                     alt="footer-img-right"
                     fill
                     className="w-full h-full object-cover"
+                    sizes="(max-width: 800px) 100vw, 800px"
                   />
                 </div>
               </div>

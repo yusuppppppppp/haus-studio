@@ -4,7 +4,7 @@ import { useState } from "react";
 import Nav_link from "../../ui/nav_link/nav_link";
 import { animate, motion } from "framer-motion";
 
-export default function Navbar() {
+export default function Navbar({ navbar }) {
   const [open, setOpen] = useState(false);
   return (
     <motion.nav
@@ -36,10 +36,11 @@ export default function Navbar() {
               className="w-full h-full"
             >
               <Image
-                src="/assets/icons/nav_menu.svg"
+                src={navbar.nav_icon_close}
                 alt="nav_hamburger_menu"
                 width={24}
                 height={24}
+                className="w-6 h-auto"
               />
             </motion.div>
             <motion.div
@@ -54,71 +55,77 @@ export default function Navbar() {
               className="w-full h-full absolute inset-y-3.5 inset-x-3"
             >
               <Image
-                src="/assets/icons/close.svg"
+                src={navbar.nav_icon_open}
                 alt="nav_hamburger_menu"
                 width={22.5}
                 height={22.5}
+                className="w-6 h-auto"
               />
             </motion.div>
           </motion.div>
           <div className="border border-l-2 border-n-300 h-screen p-section flex flex-col justify-between items-stretch bg-background">
             <div className="flex flex-col justify-start items-stretch gap-3">
               <Nav_link
-                nav_link="/#section_hero"
-                nav_text="home"
-                variant="text"
+                nav_link={navbar.nav_link1}
+                nav_text={navbar.nav_text1}
+                variant={navbar.nav_variant1}
                 setOpen={setOpen}
               />
               <Nav_link
-                nav_link="/#collection_main"
-                nav_text="collections"
-                variant="text"
+                nav_link={navbar.nav_link2}
+                nav_text={navbar.nav_text2}
+                variant={navbar.nav_variant2}
                 setOpen={setOpen}
               />
               <Nav_link
-                nav_link="/#section_about"
-                nav_text="About"
-                variant="text"
+                nav_link={navbar.nav_link3}
+                nav_text={navbar.nav_text3}
+                variant={navbar.nav_variant3}
                 setOpen={setOpen}
               />
               <Nav_link
-                nav_link="/#section_stockists"
-                nav_text="Stockists"
-                variant="text"
+                nav_link={navbar.nav_link4}
+                nav_text={navbar.nav_text4}
+                variant={navbar.nav_variant4}
                 setOpen={setOpen}
               />
             </div>
             <div className="flex flex-col justify-stretch items-start 2xl:gap-5 xl:gap-5 lg:gap-5 md:gap-5 sm:gap-1.5 gap-5">
               <div className="flex flex-row justify-between items-end w-full">
                 <div className="relative 2xl:w-40 xl:w-40 lg:w-40 md:w-40 sm:w-20 w-40 2xl:h-15 xl:h-15 lg:h-15 md:h-15 sm:h-8 h-15">
-                  <Image src="/assets/icons/nav_logo.svg" alt="nav_logo" fill />
+                  <Image 
+                  src={navbar.nav_logo} 
+                  alt="nav_logo" 
+                  fill 
+                  sizes="(max-width: 768px) 5rem, 10rem"
+                  />
                 </div>
                 <div className="flex flex-row justify-center items-end gap-2">
                   <Nav_link
-                    nav_link="https://webflow.com/templates/html/hauss-website-template"
-                    nav_icon="/assets/icons/In.svg"
-                    variant="icon"
+                    nav_link={navbar.nav_link5}
+                    nav_icon={navbar.nav_icon1}
+                    variant={navbar.nav_variant5}
                     setOpen={setOpen}
                   />
                   <Nav_link
-                    nav_link="https://webflow.com/templates/html/hauss-website-template"
-                    nav_icon="/assets/icons/x.svg"
-                    variant="icon"
+                    nav_link={navbar.nav_link6}
+                    nav_icon={navbar.nav_icon2}
+                    variant={navbar.nav_variant6}
                     setOpen={setOpen}
                   />
                   <Nav_link
-                    nav_link="https://webflow.com/templates/html/hauss-website-template"
-                    nav_icon="/assets/icons/ig.svg"
-                    variant="icon"
+                    nav_link={navbar.nav_link7}
+                    nav_icon={navbar.nav_icon3}
+                    variant={navbar.nav_variant7}
                     setOpen={setOpen}
                   />
                 </div>
               </div>
               <Nav_link
-                nav_link="https://webflow.com/templates/html/hauss-website-template"
-                nav_icon="/assets/icons/arrow.svg"
-                nav_text="inquired"
-                variant="text-icon"
+                nav_link={navbar.nav_link8}
+                nav_icon={navbar.nav_icon4}
+                nav_text={navbar.nav_text5}
+                variant={navbar.nav_variant8}
                 setOpen={setOpen}
               />
             </div>

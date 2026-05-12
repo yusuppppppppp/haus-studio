@@ -1,37 +1,7 @@
-"use client"
 import Image from "next/image";
 import { Button } from "../../ui/button";
-import { useState, useEffect } from "react";
-import { supabase } from "@/lib/supabase";
 
-export default function Section_cta() {
-  const [ cta, setCta ] = useState(null)
-
-    useEffect(() => {
-    async function fetchData() {
-      const { data, error } = await supabase
-        .from("sectioncta")
-        .select("*")
-        .single();
-
-      if (error) {
-        console.log(error);
-        return;
-      }
-
-      setCta(data);
-    }
-
-    fetchData();
-  }, []);
-
-  if (!cta) {
-    return (
-      <div className="w-full h-screen flex flex-row justify-center items-center">
-        <h2 className="font-body-secondary font-primary text-h5">Loading...</h2>
-      </div>
-    );
-  }
+export default function Section_cta({ cta }) {
 
   return (
     <>
@@ -68,6 +38,7 @@ export default function Section_cta() {
                 alt="cta-bg"
                 fill
                 className="object-cover 2xl:object-center xl:object-center lg:object-center md:object-center sm:object-center object-[15%_50%]"
+                sizes="100vw"
               />
             </div>
           </div>

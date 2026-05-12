@@ -1,36 +1,68 @@
-"use client";
-import { supabase } from "@/lib/supabase";
-import { useEffect, useState } from "react";
-import Section_scroll from "./scroll_section"
+"use client"
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionTemplate,
+} from "framer-motion";
+import { useRef } from "react";
+import Button from "../../ui/button/button"
 
-export default function Lookbook_to_about() {
-  const [lookbook_to_about, setLookbook_to_about] = useState(null);
+export default function Section_lookbook_to_about({ lookbook_transition }) {
 
-  useEffect(() => {
-    async function fetchData() {
-      const { data, error } = await supabase
-        .from("lookbooktoabout")
-        .select("*")
-        .single();
+  const ref = useRef(null);
 
-      if (error) {
-        console.log(error);
-        return;
-      }
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
 
-      setLookbook_to_about(data);
-    }
+  const backgroundColor = useTransform(
+    scrollYProgress,
+    [0, 0.5],
+    ["#F5F5F5", "#000000"],
+  );
 
-    fetchData();
-  }, []);
+  const invert = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
 
-  if (!lookbook_to_about) {
-    return (
-      <div className="w-full h-screen flex flex-row justify-center items-center">
-        <h2 className="font-body-secondary font-primary text-h5">Loading...</h2>
-      </div>
-    );
-  }
+  const filter = useMotionTemplate`invert(${invert})`;
 
-  return <Section_scroll data={lookbook_to_about}/>
+  return (
+    <>
+      <motion.div
+        ref={ref}
+        style={{ backgroundColor }}
+        transition={{
+          ease: [0.65, 0, 0.35, 1],
+        }}
+        className="relative w-full h-[300vh]"
+      >
+        <section className="sticky top-0 overflow-hidden px-section h-screen">
+          <div className="w-full h-full mx-auto max-w-400">
+            <motion.div
+              style={{
+                filter,
+              }}
+              transition={{
+                ease: [0.65, 0, 0.35, 1],
+              }}
+              className="flex flex-col justify-center items-center w-full h-full gap-20"
+            >
+              <div className="flex flex-col justify-center items-center gap-10">
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-center 2xl:max-w-125 xl:max-w-125 lg:max-w-125 md:max-w-125 sm:max-w-110 max-w-110">
+                  {lookbook_transition.lookbooktoabout_paragraph1}
+                </p>
+                <p className="font-secondary font-body-secondary text-b-m leading-relaxed text-center">
+                  {lookbook_transition.lookbooktoabout_paragraph2}
+                </p>
+              </div>
+              <Button link={lookbook_transition.lookbooktoabout_link}>
+                {lookbook_transition.button_text}
+              </Button>
+            </motion.div>
+          </div>
+        </section>
+      </motion.div>
+    </>
+  );
 }
