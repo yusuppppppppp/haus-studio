@@ -14,9 +14,13 @@ import Section_footer from "./components/layout/section_footer/section_footer";
 import { supabase } from "@/lib/supabase";
 import { useEffect, useState } from "react";
 import Section_preload from "./components/layout/section_preload/section_preload";
+import Stragger_word from "./components/ui/stragger_word/stragger_word";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
   const [data, setData] = useState({
+    preload: null,
     navbar: null,
     hero: null,
     collection: null,
@@ -30,71 +34,76 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchData() {
-      const [
-        navbarRes,
-        heroRes,
-        collectionRes,
-        aboutRes,
-        lookbookRes,
-        lookbook_transitionRes,
-        stockistsRes,
-        ctaRes,
-        footerRes,
-      ] = await Promise.all([
-        supabase.from("sectionnav").select("*").single(),
-        supabase.from("sectionhero").select("*").single(),
-        supabase.from("sectioncollection").select("*").single(),
-        supabase.from("sectionabout").select("*").single(),
-        supabase.from("sectionlookbook").select("*").single(),
-        supabase.from("lookbooktoabout").select("*").single(),
-        supabase.from("sectionstockists").select("*").single(),
-        supabase.from("sectioncta").select("*").single(),
-        supabase.from("sectionfooter").select("*").single(),
-      ]);
+      try {
+        const [
+          preloadRes,
+          navbarRes,
+          heroRes,
+          collectionRes,
+          aboutRes,
+          lookbookRes,
+          lookbook_transitionRes,
+          stockistsRes,
+          ctaRes,
+          footerRes,
+        ] = await Promise.all([
+          supabase.from("sectionpreload").select("*").single(),
+          supabase.from("sectionnav").select("*").single(),
+          supabase.from("sectionhero").select("*").single(),
+          supabase.from("sectioncollection").select("*").single(),
+          supabase.from("sectionabout").select("*").single(),
+          supabase.from("sectionlookbook").select("*").single(),
+          supabase.from("lookbooktoabout").select("*").single(),
+          supabase.from("sectionstockists").select("*").single(),
+          supabase.from("sectioncta").select("*").single(),
+          supabase.from("sectionfooter").select("*").single(),
+        ]);
 
-      if (navbarRes.error) console.log(navbarRes.error);
-      if (heroRes.error) console.log(heroRes.error);
-      if (collectionRes.error) console.log(collectionRes.error);
-      if (aboutRes.error) console.log(aboutRes.error);
-      if (lookbookRes.error) console.log(lookbookRes.error);
-      if (lookbook_transitionRes) console.log(lookbook_transitionRes.error);
-      if (stockistsRes) console.log(lookbookRes.error);
-      if (ctaRes) console.log(ctaRes.error);
-      if (footerRes) console.log(footerRes.error);
+        if (preloadRes.error) console.log(preloadRes.error);
+        if (navbarRes.error) console.log(navbarRes.error);
+        if (heroRes.error) console.log(heroRes.error);
+        if (collectionRes.error) console.log(collectionRes.error);
+        if (aboutRes.error) console.log(aboutRes.error);
+        if (lookbookRes.error) console.log(lookbookRes.error);
+        if (lookbook_transitionRes.error)
+          console.log(lookbook_transitionRes.error);
+        if (stockistsRes.error) console.log(lookbookRes.error);
+        if (ctaRes.error) console.log(ctaRes.error);
+        if (footerRes.error) console.log(footerRes.error);
 
-      setData({
-        navbar: navbarRes.data,
-        hero: heroRes.data,
-        collection: collectionRes.data,
-        about: aboutRes.data,
-        lookbook: lookbookRes.data,
-        lookbook_transition: lookbook_transitionRes.data,
-        stockists: stockistsRes.data,
-        cta: ctaRes.data,
-        footer: footerRes.data,
-      });
+        setData({
+          preload: preloadRes.data,
+          navbar: navbarRes.data,
+          hero: heroRes.data,
+          collection: collectionRes.data,
+          about: aboutRes.data,
+          lookbook: lookbookRes.data,
+          lookbook_transition: lookbook_transitionRes.data,
+          stockists: stockistsRes.data,
+          cta: ctaRes.data,
+          footer: footerRes.data,
+        });
+
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 200);
+      } catch (error) {
+        console.log(error);
+
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 200);
+      }
     }
-
     fetchData();
   }, []);
-
-  const isLoading =
-    !data.navbar ||
-    !data.hero ||
-    !data.collection ||
-    !data.about ||
-    !data.lookbook ||
-    !data.lookbook_transition ||
-    !data.stockists ||
-    !data.cta ||
-    !data.footer;
 
   {
     return (
       <>
         {/* section preload */}
 
-        <Section_preload isLoading={isLoading} />
+        <Section_preload isLoading={isLoading} preload={data.preload} />
 
         {/* section preload end */}
 
@@ -117,14 +126,14 @@ export default function Home() {
                   <div className="flex flex-row justify-between w-full uppercase 2xl:gap-50 xl:gap-50 lg:gap-50 md:gap-0 sm:gap-0 gap-0 2xl:pt-2.5 xl:pt-2.5 lg:pt-2.5 md:pt-4.5 pt-4.5 ">
                     <div className="flex flex-row items-start overflow-hidden 2xl:w-auto xl:w-full lg:w-full md:w-auto sm:w-auto w-full 2xl:h-65 xl:h-65 lg:h-65 2xl:pr-0 xl:pr-0 lg:pr-10 md:pr-0 sm:pr-0 pr-25">
                       <motion.div
-                        initial={{ y: "130%", rotate: 20 }}
-                        whileInView={{ y: "0%", rotate: 0 }}
+                        initial={{ y: "130%", rotate: 20, opacity: 0 }}
+                        whileInView={{ y: "0%", rotate: 0, opacity: 1 }}
                         viewport={{
                           once: true,
                         }}
                         transition={{
-                          delay: 2.6,
-                          duration: 0.8,
+                          delay: 2.7,
+                          duration: 1,
                           ease: [0.65, 0, 0.35, 1],
                         }}
                         className="flex flex-row items-start"
@@ -145,14 +154,14 @@ export default function Home() {
                     </div>
                     <div className="flex flex-row items-start overflow-hidden 2xl:h-65 xl:h-65 lg:h-65">
                       <motion.h1
-                        initial={{ y: "130%", rotate: 20 }}
-                        whileInView={{ y: "0%", rotate: 0 }}
+                        initial={{ y: "130%", rotate: 20, opacity: 0 }}
+                        whileInView={{ y: "0%", rotate: 0, opacity: 1 }}
                         viewport={{
                           once: true,
                         }}
                         transition={{
-                          delay: 2.6,
-                          duration: 0.8,
+                          delay: 2.7,
+                          duration: 1,
                           ease: [0.65, 0, 0.35, 1],
                         }}
                         className=" font-primary font-display text-fd-l leading-tightest"
@@ -164,50 +173,105 @@ export default function Home() {
                   <div className="max-w-400 w-full mx-auto px-section 2xl:pt-5 xl:pt-5 lg:pt-5 md:pt-40 sm:pt-10 pt-10">
                     <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-col flex-col-reverse gap-15 justify-between items-center relative isolate">
                       <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row sm:flex-row flex-col 2xl:self-center xl:self-center lg:self-center md:self-center sm:self-center self-start 2xl:pl-[33%] xl:pl-[32%] lg:pl-[30%] md:pl-[30%] sm:pl-[35%] pl-[0%] w-full 2xl:gap-0 xl:gap-0 lg:gap-0 md:gap-0 sm:gap-0 gap-5">
-                        <p className="font-primary font-body-secondary text-b-l leading-tight uppercase text-end 2xl:max-w-47.5 xl:max-w-47.5 lg:max-w-47.5 md:max-w-47.5 sm:max-w-30 max-w-30 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden block 2xl:self-center xl:self-center lg:self-center md:self-center sm:self-center self-end">
+                        <Stragger_word
+                          delay={3}
+                          as="p"
+                          className="font-primary font-body-secondary text-b-l leading-tight uppercase text-end 2xl:max-w-47.5 xl:max-w-47.5 lg:max-w-47.5 md:max-w-47.5 sm:max-w-30 max-w-35 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden block 2xl:self-center xl:self-center lg:self-center md:self-center sm:self-center self-end justify-end"
+                        >
                           {data.hero.hero_subtitle}
-                        </p>
-                        <div className="relative 2xl:w-130 xl:w-130 lg:w-130 md:w-100 sm:w-60 w-65 2xl:h-125 xl:h-125 lg:h-125 md:h-125 sm:h-80 h-120 2xl:self-center xl:self-center lg:self-center md:self-center sm:self-center self-start ">
+                        </Stragger_word>
+                        <div className="relative 2xl:w-107 xl:w-130 lg:w-130 md:w-100 sm:w-60 w-65 2xl:h-125 xl:h-125 lg:h-125 md:h-125 sm:h-80 h-120 2xl:self-center xl:self-center lg:self-center md:self-center sm:self-center self-start overflow-hidden">
+                          <motion.div
+                          initial={{ opacity: 0.10, rotate: -25, scale: 2 }}
+                          whileInView={{ opacity: 1, rotate: 0, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{
+                            delay: 2.5,
+                            duration: 1.4,
+                            ease: [0.65, 0, 0.35, 1],
+                          }} 
+                          className="will-change-transform 2xl:absolute xl:absolute lg:absolute md:absolute sm:absolute block 2xl:z-0 xl:z-0 lg:z-0 md:z-0 sm:z-0 z-0 w-full h-full"
+                          >
                           <Image
-                            className="2xl:pr-23 xl:pr-10 lg:pr-20 md:pr-10 sm:pr-5 pr-0 object-cover 2xl:absolute xl:absolute lg:absolute md:absolute sm:absolute block 2xl:z-0 xl:z-0 lg:z-0 md:z-0 sm:z-0 z-0 object-center"
+                            className="object-cover object-center"
                             src={data.hero.hero_image}
                             alt="hero_image"
                             fill
                             priority
                             sizes="(max-width: 640px) 260px, (max-width: 768px) 240px, (max-width: 1024px) 400px, 520px"
                           />
+                          </motion.div>
                         </div>
-                        <div className="2xl:flex xl:flex lg:flex md:flex sm:flex hidden flex-col justify-end items-start 2xl:max-w-92 xl:max-w-92 lg:max-w-92 md:max-w-45 sm:max-w-45 max-w-45 gap-5">
-                          <p className="font-primary font-body-secondary text-b-l leading-tight uppercase">
+                        <div className="2xl:flex xl:flex lg:flex md:flex sm:flex hidden flex-col justify-end items-start 2xl:max-w-120 xl:max-w-105 lg:max-w-110 md:max-w-55 sm:max-w-45 max-w-45 gap-5 2xl:pl-23 xl:pl-10 lg:pl-15 md:pl-10 sm:pl-5 pl-0">
+                          <Stragger_word
+                            delay={3}
+                            as="p"
+                            className="font-primary font-body-secondary text-b-l leading-tight uppercase"
+                          >
                             {data.hero.about_title}
-                          </p>
-                          <p className="text-n-500 font-secondary font-body-secondary text-b-m leading-relaxed">
+                          </Stragger_word>
+                          <Stragger_word
+                            delay={3.2}
+                            as="p"
+                            className="text-n-500 font-secondary font-body-secondary text-b-m leading-relaxed"
+                          >
                             {data.hero.about_description}
-                          </p>
+                          </Stragger_word>
                         </div>
                       </div>
                       <div className="w-full flex flex-row justify-between z-1 2xl:absolute xl:absolute lg:absolute md:absolute sm:absolute ">
                         <div className="flex flex-col justify-start items-start 2xl:gap-40 xl:gap-35 lg:gap-35 md:gap-28 sm:gap-13 gap-13">
-                          <p className="font-primary font-body-secondary text-b-l leading-tight uppercase 2xl:max-w-47.5 xl:max-w-47.5 lg:max-w-47.5 md:max-w-47.5 sm:max-w-30 max-w-30 2xl:block xl:block lg:block md:block sm:block hidden">
-                            {data.hero.hero_subtitle}
-                          </p>
-                          <div className="flex flex-col justify-center 2xl:gap-5 xl:gap-5 lg:gap-5 md:gap-5 sm:gap-3 gap-3 2xl:max-w-165 xl:max-w-130 lg:max-w-130 md:max-w-73 sm:max-w-73">
-                            <div className="flex flex-row justify-between 2xl:w-120 xl:w-90 lg:w-90 md:w-50 sm:w-55 w-">
-                              <p className="font-primary font-body-secondary text-b-l leading-tight uppercase max-w-47.5 ">
-                                {data.hero.heading_hero_description}
-                              </p>
-                              <p className="font-primary font-body-secondary text-b-l leading-tight uppercase max-w-47.5 ">
-                                {data.hero.heading_hero_number}
-                              </p>
-                            </div>
-                            <p className="mix-blend-difference font-secondary font-body-secondary text-b-m leading-relaxed">
-                              {data.hero.hero_description}
-                            </p>
-                          </div>
                           <div className="2xl:block xl:block lg:block md:block sm:block hidden">
-                            <Button link={data.hero.button_link} target="">
+                            <Stragger_word
+                              delay={3}
+                              as="p"
+                              className="font-primary font-body-secondary text-b-l leading-tight uppercase 2xl:max-w-47.5 xl:max-w-47.5 lg:max-w-47.5 md:max-w-47.5 sm:max-w-30 max-w-30"
+                            >
+                              {data.hero.hero_subtitle}
+                            </Stragger_word>
+                          </div>
+                          <div className="flex flex-col justify-center 2xl:gap-5 xl:gap-5 lg:gap-5 md:gap-5 sm:gap-3 gap-3 2xl:max-w-165 xl:max-w-130 lg:max-w-115 md:max-w-75 sm:max-w-73 max-w-full">
+                            <div className="flex flex-row justify-between 2xl:w-120 xl:w-90 lg:w-80 md:w-50 sm:w-55 w-full">
+                              <Stragger_word
+                                delay={3}
+                                as="p"
+                                className="font-primary font-body-secondary text-b-l leading-tight uppercase max-w-47.5 "
+                              >
+                                {data.hero.heading_hero_description}
+                              </Stragger_word>
+                              <Stragger_word
+                                delay={3}
+                                as="p"
+                                className="font-primary font-body-secondary text-b-l leading-tight uppercase max-w-47.5 "
+                              >
+                                {data.hero.heading_hero_number}
+                              </Stragger_word>
+                            </div>
+                            <Stragger_word
+                              delay={3.2}
+                              as="p"
+                              className="mix-blend-difference font-secondary font-body-secondary text-b-m leading-relaxed"
+                            >
+                              {data.hero.hero_description}
+                            </Stragger_word>
+                          </div>
+                          <div className="2xl:block xl:block lg:block md:block sm:block hidden overflow-hidden h-[1.5em]">
+                            <motion.div
+                            initial={{ y: "100%", opacity: 0, }}
+                            whileInView={{ y: "0%", opacity: 1, }}
+                            viewport={{ 
+                              once: true,
+                            }}
+                            transition={{
+                              delay: 3.2,
+                              duration: 0.7,
+                              ease: [0.65, 0, 0.35, 1],
+                            }}
+                            >
+                            <Button link={data.hero.button_link} target="_self">
                               {data.hero.button_text}
                             </Button>
+                            </motion.div>
                           </div>
                         </div>
                       </div>

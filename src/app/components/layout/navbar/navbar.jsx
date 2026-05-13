@@ -22,7 +22,7 @@ export default function Navbar({ navbar }) {
           <motion.div
             onClick={() => setOpen(!open)}
             animate={open ? "open" : "closed"}
-            className="cursor-pointer relative px-3 py-4 border border-t-2 border-l-2 border-r-0 border-b-2 border-n-300 -mr-0.5 bg-background z-1"
+            className="cursor-pointer shrink-0 relative px-3 py-4 border border-t-2 border-l-2 border-r-0 border-b-2 border-n-300 -mr-0.5 bg-background z-1"
           >
             <motion.div
               variants={{
@@ -40,7 +40,7 @@ export default function Navbar({ navbar }) {
                 alt="nav_hamburger_menu"
                 width={24}
                 height={24}
-                className="w-6 h-auto"
+                className="2xl:w-6 xl:w-6 lg:w-6 md:w-6 sm:w-6 w-4 h-4 object-contain"
               />
             </motion.div>
             <motion.div
@@ -52,14 +52,14 @@ export default function Navbar({ navbar }) {
                 duration: 0.4,
                 ease: [0.65, 0, 0.35, 1],
               }}
-              className="w-full h-full absolute inset-y-3.5 inset-x-3"
+              className="absolute inset-0 flex items-center justify-center"
             >
               <Image
                 src={navbar.nav_icon_open}
-                alt="nav_hamburger_menu"
-                width={22.5}
-                height={22.5}
-                className="w-6 h-auto"
+                alt="nav_hamburger_menu_x"
+                width={24}
+                height={24}
+                className="w-4 h-4 object-contain"
               />
             </motion.div>
           </motion.div>
@@ -92,7 +92,7 @@ export default function Navbar({ navbar }) {
             </div>
             <div className="flex flex-col justify-stretch items-start 2xl:gap-5 xl:gap-5 lg:gap-5 md:gap-5 sm:gap-1.5 gap-5">
               <div className="flex flex-row justify-between items-end w-full">
-                <div className="relative 2xl:w-40 xl:w-40 lg:w-40 md:w-40 sm:w-20 w-40 2xl:h-15 xl:h-15 lg:h-15 md:h-15 sm:h-8 h-15">
+                <div className="relative 2xl:w-40 xl:w-40 lg:w-40 md:w-40 sm:w-20 w-30 2xl:h-15 xl:h-15 lg:h-15 md:h-15 sm:h-8 h-10">
                   <Image 
                   src={navbar.nav_logo} 
                   alt="nav_logo" 

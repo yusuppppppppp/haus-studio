@@ -14,6 +14,7 @@ export default function Section_footer({ footer }) {
               width={55}
               height={45}
               className="self-center"
+              priority
             />
             <div className="flex flex-row justify-between w-full 2xl:gap-10 xl:gap-10 lg:gap-10 md:gap-5 sm:gap-5 gap-5">
               <div className="flex flex-col justify-stretch items-end gap-10">

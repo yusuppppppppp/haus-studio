@@ -3,7 +3,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 
-export default function Section_preload({ isLoading }) {
+export default function Section_preload({ isLoading, preload }) {
   useEffect(() => {
     if (isLoading) {
       document.documentElement.classList.add("overflow-hidden");
@@ -47,7 +47,10 @@ export default function Section_preload({ isLoading }) {
                   className="relative flex flex-col justify-center items-stretch"
                 >
                   <Image
-                    src="/assets/icons/preload_logo_normal.svg"
+                    src={
+                      preload?.preload_logo_normal ||
+                      "/assets/icons/preload_logo_normal.svg"
+                    }
                     alt="preload_logo"
                     width={60}
                     height={60}
@@ -65,8 +68,11 @@ export default function Section_preload({ isLoading }) {
                     className="absolute inset-0"
                   >
                     <Image
-                      src="/assets/icons/preload_logo_animate.svg"
-                      alt="preload_logo"
+                      src={
+                        preload?.preload_logo_fill ||
+                        "/assets/icons/preload_logo_animate.svg"
+                      }
+                      alt="preload_logo_fill"
                       width={60}
                       height={60}
                       priority
