@@ -1,7 +1,8 @@
 import Lookbook_item from "../../ui/lookbook_item/lookbook_item";
+import Stragger_heading from "../../ui/stragger_heading/stragger_heading";
+import Stragger_word from "../../ui/stragger_word/stragger_word";
 
 export default function Section_lookbook({ lookbook }) {
-
   return (
     <>
       <section
@@ -11,16 +12,27 @@ export default function Section_lookbook({ lookbook }) {
         <div className="w-full h-full mx-auto max-w-400 flex flex-col justify-stretch items-start">
           <div className="flex flex-col justify-stretch items-start self-center">
             <div className="flex flex-col justify-stretch items-start 2xl:gap-30 xl:gap-30 lg:gap-30 md:gap-30 sm:gap-20 gap-15 self-center">
-              <h2 className="font-primary font-heading text-h2 leading-tightest uppercase 2xl:max-w-130 xl:max-w-130 lg:max-w-130 md:max-w-150 sm:max-w-90 max-w-50 self-center text-center">
+              <Stragger_heading
+                as="h2"
+                className="font-primary font-heading text-h2 leading-tightest uppercase 2xl:max-w-130 xl:max-w-130 lg:max-w-130 md:max-w-150 sm:max-w-90 max-w-50 self-center justify-center"
+              >
                 {lookbook.lookbook_heading}
-              </h2>
-              <div className="flex flex-col justify-stretch item-center gap-10 max-w-90 text-center self-center">
-                <p className="font-secondary font-body-secondary text-b-m leading-relaxed uppercase">
+              </Stragger_heading>
+              <div className="flex flex-col justify-stretch item-center gap-10 max-w-90 self-center">
+                <Stragger_word
+                  delay={0.2}
+                  as="p"
+                  className="font-secondary font-body-secondary text-b-m leading-relaxed justify-center uppercase"
+                >
                   {lookbook.lookbook_subheading}
-                </p>
-                <p className="font-secondary font-body-secondary text-b-m leading-relaxed">
+                </Stragger_word>
+                <Stragger_word
+                  delay={0.2}
+                  as="p"
+                  className="font-secondary font-body-secondary text-b-m leading-relaxed justify-center"
+                >
                   {lookbook.lookbook_paragraph}
-                </p>
+                </Stragger_word>
               </div>
             </div>
           </div>

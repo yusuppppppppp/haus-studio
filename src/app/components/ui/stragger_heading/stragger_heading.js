@@ -1,0 +1,1 @@
+export { default as Stragger_heading } from "./stragger_heading"

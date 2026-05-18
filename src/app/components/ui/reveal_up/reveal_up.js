@@ -1,0 +1,1 @@
+export { default as Reveal_up } from "./reveal_up"

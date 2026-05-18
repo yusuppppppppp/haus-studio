@@ -15,6 +15,7 @@ import { supabase } from "@/lib/supabase";
 import { useEffect, useState } from "react";
 import Section_preload from "./components/layout/section_preload/section_preload";
 import Stragger_word from "./components/ui/stragger_word/stragger_word";
+import Reveal_up from "./components/ui/reveal_up/reveal_up";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -256,22 +257,11 @@ export default function Home() {
                             </Stragger_word>
                           </div>
                           <div className="2xl:block xl:block lg:block md:block sm:block hidden overflow-hidden h-[1.5em]">
-                            <motion.div
-                            initial={{ y: "100%", opacity: 0, }}
-                            whileInView={{ y: "0%", opacity: 1, }}
-                            viewport={{ 
-                              once: true,
-                            }}
-                            transition={{
-                              delay: 3.2,
-                              duration: 0.7,
-                              ease: [0.65, 0, 0.35, 1],
-                            }}
-                            >
+                            <Reveal_up delay={3.2}>  
                             <Button link={data.hero.button_link} target="_self">
                               {data.hero.button_text}
                             </Button>
-                            </motion.div>
+                            </Reveal_up>
                           </div>
                         </div>
                       </div>
