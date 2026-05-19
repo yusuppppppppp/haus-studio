@@ -4,18 +4,18 @@ import Stagger_word from "../../ui/stragger_word/stragger_word";
 export default function Section_stockists({ stockists }) {
   return (
     <>
-      <div className="relative h-[500vh]">
+      <div className="relative 2xl:h-[500vh] xl:h-[500vh] lg:h-[500vh] md:h-[500vh] sm:h-auto h-auto">
         <section
           id="section_stockists"
-          className="bg-foreground px-section overflow-hidden pb-25 pt-8 h-[130vh] sticky top-0"
+          className="bg-foreground px-section overflow-hidden pb-25 pt-8 2xl:h-[130vh] xl:h-[165vh] lg:h-[165vh] md:h-[135vh] sm:h-auto h-auto 2xl:sticky xl:sticky lg:sticky md:sticky sm:relative relative top-0"
         >
           <div className="w-full h-full max-w-400 mx-auto ">
-            <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col justify-between items-start w-full 2xl:gap-40 xl:gap-40 lg:gap-40 md:gap-30 sm:gap-30 gap-30">
-              <div className="flex flex-col justify-end item-start 2xl:max-w-75 xl:max-w-75 lg:max-w-75 md:max-w-75 sm:max-w-65 max-w-65">
+            <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col justify-between items-start w-full 2xl:gap-40 xl:gap-20 lg:gap-20 md:gap-20 sm:gap-30 gap-30">
+              <div className="flex flex-col justify-end item-start 2xl:max-w-75 xl:max-w-85 lg:max-w-75 md:max-w-75 sm:max-w-72 max-w-70">
                 <Stagger_word
                   delay={0.3}
                   as="p"
-                  className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 text-end pl-23"
+                  className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 text-end 2xl:pl-23 xl:pl-10 lg:pl-0 md:pl-23 sm:pl-23 pl-23"
                 >
                   {stockists.stockists_label1}
                 </Stagger_word>
@@ -28,7 +28,7 @@ export default function Section_stockists({ stockists }) {
               </div>
               <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col justify-stretch items-start gap-5 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-auto w-full">
                 <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-row flex-col justify-stretch items-start gap-7.5 2xl:w-50 xl:w-50 lg:w-50 md:w-full sm:w-full w-full overflow-hidden 2xl:pt-10 xl:pt-10 lg:pt-10 md:pt-10 sm:pt-0 pt-0">
-                  <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-70 h-50 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-85 w-full pb-5">
+                  <div className="flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-65 h-50 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-85 w-full pb-5">
                     <p className="font-primary font-body-secondary text-b-l leading-tight uppercase pl-2.5">
                       {stockists.stockists_item_label1}
                     </p>

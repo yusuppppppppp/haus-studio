@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import Section_preload from "./components/layout/section_preload/section_preload";
 import Stragger_word from "./components/ui/stragger_word/stragger_word";
 import Reveal_up from "./components/ui/reveal_up/reveal_up";
+import Stragger_heading from "./components/ui/stragger_heading/stragger_heading";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -183,24 +184,24 @@ export default function Home() {
                         </Stragger_word>
                         <div className="relative 2xl:w-107 xl:w-130 lg:w-130 md:w-100 sm:w-60 w-65 2xl:h-125 xl:h-125 lg:h-125 md:h-125 sm:h-80 h-120 2xl:self-center xl:self-center lg:self-center md:self-center sm:self-center self-start overflow-hidden">
                           <motion.div
-                          initial={{ opacity: 0.10, rotate: -25, scale: 2 }}
-                          whileInView={{ opacity: 1, rotate: 0, scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{
-                            delay: 2.5,
-                            duration: 1.4,
-                            ease: [0.65, 0, 0.35, 1],
-                          }} 
-                          className="will-change-transform 2xl:absolute xl:absolute lg:absolute md:absolute sm:absolute block 2xl:z-0 xl:z-0 lg:z-0 md:z-0 sm:z-0 z-0 w-full h-full"
+                            initial={{ opacity: 0.1, rotate: -25, scale: 2 }}
+                            whileInView={{ opacity: 1, rotate: 0, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{
+                              delay: 2.5,
+                              duration: 1.4,
+                              ease: [0.65, 0, 0.35, 1],
+                            }}
+                            className="will-change-transform 2xl:absolute xl:absolute lg:absolute md:absolute sm:absolute block 2xl:z-0 xl:z-0 lg:z-0 md:z-0 sm:z-0 z-0 w-full h-full"
                           >
-                          <Image
-                            className="object-cover object-center"
-                            src={data.hero.hero_image}
-                            alt="hero_image"
-                            fill
-                            priority
-                            sizes="(max-width: 640px) 260px, (max-width: 768px) 240px, (max-width: 1024px) 400px, 520px"
-                          />
+                            <Image
+                              className="object-cover object-center"
+                              src={data.hero.hero_image}
+                              alt="hero_image"
+                              fill
+                              priority
+                              sizes="(max-width: 640px) 260px, (max-width: 768px) 240px, (max-width: 1024px) 400px, 520px"
+                            />
                           </motion.div>
                         </div>
                         <div className="2xl:flex xl:flex lg:flex md:flex sm:flex hidden flex-col justify-end items-start 2xl:max-w-120 xl:max-w-105 lg:max-w-110 md:max-w-55 sm:max-w-45 max-w-45 gap-5 2xl:pl-23 xl:pl-10 lg:pl-15 md:pl-10 sm:pl-5 pl-0">
@@ -257,10 +258,13 @@ export default function Home() {
                             </Stragger_word>
                           </div>
                           <div className="2xl:block xl:block lg:block md:block sm:block hidden overflow-hidden h-[1.5em]">
-                            <Reveal_up delay={3.2}>  
-                            <Button link={data.hero.button_link} target="_self">
-                              {data.hero.button_text}
-                            </Button>
+                            <Reveal_up delay={3.2}>
+                              <Button
+                                link={data.hero.button_link}
+                                target="_self"
+                              >
+                                {data.hero.button_text}
+                              </Button>
                             </Reveal_up>
                           </div>
                         </div>
@@ -322,9 +326,13 @@ export default function Home() {
                 id="collection_main"
                 className="w-full h-full max-w-primary mx-auto flex flex-col justify-stretch 2xl:gap-50 xl:gap-50 lg:gap-50 md:gap-30 sm:gap-30 gap-20 2xl:pb-80 xl:pb-80 lg:pb-80 md:pb-0 sm:pb-0 pb-0 pt-10"
               >
-                <h2 className="font-primary font-heading text-h6 uppercase leading-tightest self-start">
+                <Stragger_heading
+                  delay={0.2}
+                  as="h2"
+                  className="font-primary font-heading text-h6 uppercase leading-tightest self-start"
+                >
                   {data.collection.collection_label}
-                </h2>
+                </Stragger_heading>
                 <div className="relative 2xl:flex xl:flex lg:flex md:grid sm:grid grid 2xl:flex-row xl:flex-row lg:flex-row md:grid-cols-2 sm:grid-cols-2 grid-cols-1 justify-center items-center 2xl:w-full xl:w-[115%] lg:w-[121%] md:w-full sm:w-full w-full 2xl:max-w-450 xl:max-w-450 lg:max-w-450 md:max-w-full sm:max-w-full max-w-full 2xl:h-40 xl:h-40 lg:h-40 md:h-auto sm:h-auto h-auto 2xl:-skew-y-15 xl:-skew-y-15 lg:-skew-y-15 md:skew-y-0 sm:skew-y-0 skew-y-0 2xl:-ml-65 xl:-ml-80 lg:-ml-85 md:ml-0 sm:ml-0 ml-0 2xl:pt-70 xl:pt-70 lg:pt-70 md:pt-0 sm:pt-0 pt-0 2xl:gap-y-8 xl:gap-y-8 lg:gap-y-8 md:gap-y-8 sm:gap-y-8 gap-y-5">
                   <div className="2xl:absolute xl:absolute lg:absolute md:block sm:block block items-start 2xl:ml-[100%] xl:ml-[100%] lg:ml-[100%] md:ml-0 sm:ml-0 ml-0 2xl:skew-y-30 xl:skew-y-30 lg:skew-y-30 md:skew-y-0 sm:skew-y-0 skew-y-0">
                     <Collection_item

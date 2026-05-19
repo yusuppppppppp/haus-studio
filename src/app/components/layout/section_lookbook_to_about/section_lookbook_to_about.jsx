@@ -60,7 +60,7 @@ export default function Section_lookbook_to_about({ lookbook_transition }) {
                 <Stragger_word
                 delay={0.3}
                 as="p" 
-                className="font-secondary font-body-secondary text-b-m leading-relaxed text-center">
+                className="font-secondary font-body-secondary text-b-m leading-relaxed justify-center">
                   {lookbook_transition.lookbooktoabout_paragraph2}
                 </Stragger_word>
               </div>

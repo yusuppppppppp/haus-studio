@@ -6,8 +6,8 @@ import Sketchable from "../../ui/sketchable/sketchable";
 export default function Section_about({ about }) {
   return (
     <>
+    <div id="section_about">
       <Sketchable
-        id="section_about"
         className="bg-foreground overflow-hidden px-section py-25 2xl:pb-50 xl:pb-30 lg:pb-30 md:pb-30 sm:pb-25 pb-30"
       >
         <div className="w-full h-full max-w-400 mx-auto">
@@ -51,11 +51,11 @@ export default function Section_about({ about }) {
                 className="font-primary font-display text-fd-s leading-tightest text-n-100 uppercase break-all 2xl:max-w-full xl:max-w-full lg:max-w-full md:max-w-full sm:max-w-full max-w-40">
                   {about.about_heading1}
                 </Stragger_heading>
-                <div className="flex flex-row justify-start item-start 2xl:self-end xl:self-end lg:self-end md:self-end sm:self-start self-start 2xl:gap-70 xl:gap-70 lg:gap-70 md:gap-35 sm:gap-22 gap-10">
+                <div className="flex flex-row justify-start item-start 2xl:self-end xl:self-end lg:self-end md:self-end sm:self-start self-start 2xl:gap-70 xl:gap-70 lg:gap-70 md:gap-7 sm:gap-4 gap-10">
                   <Stragger_word
                     delay={0.2}
                     as="p"
-                    className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 2xl:pl-12 xl:pl-12 lg:pl-12 md:pl-0 sm:pl-0 pl-0"
+                    className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 2xl:pl-12 xl:pl-12 lg:pl-12 md:pl-0 sm:pl-0 pl-0 2xl:w-auto xl:w-auto lg:w-auto md:w-40 sm:w-40 w-40"
                   >
                     {about.about_decoration_text2}
                   </Stragger_word>
@@ -86,6 +86,7 @@ export default function Section_about({ about }) {
           </div>
         </div>
       </Sketchable>
+      </div>
     </>
   );
 }
