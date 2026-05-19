@@ -25,6 +25,7 @@ export default function Lookbook_item({
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 50vw"
+            loading="eager"
           />
         </div>
         <p className="font-secondary font-body-primary text-b-l leading-relaxed capitalize max-w-95">

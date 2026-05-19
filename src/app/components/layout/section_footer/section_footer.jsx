@@ -1,11 +1,15 @@
 import Image from "next/image";
 import { Footer_nav } from "../../ui/footer_nav";
+import Stragger_word from "../../ui/stragger_word/stragger_word";
+import Stragger_heading from "../../ui/stragger_heading/stragger_heading";
 
 export default function Section_footer({ footer }) {
-
   return (
     <>
-      <section id="section_footer" className="px-section overflow-hidden pb-7">
+      <section
+        id="section_footer"
+        className="px-section overflow-hidden pt-30 pb-7"
+      >
         <div className="w-full h-full max-w-400 mx-auto">
           <div className="flex flex-col justify-stretch items-stretch gap-10">
             <Image
@@ -18,17 +22,33 @@ export default function Section_footer({ footer }) {
             />
             <div className="flex flex-row justify-between w-full 2xl:gap-10 xl:gap-10 lg:gap-10 md:gap-5 sm:gap-5 gap-5">
               <div className="flex flex-col justify-stretch items-end gap-10">
-                <p className="font-secondary font-body-secondary text-b-m leading-relaxed">
+                <Stragger_word
+                  delay={0.3}
+                  as="p"
+                  className="font-secondary font-body-secondary text-b-m leading-relaxed"
+                >
                   {footer.footer_paragraph1}
-                </p>
-                <div className="flex flex-col justify-between items-end w-full 2xl:h-150 xl:h-150 lg:h-150 md:h-150 sm:h-150 h-180">
+                </Stragger_word>
+                <div className="flex flex-col justify-between items-end w-full 2xl:h-150 xl:h-150 lg:h-150 md:h-145 sm:h-150 h-180">
                   <div className="flex flex-fow justify-between items-stretch w-full 2xl:pt-25 xl:pt-25 lg:pt-25 md:pt-70 sm:pt-70 pt-20">
-                    <p className="font-body-secondary font-secondary text-b-m leading-relaxed capitalize 2xl:block xl:block lg:block md:block sm:block hidden">
-                      {footer.footer_label1}
-                    </p>
-                    <p className="font-body-secondary font-secondary text-b-m leading-relaxed capitalize 2xl:block xl:block lg:block md:block sm:block hidden">
-                      {footer.footer_label2}
-                    </p>
+                    <div className="2xl:block xl:block lg:block md:block sm:block hidden">
+                      <Stragger_word
+                        delay={0.5}
+                        as="p"
+                        className="font-body-secondary font-secondary text-b-m leading-relaxed capitalize"
+                      >
+                        {footer.footer_label1}
+                      </Stragger_word>
+                    </div>
+                    <div className="2xl:block xl:block lg:block md:block sm:block hidden">
+                      <Stragger_word
+                        delay={0.5}
+                        as="p"
+                        className="font-body-secondary font-secondary text-b-m leading-relaxed capitalize"
+                      >
+                        {footer.footer_label2}
+                      </Stragger_word>
+                    </div>
                   </div>
                   <div className="flex flex-row justify-end items-start gap-10 self-end">
                     <p className="font-secondary font-body-secondary text-b-s leading-tight">
@@ -67,17 +87,25 @@ export default function Section_footer({ footer }) {
                         height={250}
                         className="2xl:flex xl:flex lg:flex md:hidden sm:hidden hidden"
                       />
-                      <p className="font-secondary font-body-secondary text-b-s leading-tight text-end w-full">
+                      <Stragger_word
+                        delay={0.5}
+                        as="p"
+                        className="font-secondary font-body-secondary text-b-s leading-tight justify-end w-full"
+                      >
                         {footer.footer_copyright}
-                      </p>
+                      </Stragger_word>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="2xl:flex xl:flex lg:flex md:flex sm:flex hidden flex-col justify-stretch items-start gap-10">
-                <p className="font-secondary font-body-secondary text-b-m leading-relaxed">
+                <Stragger_word
+                  delay={0.3}
+                  as="p"
+                  className="font-secondary font-body-secondary text-b-m leading-relaxed"
+                >
                   {footer.footer_paragraph2}
-                </p>
+                </Stragger_word>
                 <div className="relative h-150 max-w-200 w-full">
                   <Image
                     src={footer.footer_right_image1}

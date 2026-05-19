@@ -4,13 +4,13 @@ import Stagger_word from "../../ui/stragger_word/stragger_word";
 export default function Section_stockists({ stockists }) {
   return (
     <>
-      <div className="relative 2xl:h-[500vh] xl:h-[500vh] lg:h-[500vh] md:h-[500vh] sm:h-auto h-auto">
+      <div className="relative 2xl:h-[500vh] xl:h-[500vh] lg:h-[500vh] md:h-[500vh] sm:h-auto h-auto pb-40">
         <section
           id="section_stockists"
           className="bg-foreground px-section overflow-hidden pb-25 pt-8 2xl:h-[130vh] xl:h-[165vh] lg:h-[165vh] md:h-[135vh] sm:h-auto h-auto 2xl:sticky xl:sticky lg:sticky md:sticky sm:relative relative top-0"
         >
           <div className="w-full h-full max-w-400 mx-auto ">
-            <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col justify-between items-start w-full 2xl:gap-40 xl:gap-20 lg:gap-20 md:gap-20 sm:gap-30 gap-30">
+            <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col justify-between items-start w-full 2xl:gap-40 xl:gap-13 lg:gap-20 md:gap-20 sm:gap-30 gap-30">
               <div className="flex flex-col justify-end item-start 2xl:max-w-75 xl:max-w-85 lg:max-w-75 md:max-w-75 sm:max-w-72 max-w-70">
                 <Stagger_word
                   delay={0.3}
