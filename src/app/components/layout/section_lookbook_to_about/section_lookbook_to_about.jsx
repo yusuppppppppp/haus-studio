@@ -4,6 +4,7 @@ import {
   useScroll,
   useTransform,
   useMotionTemplate,
+  useSpring,
 } from "framer-motion";
 import { useRef } from "react";
 import Button from "../../ui/button/button"
@@ -25,7 +26,12 @@ export default function Section_lookbook_to_about({ lookbook_transition }) {
     ["#F5F5F5", "#000000"],
   );
 
-  const invert = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+  const invertRaw = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+
+  const invert = useSpring(invertRaw, {
+    stiffness: 60,
+    damping: 20,
+  });
 
   const filter = useMotionTemplate`invert(${invert})`;
 

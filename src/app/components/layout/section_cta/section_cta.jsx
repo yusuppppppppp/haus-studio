@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Button } from "../../ui/button";
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Stragger_word from "../../ui/stragger_word/stragger_word";
 import Reveal_up from "../../ui/reveal_up/reveal_up";
 import Stragger_heading from "../../ui/stragger_heading/stragger_heading";
@@ -15,7 +15,12 @@ export default function Section_cta({ cta }) {
     offset: ["start start", "end start"],
   });
 
-  const imageMove = useTransform(scrollYProgress, [0, 1], [200, -3500]);
+  const imageMoveRaw = useTransform(scrollYProgress, [0, 1], [200, -3500]);
+
+  const imageMove = useSpring(imageMoveRaw, {
+    stiffness: 60,
+    damping: 20,
+  });
 
   return (
     <>

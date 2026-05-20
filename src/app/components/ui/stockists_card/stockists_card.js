@@ -1,0 +1,1 @@
+export { default as Stockists_card } from "./stockists_card"
