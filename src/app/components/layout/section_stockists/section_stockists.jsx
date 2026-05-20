@@ -204,7 +204,6 @@ export default function Section_stockists({ stockists }) {
                 {stockists.stockists_label2}
               </Stagger_word>
             </div>
-
             <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col justify-stretch items-start gap-5 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-auto w-full">
               {cards.map((card, index) => (
                 <Stockists_card
