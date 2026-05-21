@@ -6,6 +6,7 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Stragger_word from "../../ui/stragger_word/stragger_word";
 import Reveal_up from "../../ui/reveal_up/reveal_up";
 import Stragger_heading from "../../ui/stragger_heading/stragger_heading";
+import Smooth_sticky from "../../ui/smooth_sticky/smooth_sticky";
 
 export default function Section_cta({ cta }) {
   const ref = useRef(null);
@@ -31,9 +32,11 @@ export default function Section_cta({ cta }) {
         }}
         className="relative h-[500vh]"
       >
-        <section
+        <Smooth_sticky
           id="section_CTA"
-          className="bg-background 2xl:pt-10 xl:pt-5 lg:pt-5 md:pt-10 sm:pt-10 pt-10 pb-50 overflow-hidden sticky top-0 2xl:h-screen xl:h-screen lg:h-screen md:h-screen sm:h-[165vh] h-screen"
+          scrollYProgress={scrollYProgress}
+          offsetY={120}
+          className="bg-background 2xl:pt-10 xl:pt-5 lg:pt-5 md:pt-30 sm:pt-10 pt-20 pb-50 overflow-hidden sticky top-0 2xl:h-screen xl:h-screen lg:h-screen md:h-screen sm:h-[165vh] h-screen"
         >
           <div className="w-full h-full mx-auto">
             <div className="flex flex-col justify-stretch items-start">
@@ -73,9 +76,10 @@ export default function Section_cta({ cta }) {
                   </div>
                 </div>
                 <Stragger_heading
-                delay={0.7}
-                as="h2" 
-                className="font-primary font-display text-fd-l leading-tightest justify-center uppercase 2xl:w-312 xl:w-full lg:w-312 md:w-100 sm:w-100 w-100 self-center text-n-100 mix-blend-difference 2xl:ml-0 xl:ml-20 lg:ml-15 md:ml-10 sm:ml-10 ml-10">
+                  delay={0.7}
+                  as="h2"
+                  className="font-primary font-display text-fd-l leading-tightest justify-center uppercase 2xl:w-312 xl:w-full lg:w-312 md:w-100 sm:w-100 w-100 self-center text-n-100 mix-blend-difference 2xl:ml-0 xl:ml-20 lg:ml-15 md:ml-10 sm:ml-10 ml-8"
+                >
                   {cta.cta_heading}
                 </Stragger_heading>
               </div>
@@ -84,7 +88,7 @@ export default function Section_cta({ cta }) {
                 transition={{
                   ease: [0.65, 0, 0.35, 1],
                 }}
-                className="relative w-full 2xl:h-[150vh] xl:h-[130vh] lg:h-[130vh] md:h-[70vh] sm:h-[150vh] h-[110vh] z-10"
+                className="relative w-full 2xl:h-[150vh] xl:h-[130vh] lg:h-[130vh] md:h-screen sm:h-[150vh] h-[110vh] z-10"
               >
                 <Image
                   src={cta.cta_image}
@@ -96,7 +100,7 @@ export default function Section_cta({ cta }) {
               </motion.div>
             </div>
           </div>
-        </section>
+        </Smooth_sticky>
       </motion.div>
     </>
   );

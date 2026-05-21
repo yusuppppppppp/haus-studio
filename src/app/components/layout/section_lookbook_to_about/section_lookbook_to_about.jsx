@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   motion,
   useScroll,
@@ -7,12 +7,12 @@ import {
   useSpring,
 } from "framer-motion";
 import { useRef } from "react";
-import Button from "../../ui/button/button"
+import Button from "../../ui/button/button";
 import Stragger_word from "../../ui/stragger_word/stragger_word";
 import Reveal_up from "../../ui/reveal_up/reveal_up";
+import Smooth_sticky from "../../ui/smooth_sticky/smooth_sticky";
 
 export default function Section_lookbook_to_about({ lookbook_transition }) {
-
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -22,11 +22,11 @@ export default function Section_lookbook_to_about({ lookbook_transition }) {
 
   const backgroundColor = useTransform(
     scrollYProgress,
-    [0, 0.5],
+    [0.3, 0.6],
     ["#F5F5F5", "#000000"],
   );
 
-  const invertRaw = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+  const invertRaw = useTransform(scrollYProgress, [0.3, 0.5], [0, 1]);
 
   const invert = useSpring(invertRaw, {
     stiffness: 60,
@@ -43,9 +43,13 @@ export default function Section_lookbook_to_about({ lookbook_transition }) {
         transition={{
           ease: [0.65, 0, 0.35, 1],
         }}
-        className="relative w-full h-[300vh]"
+        className="relative w-full h-[400vh]"
       >
-        <section className="sticky top-0 overflow-hidden px-section h-screen">
+        <Smooth_sticky
+          scrollYProgress={scrollYProgress}
+          offsetY={120}
+          className="sticky top-0 overflow-hidden px-section h-screen"
+        >
           <div className="w-full h-full mx-auto max-w-400">
             <motion.div
               style={{
@@ -58,26 +62,28 @@ export default function Section_lookbook_to_about({ lookbook_transition }) {
             >
               <div className="flex flex-col justify-center items-center gap-10 ">
                 <Stragger_word
-                delay={0.2}
-                as="p" 
-                className="font-secondary font-body-secondary text-b-m leading-relaxed 2xl:max-w-125 xl:max-w-125 lg:max-w-125 md:max-w-125 sm:max-w-110 max-w-110 justify-center">
+                  delay={0.2}
+                  as="p"
+                  className="font-secondary font-body-secondary text-b-m leading-relaxed 2xl:max-w-125 xl:max-w-125 lg:max-w-125 md:max-w-125 sm:max-w-110 max-w-110 justify-center"
+                >
                   {lookbook_transition.lookbooktoabout_paragraph1}
                 </Stragger_word>
                 <Stragger_word
-                delay={0.3}
-                as="p" 
-                className="font-secondary font-body-secondary text-b-m leading-relaxed justify-center">
+                  delay={0.3}
+                  as="p"
+                  className="font-secondary font-body-secondary text-b-m leading-relaxed justify-center"
+                >
                   {lookbook_transition.lookbooktoabout_paragraph2}
                 </Stragger_word>
               </div>
               <Reveal_up delay={0.3}>
-              <Button link={lookbook_transition.lookbooktoabout_link}>
-                {lookbook_transition.button_text}
-              </Button>
+                <Button link={lookbook_transition.lookbooktoabout_link}>
+                  {lookbook_transition.button_text}
+                </Button>
               </Reveal_up>
             </motion.div>
           </div>
-        </section>
+        </Smooth_sticky>
       </motion.div>
     </>
   );

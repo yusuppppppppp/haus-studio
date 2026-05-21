@@ -1,30 +1,100 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   motion,
   useScroll,
   useTransform,
   useMotionTemplate,
   useSpring,
+  useInView,
 } from "framer-motion";
-
 import Stagger_word from "../../ui/stragger_word/stragger_word";
 import Stockists_card from "../../ui/stockists_card/stockists_card";
+import Smooth_sticky from "../../ui/smooth_sticky/smooth_sticky";
+
+function AnimatedCard({ card, index}) {
+  const cardRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [isMobile, setIsMobile] = useState(null);
+
+  useEffect(() => {
+    const matches = window.matchMedia("(min-width: 767px)").matches;
+    setIsMobile(!matches);
+  }, []);
+
+  const isInView = useInView(cardRef, { once: true, amount: 0.2 });
+
+  useEffect(() => {
+    if (isMobile === true && isInView && !hasAnimated) {
+      const timer = setTimeout(() => setHasAnimated(true), 50);
+      return () => clearTimeout(timer);
+    }
+  }, [isMobile, isInView, hasAnimated]);
+
+  const isMobileReady = isMobile === true;
+  const isDesktopReady = isMobile === false;
+
+  return (
+    <motion.div
+      ref={cardRef}
+      style={isDesktopReady ? { y: card.y } : undefined}
+      animate={
+        isMobileReady
+          ? hasAnimated
+            ? { y: 0, opacity: 1 }
+            : { y: 120, opacity: 0 }
+          : undefined
+      }
+      initial={isMobileReady ? { y: 120, opacity: 0 } : false}
+      transition={{
+        duration: 1,
+        ease: [0.65, 0, 0.35, 1],
+        delay: isMobileReady ? index * 0.15 : 0,
+      }}
+    >
+      <Stockists_card
+        label={card.label}
+        number={card.number}
+        numberAlt={card.alt}
+        heading={card.heading}
+        paragraph1={card.paragraph1}
+        paragraph2={card.paragraph2}
+        imageWidth={card.imageWidth}
+        imageHeight={card.imageHeight}
+        cardClassName={card.cardClassName}
+        imageWrapperClassName={card.imageWrapperClassName}
+        imageClassName={card.imageClassName}
+      />
+    </motion.div>
+  );
+}
 
 export default function Section_stockists({ stockists }) {
   const ref = useRef(null);
+
+  const [isMobile, setIsMobile] = useState(null);
+
+  useEffect(() => {
+    const matches = window.matchMedia("(min-width: 768px)").matches;
+    setIsMobile(!matches);
+  }, []);
+
+  const enableInteraction = isMobile === false;
+  const mounted = isMobile !== null;
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
 
-  const backgroundColor = useTransform(
+  const backgroundColorRaw = useTransform(
     scrollYProgress,
-    [0.4, 0.6],
+    [0.5, 0.7],
     ["#000000", "#F5F5F5"],
   );
+
+  const backgroundColor = enableInteraction ? backgroundColorRaw : "#000000";
 
   const stockistsCard1Raw = useTransform(
     scrollYProgress,
@@ -42,34 +112,41 @@ export default function Section_stockists({ stockists }) {
 
   const stockistsCard4Raw = useTransform(scrollYProgress, [0, 0.4], [0, 400]);
 
-  const stockistsCard1 = useSpring(stockistsCard1Raw, {
+  const stockistsCard1Spring = useSpring(stockistsCard1Raw, {
     stiffness: 60,
     damping: 20,
   });
 
-  const stockistsCard2 = useSpring(stockistsCard2Raw, {
+  const stockistsCard2Spring = useSpring(stockistsCard2Raw, {
     stiffness: 60,
     damping: 20,
   });
 
-  const stockistsCard3 = useSpring(stockistsCard3Raw, {
+  const stockistsCard3Spring = useSpring(stockistsCard3Raw, {
     stiffness: 60,
     damping: 20,
   });
 
-  const stockistsCard4 = useSpring(stockistsCard4Raw, {
+  const stockistsCard4Spring = useSpring(stockistsCard4Raw, {
     stiffness: 60,
     damping: 20,
   });
 
-  const invertRaw = useTransform(scrollYProgress, [0.4, 0.6], [0, 1]);
+  const stockistsCard1 = enableInteraction ? stockistsCard1Spring : 0;
+  const stockistsCard2 = enableInteraction ? stockistsCard2Spring : 0;
+  const stockistsCard3 = enableInteraction ? stockistsCard3Spring : 0;
+  const stockistsCard4 = enableInteraction ? stockistsCard4Spring : 0;
 
-  const invert = useSpring(invertRaw, {
+  const invertRaw = useTransform(scrollYProgress, [0.5, 0.7], [0, 1]);
+
+  const invertSpring = useSpring(invertRaw, {
     stiffness: 60,
     damping: 20,
   });
 
-  const filter = useMotionTemplate`invert(${invert})`;
+  const filterMotion = useMotionTemplate`invert(${invertSpring})`;
+
+  const filter = enableInteraction ? filterMotion : "invert(0)";
 
   const cards = [
     {
@@ -165,7 +242,7 @@ export default function Section_stockists({ stockists }) {
         "2xl:w-53 xl:w-53 lg:w-53 md:w-full sm:w-full w-full 2xl:pt-0 xl:pt-0 lg:pt-0 md:pt-0 sm:pt-0 pt-10",
 
       imageWrapperClassName:
-        "flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-auto h-auto 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-70 w-full pb-5",
+        "flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-auto h-auto 2xl:w-auto xl:w-auto lg:w-auto md:w-44 sm:w-70 w-full pb-5",
 
       imageClassName:
         "2xl:pl-0 xl:pl-0 lg:pl-0 md:pl-0 sm:pl-10 pl-0 self-end 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-full w-15",
@@ -176,11 +253,13 @@ export default function Section_stockists({ stockists }) {
     <motion.div
       ref={ref}
       style={{ backgroundColor }}
-      className="relative 2xl:h-[600vh] xl:h-[600vh] lg:h-[600vh] md:h-[600vh] sm:h-auto h-auto pb-40"
+      className="relative 2xl:h-[600vh] xl:h-[600vh] lg:h-[600vh] md:h-[600vh] sm:h-auto h-auto 2xl:pb-40 xl:pb-40 lg:pb-40 md:pb-40 sm:pb-0 pb-0"
     >
-      <section
+      <Smooth_sticky
         id="section_stockists"
-        className="px-section overflow-hidden pb-25 pt-8 2xl:h-[130vh] xl:h-[165vh] lg:h-[165vh] md:h-[135vh] sm:h-auto h-auto 2xl:sticky xl:sticky lg:sticky md:sticky sm:relative relative top-0"
+        scrollYProgress={scrollYProgress}
+        offsetY={120}
+        className="px-section overflow-hidden pb-25 pt-8 2xl:h-[135vh] xl:h-[170vh] lg:h-[165vh] md:h-[140vh] sm:h-auto h-auto 2xl:sticky xl:sticky lg:sticky md:sticky sm:relative relative top-0"
       >
         <div className="w-full h-full max-w-400 mx-auto">
           <motion.div
@@ -195,7 +274,6 @@ export default function Section_stockists({ stockists }) {
               >
                 {stockists.stockists_label1}
               </Stagger_word>
-
               <Stagger_word
                 delay={0.4}
                 as="p"
@@ -206,26 +284,16 @@ export default function Section_stockists({ stockists }) {
             </div>
             <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col justify-stretch items-start gap-5 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-auto w-full">
               {cards.map((card, index) => (
-                <Stockists_card
+                <AnimatedCard
                   key={index}
-                  y={card.y}
-                  label={card.label}
-                  number={card.number}
-                  numberAlt={card.alt}
-                  heading={card.heading}
-                  paragraph1={card.paragraph1}
-                  paragraph2={card.paragraph2}
-                  imageWidth={card.imageWidth}
-                  imageHeight={card.imageHeight}
-                  cardClassName={card.cardClassName}
-                  imageWrapperClassName={card.imageWrapperClassName}
-                  imageClassName={card.imageClassName}
+                  card={card}
+                  index={index}
                 />
               ))}
             </div>
           </motion.div>
         </div>
-      </section>
+      </Smooth_sticky>
     </motion.div>
   );
 }
