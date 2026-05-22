@@ -52,6 +52,7 @@ function AnimatedCard({ card, index}) {
         ease: [0.65, 0, 0.35, 1],
         delay: isMobileReady ? index * 0.15 : 0,
       }}
+      className="will-change-[transform,opasity]"
     >
       <Stockists_card
         label={card.label}

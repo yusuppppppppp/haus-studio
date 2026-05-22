@@ -9,8 +9,11 @@ export default function Stragger_word({
   duration = 0.5,
   delay = 0,
   amount = 0,
+  ...props
 }) {
-  const MotionTag = motion[as];
+  const MotionTag = 
+  
+  typeof as === "string" ? motion[as] : as;
 
   const text = typeof children === "string" ? children : "";
 
@@ -50,6 +53,7 @@ export default function Stragger_word({
           amount: {amount},
         }}
         className={`flex flex-wrap ${className}`}
+        {...props}
       >
         {words.map((word, index) => (
           <span key={index} className="overflow-hidden mr-[0.25em]">

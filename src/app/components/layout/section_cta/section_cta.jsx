@@ -88,7 +88,7 @@ export default function Section_cta({ cta }) {
                 transition={{
                   ease: [0.65, 0, 0.35, 1],
                 }}
-                className="relative w-full 2xl:h-[150vh] xl:h-[130vh] lg:h-[130vh] md:h-screen sm:h-[150vh] h-[110vh] z-10"
+                className="relative will-change-transform w-full 2xl:h-[150vh] xl:h-[130vh] lg:h-[130vh] md:h-screen sm:h-[150vh] h-[110vh] z-10"
               >
                 <Image
                   src={cta.cta_image}

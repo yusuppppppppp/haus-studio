@@ -11,7 +11,7 @@ export default function Section_hero({ hero }) {
     <>
       <section
         id="section_hero"
-        className="bg-background w-full overflow-hidden"
+        className="bg-background w-full overflow-hidden isolate"
       >
         <div className="w-full">
           <div className="flex flex-col">
@@ -72,7 +72,7 @@ export default function Section_hero({ hero }) {
                   >
                     {hero.hero_subtitle}
                   </Stragger_word>
-                  <div className="relative 2xl:w-107 xl:w-130 lg:w-130 md:w-100 sm:w-60 w-65 2xl:h-125 xl:h-125 lg:h-125 md:h-125 sm:h-80 h-120 2xl:self-center xl:self-center lg:self-center md:self-center sm:self-center self-start overflow-hidden">
+                  <div className="relative 2xl:w-107 xl:w-130 lg:w-130 md:w-100 sm:w-60 w-65 2xl:h-125 xl:h-125 lg:h-125 md:h-125 sm:h-80 h-120 2xl:self-center xl:self-center lg:self-center md:self-center sm:self-center self-start overflow-hidden z-0">
                     <motion.div
                       initial={{ opacity: 0.1, rotate: -25, scale: 2 }}
                       whileInView={{ opacity: 1, rotate: 0, scale: 1 }}
@@ -82,7 +82,7 @@ export default function Section_hero({ hero }) {
                         duration: 1.4,
                         ease: [0.65, 0, 0.35, 1],
                       }}
-                      className="will-change-transform 2xl:absolute xl:absolute lg:absolute md:absolute sm:absolute block 2xl:z-0 xl:z-0 lg:z-0 md:z-0 sm:z-0 z-0 w-full h-full"
+                      className="will-change-transform 2xl:absolute xl:absolute lg:absolute md:absolute sm:absolute block w-full h-full"
                     >
                       <Image
                         className="object-cover object-center"
@@ -111,7 +111,7 @@ export default function Section_hero({ hero }) {
                     </Stragger_word>
                   </div>
                 </div>
-                <div className="w-full flex flex-row justify-between z-1 2xl:absolute xl:absolute lg:absolute md:absolute sm:absolute ">
+                <div className="w-full flex flex-row justify-between 2xl:absolute xl:absolute lg:absolute md:absolute sm:absolute ">
                   <div className="flex flex-col justify-start items-start 2xl:gap-40 xl:gap-35 lg:gap-35 md:gap-28 sm:gap-13 gap-13">
                     <div className="2xl:block xl:block lg:block md:block sm:block hidden">
                       <Stragger_word
@@ -142,7 +142,7 @@ export default function Section_hero({ hero }) {
                       <Stragger_word
                         delay={3.2}
                         as="p"
-                        className="mix-blend-difference font-secondary font-body-secondary text-b-m leading-relaxed"
+                        className="font-secondary font-body-secondary text-b-m leading-relaxed"
                       >
                         {hero.hero_description}
                       </Stragger_word>
