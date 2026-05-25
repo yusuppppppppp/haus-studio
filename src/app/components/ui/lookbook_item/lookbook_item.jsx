@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { hover, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Lookbook_item({
   variant = "span-1",
@@ -10,7 +10,7 @@ export default function Lookbook_item({
 }) {
   const lookbookVariant = {
     "span-1": "h-100",
-    "span-2": "2xl:h-200 xl:h-200 lg:h-200 md:h-200 sm:h-100 h-100",
+    "span-2": "md:h-200 h-100",
   };
 
   return (
@@ -51,7 +51,7 @@ export default function Lookbook_item({
         </div>
         <div className="w-full">
           <div>
-            <div className="relative isolate bg-n-200 p-2.5 flex flex-row 2xl:justify-between xl:justify-between lg:justify-between md:justify-between sm:justify-between justify-end">
+            <div className="relative isolate bg-n-200 p-2.5 flex flex-row sm:justify-between justify-end">
               <motion.div
                 variants={{
                   rest: { width: "0%" },
@@ -63,7 +63,7 @@ export default function Lookbook_item({
                 }}
                 className="inset-0 z-0 absolute bg-n-500"
               ></motion.div>
-              <p className="font-secondary font-body-primary text-b-m leading-tight uppercase 2xl:block xl:block lg:block md:block sm:block hidden mix-blend-difference text-n-100 relative  z-10">
+              <p className="font-secondary font-body-primary text-b-m leading-tight uppercase sm:block hidden mix-blend-difference text-n-100 relative  z-10">
                 studi form
               </p>
               <img

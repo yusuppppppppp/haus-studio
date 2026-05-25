@@ -62,7 +62,7 @@ export default function Section_footer({ footer }) {
               className="self-center"
               priority
             />
-            <div className="flex flex-row justify-between w-full 2xl:gap-10 xl:gap-10 lg:gap-10 md:gap-5 sm:gap-5 gap-5">
+            <div className="flex flex-row justify-between w-full lg:gap-10 gap-5">
               <div className="flex flex-col justify-stretch items-end gap-10">
                 <Stragger_word
                   delay={0.3}
@@ -71,9 +71,9 @@ export default function Section_footer({ footer }) {
                 >
                   {footer.footer_paragraph1}
                 </Stragger_word>
-                <div className="flex flex-col justify-between items-end w-full 2xl:h-150 xl:h-150 lg:h-150 md:h-145 sm:h-150 h-180">
-                  <div className="flex flex-fow justify-between items-stretch w-full 2xl:pt-25 xl:pt-25 lg:pt-25 md:pt-70 sm:pt-70 pt-20">
-                    <div className="2xl:block xl:block lg:block md:block sm:block hidden">
+                <div className="flex flex-col justify-between items-end w-full lg:h-150 md:h-145 sm:h-150 h-180">
+                  <div className="flex flex-fow justify-between items-stretch w-full lg:pt-25 sm:pt-70 pt-20">
+                    <div className="sm:block hidden">
                       <Stragger_word
                         delay={0.5}
                         as="p"
@@ -82,7 +82,7 @@ export default function Section_footer({ footer }) {
                         {footer.footer_label1}
                       </Stragger_word>
                     </div>
-                    <div className="2xl:block xl:block lg:block md:block sm:block hidden">
+                    <div className="sm:block hidden">
                       <Stragger_word
                         delay={0.5}
                         as="p"
@@ -111,8 +111,8 @@ export default function Section_footer({ footer }) {
                       </Footer_nav>
                     </div>
                   </div>
-                  <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-col flex-col-reverse w-full gap-5">
-                    <div className="overflow-hidden relative 2xl:h-150 xl:h-150 lg:h-150 md:h-150 sm:h-150 h-110 max-w-200 w-full 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden block">
+                  <div className="flex sm:flex-col flex-col-reverse w-full gap-5">
+                    <div className="overflow-hidden relative sm:h-150 h-110 max-w-200 w-full sm:hidden block">
                       <AnimatePresence mode="wait">
                         <motion.div
                           key={currentImage}
@@ -141,7 +141,7 @@ export default function Section_footer({ footer }) {
                         alt="footer-img-left"
                         width={210}
                         height={250}
-                        className="2xl:flex xl:flex lg:flex md:hidden sm:hidden hidden"
+                        className="lg:flex sm:hidden hidden"
                       />
                       <Stragger_word
                         delay={0.5}
@@ -154,7 +154,7 @@ export default function Section_footer({ footer }) {
                   </div>
                 </div>
               </div>
-              <div className="2xl:flex xl:flex lg:flex md:flex sm:flex hidden flex-col justify-stretch items-start gap-10">
+              <div className="sm:flex hidden flex-col justify-stretch items-start gap-10">
                 <Stragger_word
                   delay={0.3}
                   as="p"

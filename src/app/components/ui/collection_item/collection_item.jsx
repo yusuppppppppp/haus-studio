@@ -18,7 +18,7 @@ export default function Collection_item({ images_path, collection_name }) {
 
   return (
     <motion.div
-      className="2xl:w-55 xl:w-55 lg:w-55 md:w-full sm:w-full w-full 2xl:h-85 xl:h-85 lg:h-85 md:h-130 sm:h-110 h-110 will-change-transform"
+      className="lg:w-55 w-full lg:h-85 md:h-130 h-110 will-change-transform"
       initial="rest"
       animate="rest"
       whileHover={isDesktop ? "hover" : undefined}

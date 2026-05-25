@@ -24,7 +24,7 @@ export default function Stockists_card({
   return (
     <motion.div
       style={{ y }}
-      className={`flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col sm:flex-row flex-col justify-stretch items-start gap-7.5 overflow-hidden ${cardClassName}`}
+      className={`flex md:flex-col sm:flex-row flex-col justify-stretch items-start gap-7.5 overflow-hidden ${cardClassName}`}
     >
       <div
         className={`flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background pb-5 ${imageWrapperClassName}`}

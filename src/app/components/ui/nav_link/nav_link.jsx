@@ -15,7 +15,7 @@ export default function Nav_link({
   const sizeStyle =
     variant === "icon"
       ? "p-1.5"
-      : "p-2.5 2xl:w-90 xl:w-90 lg:w-90 md:w-90 sm:w-90 w-65 2xl:h-20 xl:h-20 lg:h-20 md:h-20 sm:h-12 h-20";
+      : "p-2.5 sm:w-90 w-65 md:h-20 sm:h-12 h-20";
 
   const handleClick = (e) => {
     if (nav_link.includes("#")) {

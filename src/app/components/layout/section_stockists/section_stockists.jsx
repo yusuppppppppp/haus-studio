@@ -165,13 +165,13 @@ export default function Section_stockists({ stockists }) {
       paragraph1: stockists.stockists_item1_paragraph1,
       paragraph2: stockists.stockists_item1_paragraph2,
 
-      cardClassName: "2xl:w-50 xl:w-50 lg:w-50 md:w-full sm:w-full w-full",
+      cardClassName: "lg:w-50 w-full",
 
       imageWrapperClassName:
-        "flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-65 h-50 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-85 w-full pb-5",
+        "flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background lg:h-110 md:h-auto sm:h-65 h-50 md:w-auto sm:w-85 w-full pb-5",
 
       imageClassName:
-        "2xl:pr-10 xl:pr-10 lg:pr-10 md:pr-10 sm:pr-0 pr-0 2xl:pl-0 xl:pl-0 lg:pl-0 md:pl-0 sm:pl-10 pl-0 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-full w-15 self-end",
+        "md:pr-10 pr-0 md:pl-0 sm:pl-10 pl-0 sm:w-full w-15 self-end",
     },
 
     {
@@ -190,13 +190,13 @@ export default function Section_stockists({ stockists }) {
       paragraph2: stockists.stockists_item2_paragraph2,
 
       cardClassName:
-        "2xl:w-53 xl:w-53 lg:w-53 md:w-full sm:w-full w-full 2xl:pt-0 xl:pt-0 lg:pt-0 md:pt-0 sm:pt-0 pt-10",
+        "lg:w-53 w-full sm:pt-0 pt-10",
 
       imageWrapperClassName:
-        "flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-auto h-50 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-92 w-full pb-5",
+        "flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background lg:h-110 sm:h-auto h-50 md:w-auto sm:w-92 w-full pb-5",
 
       imageClassName:
-        "2xl:pl-10 xl:pl-10 lg:pl-10 md:pl-10 sm:pl-10 pl-0 self-end 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-full w-15",
+        "sm:pl-10 pl-0 self-end sm:w-full w-15",
     },
 
     {
@@ -215,13 +215,13 @@ export default function Section_stockists({ stockists }) {
       paragraph2: stockists.stockists_item3_paragraph2,
 
       cardClassName:
-        "2xl:w-53 xl:w-53 lg:w-53 md:w-full sm:w-full w-full 2xl:pt-0 xl:pt-0 lg:pt-0 md:pt-0 sm:pt-0 pt-10",
+        "lg:w-53 w-full sm:pt-0 pt-10",
 
       imageWrapperClassName:
-        "flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-auto h-50 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-85 w-full pb-5",
+        "flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background lg:h-110 sm:h-auto h-50 md:w-auto sm:w-85 w-full pb-5",
 
       imageClassName:
-        "2xl:pl-10 xl:pl-10 lg:pl-10 md:pl-10 sm:pl-10 pl-0 self-end 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-full w-15",
+        "sm:pl-10 pl-0 self-end sm:w-full w-15",
     },
 
     {
@@ -240,13 +240,13 @@ export default function Section_stockists({ stockists }) {
       paragraph2: stockists.stockists_item4_paragraph2,
 
       cardClassName:
-        "2xl:w-53 xl:w-53 lg:w-53 md:w-full sm:w-full w-full 2xl:pt-0 xl:pt-0 lg:pt-0 md:pt-0 sm:pt-0 pt-10",
+        "lg:w-53 w-full sm:pt-0 pt-10",
 
       imageWrapperClassName:
-        "flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background 2xl:h-110 xl:h-110 lg:h-110 md:h-auto sm:h-auto h-auto 2xl:w-auto xl:w-auto lg:w-auto md:w-44 sm:w-70 w-full pb-5",
+        "flex flex-col justify-start items-start gap-7.5 pt-1.5 bg-background lg:h-110 h-auto lg:w-auto md:w-44 sm:w-70 w-full pb-5",
 
       imageClassName:
-        "2xl:pl-0 xl:pl-0 lg:pl-0 md:pl-0 sm:pl-10 pl-0 self-end 2xl:w-full xl:w-full lg:w-full md:w-full sm:w-full w-15",
+        "md:pl-0 sm:pl-10 pl-0 self-end sm:w-full w-15",
     },
   ];
 
@@ -254,24 +254,24 @@ export default function Section_stockists({ stockists }) {
     <motion.div
       ref={ref}
       style={{ backgroundColor }}
-      className="relative 2xl:h-[600vh] xl:h-[600vh] lg:h-[600vh] md:h-[600vh] sm:h-auto h-auto 2xl:pb-40 xl:pb-40 lg:pb-40 md:pb-40 sm:pb-0 pb-0"
+      className="relative md:h-[600vh] h-auto md:pb-40 pb-0"
     >
       <Smooth_sticky
         id="section_stockists"
         scrollYProgress={scrollYProgress}
         offsetY={120}
-        className="px-section overflow-hidden pb-25 pt-8 2xl:h-[135vh] xl:h-[170vh] lg:h-[165vh] md:h-[140vh] sm:h-auto h-auto 2xl:sticky xl:sticky lg:sticky md:sticky sm:relative relative top-0"
+        className="px-section overflow-hidden pb-25 pt-8 2xl:h-[135vh] xl:h-[170vh] lg:h-[165vh] md:h-[140vh] h-auto md:sticky relative top-0"
       >
         <div className="w-full h-full max-w-400 mx-auto">
           <motion.div
             style={{ filter }}
-            className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col flex-col justify-between items-start w-full 2xl:gap-40 xl:gap-13 lg:gap-20 md:gap-20 sm:gap-30 gap-30"
+            className="flex lg:flex-row flex-col justify-between items-start w-full 2xl:gap-40 xl:gap-13 md:gap-20 gap-30"
           >
-            <div className="flex flex-col justify-end item-start 2xl:max-w-75 xl:max-w-85 lg:max-w-75 md:max-w-75 sm:max-w-72 max-w-70">
+            <div className="flex flex-col justify-end item-start 2xl:max-w-75 xl:max-w-85 md:max-w-75 sm:max-w-72 max-w-70">
               <Stagger_word
                 delay={0.3}
                 as="p"
-                className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 text-end 2xl:pl-23 xl:pl-10 lg:pl-0 md:pl-23 sm:pl-23 pl-23"
+                className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 text-end 2xl:pl-23 xl:pl-10 lg:pl-0 pl-23"
               >
                 {stockists.stockists_label1}
               </Stagger_word>
@@ -283,7 +283,7 @@ export default function Section_stockists({ stockists }) {
                 {stockists.stockists_label2}
               </Stagger_word>
             </div>
-            <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col justify-stretch items-start gap-5 2xl:w-auto xl:w-auto lg:w-auto md:w-auto sm:w-auto w-full">
+            <div className="flex md:flex-row flex-col justify-stretch items-start gap-5 sm:w-auto w-full">
               {cards.map((card, index) => (
                 <AnimatedCard
                   key={index}

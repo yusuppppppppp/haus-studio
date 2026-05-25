@@ -40,7 +40,7 @@ export default function Navbar({ navbar }) {
                 alt="nav_hamburger_menu"
                 width={24}
                 height={24}
-                className="2xl:w-6 xl:w-6 lg:w-6 md:w-6 sm:w-6 w-4 h-4 object-contain"
+                className="sm:w-6 w-4 h-4 object-contain"
               />
             </motion.div>
             <motion.div
@@ -90,9 +90,9 @@ export default function Navbar({ navbar }) {
                 setOpen={setOpen}
               />
             </div>
-            <div className="flex flex-col justify-stretch items-start 2xl:gap-5 xl:gap-5 lg:gap-5 md:gap-5 sm:gap-1.5 gap-5">
+            <div className="flex flex-col justify-stretch items-start md:gap-5 sm:gap-1.5 gap-5">
               <div className="flex flex-row justify-between items-end w-full">
-                <div className="relative 2xl:w-40 xl:w-40 lg:w-40 md:w-40 sm:w-20 w-30 2xl:h-15 xl:h-15 lg:h-15 md:h-15 sm:h-8 h-10">
+                <div className="relative md:w-40 sm:w-20 w-30 md:h-15 sm:h-8 h-10">
                   <Image 
                   src={navbar.nav_logo} 
                   alt="nav_logo" 

@@ -8,14 +8,14 @@ export default function Footer_nav({ children, footer_nav_link }) {
     <Reveal_up delay={0.5}>
       <Link href={footer_nav_link}>
         <motion.div
-          className="overflow-hidden 2xl:h-3 xl:h-3 lg:h-3 md:h-3.5 sm:h-3 h-3"
+          className="overflow-hidden lg:h-3 md:h-3.5 h-3"
           initial="rest"
           whileHover="hover"
           animate="rest"
         >
           <div className="overflow-hidden h-[1em]">
             <motion.div
-              className="flex flex-col  2xl:gap-0.2 xl:gap-0.2 lg:gap-0.2 md:gap-0.5 sm:gap-1 gap-1"
+              className="flex flex-col lg:gap-0.2 md:gap-0.5 gap-1"
               variants={{
                 rest: { y: "0em" },
                 hover: { y: "-1em" },

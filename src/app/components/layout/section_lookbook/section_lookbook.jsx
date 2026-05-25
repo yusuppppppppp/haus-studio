@@ -13,10 +13,10 @@ export default function Section_lookbook({ lookbook }) {
       >
         <div className="w-full h-full mx-auto max-w-400 flex flex-col justify-stretch items-start">
           <div className="flex flex-col justify-stretch items-start self-center">
-            <div className="flex flex-col justify-stretch items-start 2xl:gap-30 xl:gap-30 lg:gap-30 md:gap-30 sm:gap-20 gap-15 self-center">
+            <div className="flex flex-col justify-stretch items-start md:gap-30 sm:gap-20 gap-15 self-center">
               <Stragger_heading
                 as="h2"
-                className="font-primary font-heading text-h2 leading-tightest uppercase 2xl:max-w-130 xl:max-w-130 lg:max-w-130 md:max-w-150 sm:max-w-90 max-w-50 self-center justify-center"
+                className="font-primary font-heading text-h2 leading-tightest uppercase lg:max-w-130 md:max-w-150 sm:max-w-90 max-w-50 self-center justify-center"
               >
                 {lookbook.lookbook_heading}
               </Stragger_heading>
@@ -41,14 +41,14 @@ export default function Section_lookbook({ lookbook }) {
 
           {/* section lookbook main content */}
 
-          <div className="w-full flex flex-col justify-stretch items-start 2xl:pt-60 xl:pt-45 lg:pt-45 md:pt-40 sm:pt-35 pt-30 overflow-hidden">
+          <div className="w-full flex flex-col justify-stretch items-start 2xl:pt-60 lg:pt-45 md:pt-40 sm:pt-35 pt-30 overflow-hidden">
             <div className="flex flex-col justify-stretch items-stretch w-full">
-              <div className="grid 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-4 grid-cols-1">
+              <div className="grid sm:grid-cols-4 grid-cols-1">
                 <motion.div
                   initial="rest"
                   whileHover="hover"
                   animate="rest"
-                  className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
+                  className="lg:col-span-1 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
                 >
                   <Lookbook_item
                     variant="span-1"
@@ -61,7 +61,7 @@ export default function Section_lookbook({ lookbook }) {
                   initial="rest"
                   whileHover="hover"
                   animate="rest"
-                  className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
+                  className="lg:col-span-1 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
                 >
                   <Lookbook_item
                     variant="span-1"
@@ -70,12 +70,12 @@ export default function Section_lookbook({ lookbook }) {
                     lookbook_link={lookbook.lookbook_link2}
                   />
                 </motion.div>
-                <div className="bg-background col-span-1 h-130 w-100 2xl:block xl:block lg:block md:hidden sm:hidden hidden"></div>
+                <div className="bg-background col-span-1 h-130 w-100 lg:block hidden"></div>
                 <motion.div
                   initial="rest"
                   whileHover="hover"
                   animate="rest"
-                  className="col-span-1 p-2 2xl:flex xl:flex lg:flex md:hidden sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border"
+                  className="col-span-1 p-2 lg:flex sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border"
                 >
                   <Lookbook_item
                     variant="span-1"
@@ -85,7 +85,7 @@ export default function Section_lookbook({ lookbook }) {
                   />
                 </motion.div>
               </div>
-              <div className="grid 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-4 grid-cols-1">
+              <div className="grid sm:grid-cols-4 grid-cols-1">
                 <motion.div
                   initial="rest"
                   whileHover="hover"
@@ -105,7 +105,7 @@ export default function Section_lookbook({ lookbook }) {
                       initial="rest"
                       whileHover="hover"
                       animate="rest"
-                      className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
+                      className="md:col-span-1 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
                     >
                       <Lookbook_item
                         variant="span-1"
@@ -114,13 +114,13 @@ export default function Section_lookbook({ lookbook }) {
                         lookbook_link={lookbook.lookbook_link5}
                       />
                     </motion.div>
-                    <div className="bg-background col-span-1 h-130 w-100 2xl:block xl:block lg:block md:block sm:hidden hidden"></div>
-                    <div className="bg-background col-span-1 h-130 w-100 2xl:block xl:block lg:block md:block sm:hidden hidden"></div>
+                    <div className="bg-background col-span-1 h-130 w-100 md:block hidden"></div>
+                    <div className="bg-background col-span-1 h-130 w-100 md:block hidden"></div>
                     <motion.div
                       initial="rest"
                       whileHover="hover"
                       animate="rest"
-                      className="col-span-1 p-2 2xl:flex xl:flex lg:flex md:flex sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border"
+                      className="col-span-1 p-2 md:flex hidden flex-col gap-13 justify-between items-start border-n-300 border"
                     >
                       <Lookbook_item
                         variant="span-1"
@@ -132,12 +132,12 @@ export default function Section_lookbook({ lookbook }) {
                   </div>
                 </div>
               </div>
-              <div className="grid 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-4 grid-cols-1">
+              <div className="grid sm:grid-cols-4 grid-cols-1">
                 <motion.div
                   initial="rest"
                   whileHover="hover"
                   animate="rest"
-                  className="col-span-1 p-2 2xl:flex xl:flex lg:flex md:hidden sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border"
+                  className="col-span-1 p-2 lg:flex hidden flex-col gap-13 justify-between items-start border-n-300 border"
                 >
                   <Lookbook_item
                     variant="span-1"
@@ -146,12 +146,12 @@ export default function Section_lookbook({ lookbook }) {
                     lookbook_link={lookbook.lookbook_link7}
                   />
                 </motion.div>
-                <div className="bg-background col-span-1 h-130 w-100 2xl:block xl:block lg:block md:hidden sm:hidden hidden"></div>
+                <div className="bg-background col-span-1 h-130 w-100 lg:block sm:hidden hidden"></div>
                 <motion.div
                   initial="rest"
                   whileHover="hover"
                   animate="rest"
-                  className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
+                  className="lg:col-span-1 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
                 >
                   <Lookbook_item
                     variant="span-1"
@@ -164,7 +164,7 @@ export default function Section_lookbook({ lookbook }) {
                   initial="rest"
                   whileHover="hover"
                   animate="rest"
-                  className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
+                  className="lg:col-span-1 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
                 >
                   <Lookbook_item
                     variant="span-1"
@@ -174,15 +174,15 @@ export default function Section_lookbook({ lookbook }) {
                   />
                 </motion.div>
               </div>
-              <div className="grid 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-4 grid-cols-1">
+              <div className="grid sm:grid-cols-4 grid-cols-1">
                 <div className="col-span-2 flex flex-col justify-stretch items-stretch">
                   <div className="w-full h-full grid grid-cols-2">
-                    <div className="bg-background col-span-1 h-130 w-100 2xl:block xl:block lg:block md:block sm:hidden hidden"></div>
+                    <div className="bg-background col-span-1 h-130 w-100 md:block hidden"></div>
                     <motion.div
                       initial="rest"
                       whileHover="hover"
                       animate="rest"
-                      className="2xl:col-span-1 xl:col-span-1 lg:col-span-1 md:col-span-1 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
+                      className="md:col-span-1 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
                     >
                       <Lookbook_item
                         variant="span-1"
@@ -195,7 +195,7 @@ export default function Section_lookbook({ lookbook }) {
                       initial="rest"
                       whileHover="hover"
                       animate="rest"
-                      className="col-span-1 p-2 2xl:flex xl:flex lg:flex md:flex sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border"
+                      className="col-span-1 p-2 md:flex hidden flex-col gap-13 justify-between items-start border-n-300 border"
                     >
                       <Lookbook_item
                         variant="span-1"
@@ -204,7 +204,7 @@ export default function Section_lookbook({ lookbook }) {
                         lookbook_link={lookbook.lookbook_link11}
                       />
                     </motion.div>
-                    <div className="bg-background col-span-1 h-130 w-100 2xl:block xl:block lg:block md:block sm:hidden hidden"></div>
+                    <div className="bg-background col-span-1 h-130 w-100 md:block hidden"></div>
                   </div>
                 </div>
                 <motion.div

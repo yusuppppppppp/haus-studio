@@ -15,7 +15,7 @@ export default function Button({ children, link, target }) {
           [
         </p>
         <motion.div
-          className="flex flex-col 2xl:gap-1 xl:gap-1 lg:gap-1 md:gap-1 sm:gap-0.7 gap-2 -translate-y-[1.5em]"
+          className="flex flex-col md:gap-1 sm:gap-0.7 gap-2 -translate-y-[1.5em]"
           variants={{
             rest: { y: "1.5em" },
             hover: { y: "0em" },
