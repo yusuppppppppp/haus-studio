@@ -1,1 +1,0 @@
-export { default as Stragger_word } from "./stragger_word"

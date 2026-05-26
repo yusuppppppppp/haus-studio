@@ -1,7 +1,7 @@
 import { Anton, Archivo } from "next/font/google";
 import "./globals.css";
-import Smooth_scroll from "./components/layout/smooth_scroll/smooth_scroll";
-import Custom_cursor from "./components/ui/custom_cursor/custom_cursor";
+import Smooth_scroll from "../components/providers/smooth_scroll/smooth_scroll";
+import Custom_cursor from "../components/providers/custom_cursor/custom_cursor";
 
 const anton = Anton({
   variable: "--font-anton",

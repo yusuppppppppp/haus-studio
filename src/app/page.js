@@ -1,17 +1,17 @@
 "use client";
 import "./globals.css";
-import Navbar from "./components/layout/navbar/navbar";
-import Section_lookbook_to_about from "./components/layout/section_lookbook_to_about/section_lookbook_to_about";
-import Section_lookbook from "./components/layout/section_lookbook/section_lookbook";
-import Section_about from "./components/layout/section_about/section_about";
-import Section_stockists from "./components/layout/section_stockists/section_stockists";
-import Section_cta from "./components/layout/section_cta/section_cta";
-import Section_footer from "./components/layout/section_footer/section_footer";
+import Navbar from "../components/layout/section_navbar/navbar/navbar";
+import Section_lookbook_to_about from "../components/features/section_lookbook_to_about/section_lookbook_to_about";
+import Section_lookbook from "../components/features/lookbook/section_lookbook/section_lookbook";
+import Section_about from "../components/features/about/section_about/section_about";
+import Section_stockists from "../components/features/stockists/section_stockists/section_stockists";
+import Section_cta from "../components/layout/section_cta/section_cta";
+import Section_footer from "../components/layout/footer/section_footer/section_footer";
 import { supabase } from "@/lib/supabase";
 import { useEffect, useState } from "react";
-import Section_preload from "./components/layout/section_preload/section_preload";
-import Section_collection from "./components/layout/section_collection/section_collection";
-import Section_hero from "./components/layout/section_hero/section_hero";
+import Section_preload from "../components/providers/section_preload/section_preload";
+import Section_collection from "../components/features/collection/section_collection/section_collection";
+import Section_hero from "../components/features/section_hero/section_hero";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);

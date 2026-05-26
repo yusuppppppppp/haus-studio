@@ -1,0 +1,1 @@
+export { default as Stagger_heading } from "./stagger_heading"
