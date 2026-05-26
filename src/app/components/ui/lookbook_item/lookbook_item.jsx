@@ -33,7 +33,7 @@ export default function Lookbook_item({
                 duration: 0.6,
                 ease: [0.65, 0, 0.35, 1],
               }}
-              className="w-full h-full"
+              className="relative w-full h-full"
             >
               <Image
                 src={lookbook_image}
