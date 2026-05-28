@@ -4,6 +4,7 @@ import Footer_nav from "../footer_nav/footer_nav";
 import Stragger_word from "@/animations/stagger_word/stagger_word";
 import { motion, AnimatePresence } from "framer-motion";
 import useFooterImage from "@/hooks/useFooterImage";
+import { label, footerNav } from "@/data/sectionFooter";
 
 export default function Section_footer({ footer }) {
   const footerImage = [
@@ -42,42 +43,37 @@ export default function Section_footer({ footer }) {
                 </Stragger_word>
                 <div className="flex flex-col justify-between items-end w-full lg:h-150 md:h-145 sm:h-150 h-180">
                   <div className="flex flex-fow justify-between items-stretch w-full lg:pt-25 sm:pt-70 pt-20">
-                    <div className="sm:block hidden">
-                      <Stragger_word
-                        delay={0.5}
-                        as="p"
-                        className="font-body-secondary font-secondary text-b-m leading-relaxed capitalize"
-                      >
-                        {footer.footer_label1}
-                      </Stragger_word>
-                    </div>
-                    <div className="sm:block hidden">
-                      <Stragger_word
-                        delay={0.5}
-                        as="p"
-                        className="font-body-secondary font-secondary text-b-m leading-relaxed capitalize"
-                      >
-                        {footer.footer_label2}
-                      </Stragger_word>
-                    </div>
+                    {label(footer).map(
+                      (label, index) =>
+                        label && (
+                          <div key={index} className="sm:block hidden">
+                            <Stragger_word
+                              delay={0.5}
+                              as="p"
+                              className="font-body-secondary font-secondary text-b-m leading-relaxed capitalize"
+                            >
+                              {label}
+                            </Stragger_word>
+                          </div>
+                        ),
+                    )}
                   </div>
                   <div className="flex flex-row justify-end items-start gap-10 self-end">
                     <p className="font-secondary font-body-secondary text-b-s leading-tight">
                       {footer.footer_nav_icon}
                     </p>
                     <div className="flex flex-col justify-stretch items-end gap-2.5">
-                      <Footer_nav footer_nav_link={footer.footer_nav_link1}>
-                        {footer.footer_nav_text1}
-                      </Footer_nav>
-                      <Footer_nav footer_nav_link={footer.footer_nav_link2}>
-                        {footer.footer_nav_text2}
-                      </Footer_nav>
-                      <Footer_nav footer_nav_link={footer.footer_nav_link3}>
-                        {footer.footer_nav_text3}
-                      </Footer_nav>
-                      <Footer_nav footer_nav_link={footer.footer_nav_link4}>
-                        {footer.footer_nav_text4}
-                      </Footer_nav>
+                      {footerNav(footer).map(
+                        (footerNav, index) =>
+                          footerNav && (
+                            <Footer_nav
+                              key={index}
+                              footer_nav_link={footerNav.link}
+                            >
+                              {footerNav.text}
+                            </Footer_nav>
+                          ),
+                      )}
                     </div>
                   </div>
                   <div className="flex sm:flex-col flex-col-reverse w-full gap-5">
