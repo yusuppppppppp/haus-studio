@@ -40,7 +40,7 @@ export default function Navbar({ navbar }) {
                 alt="nav_hamburger_menu"
                 width={24}
                 height={24}
-                className="sm:w-6 w-4 h-4 object-contain"
+                className="sm:size-6 size-4 object-contain"
               />
             </motion.div>
             <motion.div
@@ -59,7 +59,7 @@ export default function Navbar({ navbar }) {
                 alt="nav_hamburger_menu_x"
                 width={24}
                 height={24}
-                className="w-4 h-4 object-contain"
+                className="size-4 object-contain"
               />
             </motion.div>
           </motion.div>

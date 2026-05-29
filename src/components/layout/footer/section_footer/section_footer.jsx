@@ -29,7 +29,7 @@ export default function Section_footer({ footer }) {
               alt="logo"
               width={55}
               height={45}
-              className="self-center"
+              className="self-center w-auto h-auto"
               priority
             />
             <div className="flex flex-row justify-between w-full lg:gap-10 gap-5">
@@ -106,7 +106,7 @@ export default function Section_footer({ footer }) {
                         alt="footer-img-left"
                         width={210}
                         height={250}
-                        className="lg:flex sm:hidden hidden"
+                        className="lg:flex sm:hidden hidden w-auto h-auto"
                       />
                       <Stragger_word
                         delay={0.5}

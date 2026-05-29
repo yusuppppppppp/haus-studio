@@ -35,7 +35,7 @@ function AnimatedCard({ card, index }) {
         ease: [0.65, 0, 0.35, 1],
         delay: isMobileReady ? index * 0.15 : 0,
       }}
-      className="will-change-[transform,opasity]"
+      className="relative will-change-[transform,opacity]"
     >
       <Stockists_card
         label={card.label}
@@ -65,8 +65,6 @@ export default function Section_stockists({ stockists }) {
     stockistsCard4,
     filter,
   } = useStockistsAnimation();
-
-  const mounted = isMobile !== null;
 
   const cards = [
     {
@@ -127,7 +125,7 @@ export default function Section_stockists({ stockists }) {
             style={{ filter }}
             className="flex lg:flex-row flex-col justify-between items-start w-full 2xl:gap-40 xl:gap-13 md:gap-20 gap-30"
           >
-            <div className="flex flex-col justify-end item-start 2xl:max-w-75 xl:max-w-85 md:max-w-75 sm:max-w-72 max-w-70">
+            <div className="flex flex-col justify-end items-start 2xl:max-w-75 xl:max-w-85 md:max-w-75 sm:max-w-72 max-w-70">
               <Stagger_word
                 delay={0.3}
                 as="p"
