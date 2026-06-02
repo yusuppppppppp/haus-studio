@@ -7,7 +7,7 @@ import Stockists_card from "../stockists_card/stockists_card";
 import Smooth_sticky from "../../../ui/smooth_sticky/smooth_sticky";
 import useStockistsAnimation from "@/hooks/useStockistsAnimation";
 import useStockistsMobileReveal from "@/hooks/useStockistsMobileReveal";
-import { stockistsCardConfig } from "@/data/stockistsCardConfig";
+import { getStockistsCard } from "@/data/getStockistsCard";
 
 function AnimatedCard({ card, index }) {
   const cardRef = useRef(null);
@@ -66,47 +66,13 @@ export default function Section_stockists({ stockists }) {
     filter,
   } = useStockistsAnimation();
 
-  const cards = [
-    {
-      ...stockistsCardConfig[0],
-      y: stockistsCard1,
-      label: stockists.stockists_item_label1,
-      number: stockists.stockists_number1,
-      heading: stockists.stockists_heading1,
-      paragraph1: stockists.stockists_item1_paragraph1,
-      paragraph2: stockists.stockists_item1_paragraph2,
-    },
-
-    {
-      ...stockistsCardConfig[1],
-      y: stockistsCard2,
-      label: stockists.stockists_item_label2,
-      number: stockists.stockists_number2,
-      heading: stockists.stockists_heading2,
-      paragraph1: stockists.stockists_item2_paragraph1,
-      paragraph2: stockists.stockists_item2_paragraph2,
-    },
-
-    {
-      ...stockistsCardConfig[2],
-      y: stockistsCard3,
-      label: stockists.stockists_item_label3,
-      number: stockists.stockists_number3,
-      heading: stockists.stockists_heading3,
-      paragraph1: stockists.stockists_item3_paragraph1,
-      paragraph2: stockists.stockists_item3_paragraph2,
-    },
-
-    {
-      ...stockistsCardConfig[3],
-      y: stockistsCard4,
-      label: stockists.stockists_item_label4,
-      number: stockists.stockists_number4,
-      heading: stockists.stockists_heading4,
-      paragraph1: stockists.stockists_item4_paragraph1,
-      paragraph2: stockists.stockists_item4_paragraph2,
-    },
-  ];
+  const cards = getStockistsCard({
+    stockists,
+    stockistsCard1,
+    stockistsCard2,
+    stockistsCard3,
+    stockistsCard4,
+  })
 
   return (
     <motion.div

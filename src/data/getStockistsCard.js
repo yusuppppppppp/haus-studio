@@ -1,5 +1,18 @@
-export const stockistsCardConfig = [
+export const getStockistsCard = ({
+  stockists,
+  stockistsCard1,
+  stockistsCard2,
+  stockistsCard3,
+  stockistsCard4,
+}) => [
   {
+    y: stockistsCard1,
+    label: stockists.stockists_item_label1,
+    number: stockists.stockists_number1,
+    heading: stockists.stockists_heading1,
+    paragraph1: stockists.stockists_item1_paragraph1,
+    paragraph2: stockists.stockists_item1_paragraph2,
+
     imageWidth: 200,
     imageHeight: 200,
     alt: "number_1",
@@ -11,6 +24,13 @@ export const stockistsCardConfig = [
   },
 
   {
+    y: stockistsCard2,
+    label: stockists.stockists_item_label2,
+    number: stockists.stockists_number2,
+    heading: stockists.stockists_heading2,
+    paragraph1: stockists.stockists_item2_paragraph1,
+    paragraph2: stockists.stockists_item2_paragraph2,
+
     imageWidth: 240,
     imageHeight: 240,
     alt: "number_2",
@@ -21,6 +41,13 @@ export const stockistsCardConfig = [
   },
 
   {
+    y: stockistsCard3,
+    label: stockists.stockists_item_label3,
+    number: stockists.stockists_number3,
+    heading: stockists.stockists_heading3,
+    paragraph1: stockists.stockists_item3_paragraph1,
+    paragraph2: stockists.stockists_item3_paragraph2,
+
     imageWidth: 240,
     imageHeight: 240,
     alt: "number_3",
@@ -31,6 +58,13 @@ export const stockistsCardConfig = [
   },
 
   {
+    y: stockistsCard4,
+    label: stockists.stockists_item_label4,
+    number: stockists.stockists_number4,
+    heading: stockists.stockists_heading4,
+    paragraph1: stockists.stockists_item4_paragraph1,
+    paragraph2: stockists.stockists_item4_paragraph2,
+
     imageWidth: 240,
     imageHeight: 240,
     alt: "number_4",
