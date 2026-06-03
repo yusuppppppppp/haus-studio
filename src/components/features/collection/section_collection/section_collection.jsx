@@ -12,10 +12,10 @@ export default function Section_collection({ collection }) {
     <>
       <section
         id="section_collection"
-        className="bg-background px-section pt-50 pb-40 overflow-hidden"
+        className="px-section pt-50 pb-40 overflow-hidden"
       >
         <div className="w-full h-full mx-auto max-w-400">
-          <div className="max-w-205 flex flex-col lg:gap-45 sm:gap-25 gap-15  mx-auto pb-50 ">
+          <div className="max-w-205 flex flex-col lg:gap-45 sm:gap-25 gap-15 mx-auto pb-50 mix-blend-screen">
             <div className="flex flex-col justify-center">
               <div className="flex flex-col justify-center">
                 <p className="font-secondary font-body-secondary text-b-m leading-relaxed sm:max-w-100 max-w-65 uppercase">

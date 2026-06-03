@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import Section_preload from "../components/providers/section_preload/section_preload";
 import Section_collection from "../components/features/collection/section_collection/section_collection";
 import Section_hero from "../components/features/section_hero/section_hero";
+import HeroToCollection from "@/components/transitions/heroToCollection/heroToCollection";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -114,13 +115,15 @@ export default function Home() {
 
             {/* section hero */}
 
-            <Section_hero hero={data.hero} />
+            {/* <Section_hero hero={data.hero} /> */}
 
             {/* section hero end */}
 
+            <HeroToCollection hero={data.hero} collection={data.collection} />
+
             {/*  section collection */}
 
-            <Section_collection collection={data.collection} />
+            {/* <Section_collection collection={data.collection} /> */}
 
             {/* section collection end */}
 
