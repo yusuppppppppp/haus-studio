@@ -11,8 +11,8 @@ export default function HeroToCollection({ hero, collection }) {
 
   return (
     <>
-      <div className="relative isolate w-full h-[600vh]">
-        <section className="w-full sticky top-0">
+      <div className="relative isolate w-full lg:h-[600vh] h-auto">
+        <section className="w-full lg:sticky block top-0">
           <div className="relative w-full h-full">
             {/* section hero */}
 
