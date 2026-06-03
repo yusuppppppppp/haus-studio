@@ -3,9 +3,14 @@ import Image from "next/image";
 import { useState } from "react";
 import Nav_link from "../nav_link/nav_link";
 import { animate, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export default function Navbar({ navbar }) {
   const [open, setOpen] = useState(false);
+
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   return (
     <motion.nav
       initial={{ x: "89%" }}
@@ -71,33 +76,37 @@ export default function Navbar({ navbar }) {
                 variant={navbar.nav_variant1}
                 setOpen={setOpen}
               />
-              <Nav_link
-                nav_link={navbar.nav_link2}
-                nav_text={navbar.nav_text2}
-                variant={navbar.nav_variant2}
-                setOpen={setOpen}
-              />
-              <Nav_link
-                nav_link={navbar.nav_link3}
-                nav_text={navbar.nav_text3}
-                variant={navbar.nav_variant3}
-                setOpen={setOpen}
-              />
-              <Nav_link
-                nav_link={navbar.nav_link4}
-                nav_text={navbar.nav_text4}
-                variant={navbar.nav_variant4}
-                setOpen={setOpen}
-              />
+              {isHome && (
+                <>
+                  <Nav_link
+                    nav_link={navbar.nav_link2}
+                    nav_text={navbar.nav_text2}
+                    variant={navbar.nav_variant2}
+                    setOpen={setOpen}
+                  />
+                  <Nav_link
+                    nav_link={navbar.nav_link3}
+                    nav_text={navbar.nav_text3}
+                    variant={navbar.nav_variant3}
+                    setOpen={setOpen}
+                  />
+                  <Nav_link
+                    nav_link={navbar.nav_link4}
+                    nav_text={navbar.nav_text4}
+                    variant={navbar.nav_variant4}
+                    setOpen={setOpen}
+                  />
+                </>
+              )}
             </div>
             <div className="flex flex-col justify-stretch items-start md:gap-5 sm:gap-1.5 gap-5">
               <div className="flex flex-row justify-between items-end w-full">
                 <div className="relative md:w-40 sm:w-20 w-30 md:h-15 sm:h-8 h-10">
-                  <Image 
-                  src={navbar.nav_logo} 
-                  alt="nav_logo" 
-                  fill 
-                  sizes="(max-width: 768px) 5rem, 10rem"
+                  <Image
+                    src={navbar.nav_logo}
+                    alt="nav_logo"
+                    fill
+                    sizes="(max-width: 768px) 5rem, 10rem"
                   />
                 </div>
                 <div className="flex flex-row justify-center items-end gap-2">

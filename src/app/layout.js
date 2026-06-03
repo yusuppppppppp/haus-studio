@@ -1,7 +1,6 @@
 import { Anton, Archivo } from "next/font/google";
 import "./globals.css";
-import Smooth_scroll from "../components/providers/smooth_scroll/smooth_scroll";
-import Custom_cursor from "../components/providers/custom_cursor/custom_cursor";
+import Global_data_provider from "@/components/providers/global_data_provider/global_data_provider";
 
 const anton = Anton({
   variable: "--font-anton",
@@ -31,10 +30,7 @@ export default function RootLayout({ children }) {
       className={`${anton.variable} ${archivo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Smooth_scroll>
-          <Custom_cursor />
-          {children}
-        </Smooth_scroll>
+        <Global_data_provider>{children}</Global_data_provider>
       </body>
     </html>
   );

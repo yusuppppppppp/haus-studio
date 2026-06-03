@@ -1,17 +1,13 @@
 "use client";
 import "./globals.css";
-import Navbar from "../components/layout/section_navbar/navbar/navbar";
 import Section_lookbook_to_about from "../components/features/section_lookbook_to_about/section_lookbook_to_about";
 import Section_lookbook from "../components/features/lookbook/section_lookbook/section_lookbook";
 import Section_about from "../components/features/about/section_about/section_about";
 import Section_stockists from "../components/features/stockists/section_stockists/section_stockists";
 import Section_cta from "../components/layout/section_cta/section_cta";
-import Section_footer from "../components/layout/footer/section_footer/section_footer";
 import { supabase } from "@/lib/supabase";
 import { useEffect, useState } from "react";
 import Section_preload from "../components/providers/section_preload/section_preload";
-import Section_collection from "../components/features/collection/section_collection/section_collection";
-import Section_hero from "../components/features/section_hero/section_hero";
 import HeroToCollection from "@/components/transitions/heroToCollection/heroToCollection";
 
 export default function Home() {
@@ -19,7 +15,6 @@ export default function Home() {
 
   const [data, setData] = useState({
     preload: null,
-    navbar: null,
     hero: null,
     collection: null,
     about: null,
@@ -27,7 +22,6 @@ export default function Home() {
     lookbook_transition: null,
     stockists: null,
     cta: null,
-    footer: null,
   });
 
   useEffect(() => {
@@ -35,7 +29,6 @@ export default function Home() {
       try {
         const [
           preloadRes,
-          navbarRes,
           heroRes,
           collectionRes,
           aboutRes,
@@ -43,10 +36,8 @@ export default function Home() {
           lookbook_transitionRes,
           stockistsRes,
           ctaRes,
-          footerRes,
         ] = await Promise.all([
           supabase.from("sectionpreload").select("*").single(),
-          supabase.from("sectionnav").select("*").single(),
           supabase.from("sectionhero").select("*").single(),
           supabase.from("sectioncollection").select("*").single(),
           supabase.from("sectionabout").select("*").single(),
@@ -54,11 +45,9 @@ export default function Home() {
           supabase.from("lookbooktoabout").select("*").single(),
           supabase.from("sectionstockists").select("*").single(),
           supabase.from("sectioncta").select("*").single(),
-          supabase.from("sectionfooter").select("*").single(),
         ]);
 
         if (preloadRes.error) console.log(preloadRes.error);
-        if (navbarRes.error) console.log(navbarRes.error);
         if (heroRes.error) console.log(heroRes.error);
         if (collectionRes.error) console.log(collectionRes.error);
         if (aboutRes.error) console.log(aboutRes.error);
@@ -67,11 +56,9 @@ export default function Home() {
           console.log(lookbook_transitionRes.error);
         if (stockistsRes.error) console.log(lookbookRes.error);
         if (ctaRes.error) console.log(ctaRes.error);
-        if (footerRes.error) console.log(footerRes.error);
 
         setData({
           preload: preloadRes.data,
-          navbar: navbarRes.data,
           hero: heroRes.data,
           collection: collectionRes.data,
           about: aboutRes.data,
@@ -79,7 +66,6 @@ export default function Home() {
           lookbook_transition: lookbook_transitionRes.data,
           stockists: stockistsRes.data,
           cta: ctaRes.data,
-          footer: footerRes.data,
         });
 
         setTimeout(() => {
@@ -109,21 +95,17 @@ export default function Home() {
           <main>
             {/* section navbar */}
 
-            <Navbar navbar={data.navbar} />
+            {/* <Navbar navbar={data.navbar} /> */}
 
             {/* section navbar end */}
 
             {/* section hero */}
-
-            {/* <Section_hero hero={data.hero} /> */}
 
             {/* section hero end */}
 
             <HeroToCollection hero={data.hero} collection={data.collection} />
 
             {/*  section collection */}
-
-            {/* <Section_collection collection={data.collection} /> */}
 
             {/* section collection end */}
 
@@ -161,7 +143,7 @@ export default function Home() {
 
             {/* section footer */}
 
-            <Section_footer footer={data.footer} />
+            {/* <Section_footer footer={data.footer} /> */}
 
             {/* section footer end */}
           </main>

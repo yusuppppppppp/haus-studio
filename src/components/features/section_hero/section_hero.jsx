@@ -11,7 +11,7 @@ export default function Section_hero({ hero }) {
     <>
       <section
         id="section_hero"
-        className="bg-background relative isolate sm:pb-0 pb-40"
+        className="bg-background relative isolate 2xl:pb-25 lg:pb-0 md:pb-30 sm:pb-0 pb-40"
       >
         <div className="flex flex-col justify-center">
           <div className="flex flex-row justify-between w-full uppercase lg:gap-50 gap-0 lg:pt-2.5 pt-4.5 z-20 text-n-100 mix-blend-difference">
