@@ -1,0 +1,1 @@
+export { default as Section_contact } from "./section_contact"

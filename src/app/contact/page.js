@@ -1,9 +1,9 @@
+import Section_contact from "@/components/features/contact/section_contact/section_contact";
+
 export default function Contact() {
-    return (
-        <>
-            <h1 className="text-fd-l uppercase">
-                ini halaman contact
-            </h1>
-        </>
-    )
+  return (
+    <main>
+      <Section_contact/>
+    </main>
+  );
 }

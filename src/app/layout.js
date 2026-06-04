@@ -1,6 +1,7 @@
 import { Anton, Archivo } from "next/font/google";
 import "./globals.css";
 import Global_data_provider from "@/components/providers/global_data_provider/global_data_provider";
+import { Toaster } from "sonner";
 
 const anton = Anton({
   variable: "--font-anton",
@@ -31,6 +32,21 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col">
         <Global_data_provider>{children}</Global_data_provider>
+        <Toaster
+          position="bottom-right"
+          richColors
+          toastOptions={{
+            style: {
+              background: "#0a0a0a",
+              color: "#fafafa",
+              border: "1px solid rgba(255,255,255,0.1)",
+              borderRadius: "14px",
+              padding: "16px",
+              backdropFilter: "blur(10px)",
+            },
+            className: "font-medium",
+          }}
+        />
       </body>
     </html>
   );
