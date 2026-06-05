@@ -25,7 +25,7 @@ export default function Section_cta({ cta }) {
           id="section_CTA"
           scrollYProgress={scrollYProgress}
           offsetY={120}
-          className="bg-background 2xl:pt-10 lg:pt-5 md:pt-30 sm:pt-10 pt-20 pb-50 overflow-hidden sticky top-0 md:h-screen sm:h-[165vh] h-screen"
+          className="bg-background 2xl:pt-10 lg:pt-5 md:pt-30 sm:pt-10 pt-20 pb-50 overflow-hidden sticky top-0 2xl:h-[145vh] md:h-screen sm:h-[165vh] h-screen"
         >
           <div className="w-full h-full mx-auto">
             <div className="flex flex-col justify-stretch items-start">

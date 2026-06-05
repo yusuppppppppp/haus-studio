@@ -50,6 +50,39 @@ export default function Home() {
           supabase.from("sectioncta").select("*").single(),
         ]);
 
+        // const [sectionRes, lookbookItemsRes] = await Promise.all([
+        //   supabase.from("web_sections").select("*"),
+        //   supabase.from("lookbook_items").select("*").eq("is_published", true),
+        // ]);
+
+        // if (sectionRes.error) throw sectionRes.error;
+        // if (lookbookItemsRes.error) throw lookbookItemsRes.error;
+
+        // const sectionsData = sectionRes.data;
+        // const lookbookItems = lookbookItemsRes.data;
+
+        // const sectionMap = {};
+        // sectionsData.forEach((item) => {
+        //   sectionMap[item.section_slug] = {
+        //     title: item.title,
+        //     context_text: item.context_text,
+        //     ...item.ui_payload,
+        //   };
+        // });
+
+        // setData({
+        //   preload: sectionMap["preload"] || null,
+        //   hero: sectionMap["hero"] || null,
+        //   collection: sectionMap["collection"] || null,
+        //   about: sectionMap["about"] || null,
+        //   lookbook: sectionMap["lookbook"]
+        //     ? {...sectionMap["lookbook"], items: lookbookItems}
+        //     : null,
+        //   lookbook_transition: sectionMap["lookbook_to_about"] || null,
+        //   stockists: sectionMap["stockists"] || null,
+        //   cta: sectionMap["cta"] || null,
+        // })
+
         if (preloadRes.error) console.log(preloadRes.error);
         if (heroRes.error) console.log(heroRes.error);
         if (collectionRes.error) console.log(collectionRes.error);
