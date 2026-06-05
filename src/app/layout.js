@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import { Anton, Archivo } from "next/font/google";
 import "./globals.css";
 import Global_data_provider from "@/components/providers/global_data_provider/global_data_provider";
@@ -48,6 +49,7 @@ export default function RootLayout({ children }) {
             className: "font-medium",
           }}
         />
+        <Analytics/>
       </body>
     </html>
   );
