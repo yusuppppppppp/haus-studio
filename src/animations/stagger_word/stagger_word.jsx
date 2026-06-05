@@ -50,7 +50,7 @@ export default function Stagger_word({
         whileInView="visible"
         viewport={{
           once: true,
-          amount: {amount},
+          amount,
         }}
         className={`flex flex-wrap ${className}`}
         {...props}

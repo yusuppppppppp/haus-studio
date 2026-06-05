@@ -50,7 +50,6 @@ export default function Lookbook_item({
           </p>
         </div>
         <div className="w-full">
-          <div>
             <div className="relative isolate bg-n-200 p-2.5 flex flex-row sm:justify-between justify-end">
               <motion.div
                 variants={{
@@ -75,7 +74,6 @@ export default function Lookbook_item({
               />
             </div>
           </div>
-        </div>
       </motion.a>
     </>
   );

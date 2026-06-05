@@ -2,7 +2,7 @@ import Contact_from from "../contact_form/contact_from";
 
 export default function Section_contact() {
   return (
-    <section className="bg-background overflow-hidden px-section pb-30 pt-2.5">
+    <section className="bg-background overflow-hidden px-section pb-35 pt-2.5">
       <div className="w-full h-full mx-auto max-w-400">
         <div className="flex flex-col gap-30">
           <h1 className="text-fd-l font-primary font-display uppercase text-center leading-tightest">

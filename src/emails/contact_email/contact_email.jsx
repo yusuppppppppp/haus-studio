@@ -17,7 +17,7 @@ export default function Contact_email({ name, email, message }) {
             <Section>
               <Container>
                 <Heading className="font-primary font-body-primary text-h2 leading-tightest">
-                  New Massage
+                  New Message
                 </Heading>
                 <Text className="font-secondary font-body-primary text-b-m leading-relaxed">
                   {name}

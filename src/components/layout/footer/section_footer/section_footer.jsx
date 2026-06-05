@@ -20,7 +20,7 @@ export default function Section_footer({ footer }) {
     <>
       <section
         id="section_footer"
-        className="px-section overflow-hidden pt-30 pb-7"
+        className="relative px-section overflow-hidden pt-30 pb-7"
       >
         <div className="w-full h-full max-w-400 mx-auto">
           <div className="flex flex-col justify-stretch items-stretch gap-10">

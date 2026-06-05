@@ -6,6 +6,7 @@ import Smooth_scroll from "../smooth_scroll/smooth_scroll";
 import Custom_cursor from "../custom_cursor/custom_cursor";
 import Navbar from "../../layout/section_navbar/navbar/navbar";
 import Section_footer from "../../layout/footer/section_footer/section_footer";
+import { Global_data_context } from "@/context/global_data_context";
 
 export default function Global_data_provider({ children }) {
   const [globalData, setGlobalData] = useState({
@@ -37,16 +38,16 @@ export default function Global_data_provider({ children }) {
 
   return (
     <>
-      <Smooth_scroll>
-        <Custom_cursor />
+      <Global_data_context.Provider value={globalData}>
+        <Smooth_scroll>
+          <Custom_cursor />
 
-        {globalData.navbar && <Navbar navbar={globalData.navbar} />}
+          {globalData.navbar && <Navbar navbar={globalData.navbar} />}
 
-        {children}
-        
-        {globalData.footer && <Section_footer footer={globalData.footer} />}
-
-      </Smooth_scroll>
+          {children}
+          
+        </Smooth_scroll>
+      </Global_data_context.Provider>
     </>
   );
 }

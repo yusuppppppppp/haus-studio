@@ -9,9 +9,12 @@ import { supabase } from "@/lib/supabase";
 import { useEffect, useState } from "react";
 import Section_preload from "../components/providers/section_preload/section_preload";
 import HeroToCollection from "@/components/transitions/heroToCollection/heroToCollection";
+import { useGlobalData } from "@/context/global_data_context";
+import Section_footer from "@/components/layout/footer/section_footer/section_footer";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const { footer } = useGlobalData();
 
   const [data, setData] = useState({
     preload: null,
@@ -143,7 +146,9 @@ export default function Home() {
 
             {/* section footer */}
 
-            {/* <Section_footer footer={data.footer} /> */}
+            {footer && (
+              <Section_footer footer={footer}/>
+            )}
 
             {/* section footer end */}
           </main>
