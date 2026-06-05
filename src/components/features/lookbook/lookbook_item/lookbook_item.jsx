@@ -7,6 +7,7 @@ export default function Lookbook_item({
   lookbook_image,
   lookbook_name,
   lookbook_link,
+  button_text,
 }) {
   const lookbookVariant = {
     "span-1": "h-100",
@@ -50,30 +51,30 @@ export default function Lookbook_item({
           </p>
         </div>
         <div className="w-full">
-            <div className="relative isolate bg-n-200 p-2.5 flex flex-row sm:justify-between justify-end">
-              <motion.div
-                variants={{
-                  rest: { width: "0%" },
-                  hover: { width: "100%" },
-                }}
-                transition={{
-                  duration: 0.6,
-                  ease: [0.65, 0, 0.35, 1],
-                }}
-                className="inset-0 z-0 absolute bg-n-500"
-              ></motion.div>
-              <p className="font-secondary font-body-primary text-b-m leading-tight uppercase sm:block hidden mix-blend-difference text-n-100 relative  z-10">
-                studi form
-              </p>
-              <img
-                src="/assets/icons/arrow.svg"
-                alt="icon-lookbook-arrow"
-                width={24}
-                height={24}
-                className="relative z-10 mix-blend-difference invert"
-              />
-            </div>
+          <div className="relative isolate bg-n-200 p-2.5 flex flex-row sm:justify-between justify-end">
+            <motion.div
+              variants={{
+                rest: { width: "0%" },
+                hover: { width: "100%" },
+              }}
+              transition={{
+                duration: 0.6,
+                ease: [0.65, 0, 0.35, 1],
+              }}
+              className="inset-0 z-0 absolute bg-n-500"
+            ></motion.div>
+            <p className="font-secondary font-body-primary text-b-m leading-tight uppercase sm:block hidden mix-blend-difference text-n-100 relative  z-10">
+              {button_text}
+            </p>
+            <img
+              src="/assets/icons/arrow.svg"
+              alt="icon-lookbook-arrow"
+              width={24}
+              height={24}
+              className="relative z-10 mix-blend-difference invert"
+            />
           </div>
+        </div>
       </motion.a>
     </>
   );

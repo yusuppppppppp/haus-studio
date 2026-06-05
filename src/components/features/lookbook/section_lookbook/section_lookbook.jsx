@@ -55,6 +55,7 @@ export default function Section_lookbook({ lookbook }) {
                     lookbook_image={lookbook.lookbook_image1}
                     lookbook_name={lookbook.lookbook_name1}
                     lookbook_link={lookbook.lookbook_link1}
+                    button_text={lookbook.lookbook_button_text}
                   />
                 </motion.div>
                 <motion.div
@@ -68,6 +69,7 @@ export default function Section_lookbook({ lookbook }) {
                     lookbook_image={lookbook.lookbook_image2}
                     lookbook_name={lookbook.lookbook_name2}
                     lookbook_link={lookbook.lookbook_link2}
+                    button_text={lookbook.lookbook_button_text}
                   />
                 </motion.div>
                 <div className="bg-background col-span-1 h-130 w-100 lg:block hidden"></div>
@@ -82,6 +84,7 @@ export default function Section_lookbook({ lookbook }) {
                     lookbook_image={lookbook.lookbook_image3}
                     lookbook_name={lookbook.lookbook_name3}
                     lookbook_link={lookbook.lookbook_link3}
+                    button_text={lookbook.lookbook_button_text}
                   />
                 </motion.div>
               </div>
@@ -97,6 +100,7 @@ export default function Section_lookbook({ lookbook }) {
                     lookbook_image={lookbook.lookbook_image4}
                     lookbook_name={lookbook.lookbook_name4}
                     lookbook_link={lookbook.lookbook_link4}
+                    button_text={lookbook.lookbook_button_text}
                   />
                 </motion.div>
                 <div className="col-span-2 flex flex-col justify-stretch items-stretch">
@@ -112,6 +116,7 @@ export default function Section_lookbook({ lookbook }) {
                         lookbook_image={lookbook.lookbook_image5}
                         lookbook_name={lookbook.lookbook_name5}
                         lookbook_link={lookbook.lookbook_link5}
+                        button_text={lookbook.lookbook_button_text}
                       />
                     </motion.div>
                     <div className="bg-background col-span-1 h-130 w-100 md:block hidden"></div>
@@ -127,6 +132,7 @@ export default function Section_lookbook({ lookbook }) {
                         lookbook_image={lookbook.lookbook_image6}
                         lookbook_name={lookbook.lookbook_name6}
                         lookbook_link={lookbook.lookbook_link6}
+                        button_text={lookbook.lookbook_button_text}
                       />
                     </motion.div>
                   </div>
@@ -144,6 +150,7 @@ export default function Section_lookbook({ lookbook }) {
                     lookbook_image={lookbook.lookbook_image7}
                     lookbook_name={lookbook.lookbook_name7}
                     lookbook_link={lookbook.lookbook_link7}
+                    button_text={lookbook.lookbook_button_text}
                   />
                 </motion.div>
                 <div className="bg-background col-span-1 h-130 w-100 lg:block sm:hidden hidden"></div>
@@ -158,6 +165,7 @@ export default function Section_lookbook({ lookbook }) {
                     lookbook_image={lookbook.lookbook_image8}
                     lookbook_name={lookbook.lookbook_name8}
                     lookbook_link={lookbook.lookbook_link8}
+                    button_text={lookbook.lookbook_button_text}
                   />
                 </motion.div>
                 <motion.div
@@ -171,6 +179,7 @@ export default function Section_lookbook({ lookbook }) {
                     lookbook_image={lookbook.lookbook_image9}
                     lookbook_name={lookbook.lookbook_name9}
                     lookbook_link={lookbook.lookbook_link9}
+                    button_text={lookbook.lookbook_button_text}
                   />
                 </motion.div>
               </div>
@@ -189,6 +198,7 @@ export default function Section_lookbook({ lookbook }) {
                         lookbook_image={lookbook.lookbook_image10}
                         lookbook_name={lookbook.lookbook_name10}
                         lookbook_link={lookbook.lookbook_link10}
+                        button_text={lookbook.lookbook_button_text}
                       />
                     </motion.div>
                     <motion.div
@@ -202,6 +212,7 @@ export default function Section_lookbook({ lookbook }) {
                         lookbook_image={lookbook.lookbook_image11}
                         lookbook_name={lookbook.lookbook_name11}
                         lookbook_link={lookbook.lookbook_link11}
+                        button_text={lookbook.lookbook_button_text}
                       />
                     </motion.div>
                     <div className="bg-background col-span-1 h-130 w-100 md:block hidden"></div>
@@ -218,6 +229,7 @@ export default function Section_lookbook({ lookbook }) {
                     lookbook_image={lookbook.lookbook_image12}
                     lookbook_name={lookbook.lookbook_name12}
                     lookbook_link={lookbook.lookbook_link12}
+                    button_text={lookbook.lookbook_button_text}
                   />
                 </motion.div>
               </div>
