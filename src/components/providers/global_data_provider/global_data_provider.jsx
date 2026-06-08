@@ -23,6 +23,7 @@ export default function Global_data_provider({ children }) {
     stockists: null,
     cta: null,
     footer: null,
+    contact: null,
   });
 
   useEffect(() => {
@@ -39,8 +40,9 @@ export default function Global_data_provider({ children }) {
           lookbook_transition: websiteData.lookbook_to_about || null,
           stockists: websiteData.stockists || null,
           cta: websiteData.cta || null,
-          navbar: websiteData.navbar || null,
+          navbar: websiteData.nav || null,
           footer: websiteData.footer || null,
+          contact: websiteData.contact || null,
         });
 
         setTimeout(() => {

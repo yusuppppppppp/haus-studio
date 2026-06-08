@@ -52,7 +52,7 @@ export default function Section_cta({ cta }) {
                     as="p"
                     className="font-secondary font-body-secondary text-b-m leading-relaxed lg:max-w-85 max-w-60 sm:justify-start justify-center"
                   >
-                    {cta?.paragraph?.[0]}
+                    {cta?.paragraphs?.[0]}
                   </Stragger_word>
                   <div className="sm:block hidden">
                     <Stragger_word
@@ -60,7 +60,7 @@ export default function Section_cta({ cta }) {
                       as="p"
                       className="font-secondary font-body-secondary text-b-m leading-relaxed lg:max-w-85 max-w-60 justify-end"
                     >
-                      {cta?.paragraph?.[1]}
+                      {cta?.paragraphs?.[1]}
                     </Stragger_word>
                   </div>
                 </div>

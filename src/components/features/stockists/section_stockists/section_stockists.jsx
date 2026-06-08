@@ -97,14 +97,14 @@ export default function Section_stockists({ stockists }) {
                 as="p"
                 className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 text-end 2xl:pl-23 xl:pl-10 lg:pl-0 pl-23"
               >
-                {stockists.stockists_label1}
+                {stockists?.labels[0]}
               </Stagger_word>
               <Stagger_word
                 delay={0.4}
                 as="p"
                 className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100"
               >
-                {stockists.stockists_label2}
+                {stockists?.labels[1]}
               </Stagger_word>
             </div>
             <div className="flex md:flex-row flex-col justify-stretch items-start gap-5 sm:w-auto w-full">

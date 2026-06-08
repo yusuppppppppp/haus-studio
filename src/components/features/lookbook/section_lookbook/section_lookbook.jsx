@@ -1,10 +1,13 @@
 "use client";
+
 import Lookbook_item from "../lookbook_item/lookbook_item";
 import Stragger_heading from "@/animations/stagger_heading/stagger_heading";
 import Stragger_word from "@/animations/stagger_word/stagger_word";
-import { motion } from "framer-motion";
 
 export default function Section_lookbook({ lookbook }) {
+  const items = lookbook?.items || [];
+  const btn = lookbook?.button_text;
+
   return (
     <>
       <section
@@ -24,215 +27,61 @@ export default function Section_lookbook({ lookbook }) {
                 <Stragger_word
                   delay={0.2}
                   as="p"
-                  className="font-secondary font-body-secondary text-b-m leading-relaxed justify-center uppercase"
-                >
+                  className="font-secondary font-body-secondary text-b-m leading-relaxed justify-center uppercase">
                   {lookbook?.subheading}
                 </Stragger_word>
-                <Stragger_word
-                  delay={0.2}
-                  as="p"
-                  className="font-secondary font-body-secondary text-b-m leading-relaxed justify-center"
-                >
+                <Stragger_word delay={0.2} as="p" className="font-secondary font-body-secondary text-b-m leading-relaxed justify-center">
                   {lookbook?.paragraph}
                 </Stragger_word>
               </div>
             </div>
           </div>
 
-          {/* section lookbook main content */}
-
           <div className="w-full flex flex-col justify-stretch items-start 2xl:pt-60 lg:pt-45 md:pt-40 sm:pt-35 pt-30 overflow-hidden">
             <div className="flex flex-col justify-stretch items-stretch w-full">
+
+              {/* Row 1 */}
               <div className="grid sm:grid-cols-4 grid-cols-1">
-                <motion.div
-                  initial="rest"
-                  whileHover="hover"
-                  animate="rest"
-                  className="lg:col-span-1 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
-                >
-                  <Lookbook_item
-                    variant="span-1"
-                    lookbook_image={lookbook.lookbook_image1}
-                    lookbook_name={lookbook.lookbook_name1}
-                    lookbook_link={lookbook.lookbook_link1}
-                    button_text={lookbook?.button_text}
-                  />
-                </motion.div>
-                <motion.div
-                  initial="rest"
-                  whileHover="hover"
-                  animate="rest"
-                  className="lg:col-span-1 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
-                >
-                  <Lookbook_item
-                    variant="span-1"
-                    lookbook_image={lookbook.lookbook_image2}
-                    lookbook_name={lookbook.lookbook_name2}
-                    lookbook_link={lookbook.lookbook_link2}
-                    button_text={lookbook.lookbook_button_text}
-                  />
-                </motion.div>
+                <Lookbook_item item={items[0]} variant="span-1" button_text={btn} className="lg:col-span-1 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border" />
+                <Lookbook_item item={items[1]} variant="span-1" button_text={btn} className="lg:col-span-1 sm:col-span-2 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border" />
                 <div className="bg-background col-span-1 h-130 w-100 lg:block hidden"></div>
-                <motion.div
-                  initial="rest"
-                  whileHover="hover"
-                  animate="rest"
-                  className="col-span-1 p-2 lg:flex sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border"
-                >
-                  <Lookbook_item
-                    variant="span-1"
-                    lookbook_image={lookbook.lookbook_image3}
-                    lookbook_name={lookbook.lookbook_name3}
-                    lookbook_link={lookbook.lookbook_link3}
-                    button_text={lookbook.lookbook_button_text}
-                  />
-                </motion.div>
+                <Lookbook_item item={items[2]} variant="span-1" button_text={btn} className="col-span-1 p-2 lg:flex sm:hidden hidden flex-col gap-13 justify-between items-start border-n-300 border" />
               </div>
+
+              {/* Row 2 */}
               <div className="grid sm:grid-cols-4 grid-cols-1">
-                <motion.div
-                  initial="rest"
-                  whileHover="hover"
-                  animate="rest"
-                  className="col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
-                >
-                  <Lookbook_item
-                    variant="span-2"
-                    lookbook_image={lookbook.lookbook_image4}
-                    lookbook_name={lookbook.lookbook_name4}
-                    lookbook_link={lookbook.lookbook_link4}
-                    button_text={lookbook.lookbook_button_text}
-                  />
-                </motion.div>
+                <Lookbook_item item={items[3]} variant="span-2" button_text={btn} className="col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border" />
                 <div className="col-span-2 flex flex-col justify-stretch items-stretch">
                   <div className="w-full h-full grid grid-cols-2">
-                    <motion.div
-                      initial="rest"
-                      whileHover="hover"
-                      animate="rest"
-                      className="md:col-span-1 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
-                    >
-                      <Lookbook_item
-                        variant="span-1"
-                        lookbook_image={lookbook.lookbook_image5}
-                        lookbook_name={lookbook.lookbook_name5}
-                        lookbook_link={lookbook.lookbook_link5}
-                        button_text={lookbook.lookbook_button_text}
-                      />
-                    </motion.div>
+                    <Lookbook_item item={items[4]} variant="span-1" button_text={btn} className="md:col-span-1 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border" />
                     <div className="bg-background col-span-1 h-130 w-100 md:block hidden"></div>
                     <div className="bg-background col-span-1 h-130 w-100 md:block hidden"></div>
-                    <motion.div
-                      initial="rest"
-                      whileHover="hover"
-                      animate="rest"
-                      className="col-span-1 p-2 md:flex hidden flex-col gap-13 justify-between items-start border-n-300 border"
-                    >
-                      <Lookbook_item
-                        variant="span-1"
-                        lookbook_image={lookbook.lookbook_image6}
-                        lookbook_name={lookbook.lookbook_name6}
-                        lookbook_link={lookbook.lookbook_link6}
-                        button_text={lookbook.lookbook_button_text}
-                      />
-                    </motion.div>
+                    <Lookbook_item item={items[5]} variant="span-1" button_text={btn} className="col-span-1 p-2 md:flex hidden flex-col gap-13 justify-between items-start border-n-300 border" />
                   </div>
                 </div>
               </div>
+
+              {/* Row 3 */}
               <div className="grid sm:grid-cols-4 grid-cols-1">
-                <motion.div
-                  initial="rest"
-                  whileHover="hover"
-                  animate="rest"
-                  className="col-span-1 p-2 lg:flex hidden flex-col gap-13 justify-between items-start border-n-300 border"
-                >
-                  <Lookbook_item
-                    variant="span-1"
-                    lookbook_image={lookbook.lookbook_image7}
-                    lookbook_name={lookbook.lookbook_name7}
-                    lookbook_link={lookbook.lookbook_link7}
-                    button_text={lookbook.lookbook_button_text}
-                  />
-                </motion.div>
+                <Lookbook_item item={items[6]} variant="span-1" button_text={btn} className="col-span-1 p-2 lg:flex hidden flex-col gap-13 justify-between items-start border-n-300 border" />
                 <div className="bg-background col-span-1 h-130 w-100 lg:block sm:hidden hidden"></div>
-                <motion.div
-                  initial="rest"
-                  whileHover="hover"
-                  animate="rest"
-                  className="lg:col-span-1 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
-                >
-                  <Lookbook_item
-                    variant="span-1"
-                    lookbook_image={lookbook.lookbook_image8}
-                    lookbook_name={lookbook.lookbook_name8}
-                    lookbook_link={lookbook.lookbook_link8}
-                    button_text={lookbook.lookbook_button_text}
-                  />
-                </motion.div>
-                <motion.div
-                  initial="rest"
-                  whileHover="hover"
-                  animate="rest"
-                  className="lg:col-span-1 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
-                >
-                  <Lookbook_item
-                    variant="span-1"
-                    lookbook_image={lookbook.lookbook_image9}
-                    lookbook_name={lookbook.lookbook_name9}
-                    lookbook_link={lookbook.lookbook_link9}
-                    button_text={lookbook.lookbook_button_text}
-                  />
-                </motion.div>
+                <Lookbook_item item={items[7]} variant="span-1" button_text={btn} className="lg:col-span-1 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border" />
+                <Lookbook_item item={items[8]} variant="span-1" button_text={btn} className="lg:col-span-1 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border" />
               </div>
+
+              {/* Row 4 */}
               <div className="grid sm:grid-cols-4 grid-cols-1">
                 <div className="col-span-2 flex flex-col justify-stretch items-stretch">
                   <div className="w-full h-full grid grid-cols-2">
                     <div className="bg-background col-span-1 h-130 w-100 md:block hidden"></div>
-                    <motion.div
-                      initial="rest"
-                      whileHover="hover"
-                      animate="rest"
-                      className="md:col-span-1 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
-                    >
-                      <Lookbook_item
-                        variant="span-1"
-                        lookbook_image={lookbook.lookbook_image10}
-                        lookbook_name={lookbook.lookbook_name10}
-                        lookbook_link={lookbook.lookbook_link10}
-                        button_text={lookbook.lookbook_button_text}
-                      />
-                    </motion.div>
-                    <motion.div
-                      initial="rest"
-                      whileHover="hover"
-                      animate="rest"
-                      className="col-span-1 p-2 md:flex hidden flex-col gap-13 justify-between items-start border-n-300 border"
-                    >
-                      <Lookbook_item
-                        variant="span-1"
-                        lookbook_image={lookbook.lookbook_image11}
-                        lookbook_name={lookbook.lookbook_name11}
-                        lookbook_link={lookbook.lookbook_link11}
-                        button_text={lookbook.lookbook_button_text}
-                      />
-                    </motion.div>
+                    <Lookbook_item item={items[9]} variant="span-1" button_text={btn} className="md:col-span-1 col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border" />
+                    <Lookbook_item item={items[10]} variant="span-1" button_text={btn} className="col-span-1 p-2 md:flex hidden flex-col gap-13 justify-between items-start border-n-300 border" />
                     <div className="bg-background col-span-1 h-130 w-100 md:block hidden"></div>
                   </div>
                 </div>
-                <motion.div
-                  initial="rest"
-                  whileHover="hover"
-                  animate="rest"
-                  className="col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border"
-                >
-                  <Lookbook_item
-                    variant="span-2"
-                    lookbook_image={lookbook.lookbook_image12}
-                    lookbook_name={lookbook.lookbook_name12}
-                    lookbook_link={lookbook.lookbook_link12}
-                    button_text={lookbook.lookbook_button_text}
-                  />
-                </motion.div>
+                <Lookbook_item item={items[11]} variant="span-2" button_text={btn} className="col-span-2 p-2 flex flex-col gap-13 justify-between items-start border-n-300 border" />
               </div>
+
             </div>
           </div>
         </div>

@@ -41,19 +41,19 @@ export default function Section_lookbook_to_about({ lookbook_transition }) {
                   as="p"
                   className="font-secondary font-body-secondary text-b-m leading-relaxed md:max-w-125 max-w-110 justify-center"
                 >
-                  {lookbook_transition.lookbooktoabout_paragraph1}
+                  {lookbook_transition?.paragraphs[0]}
                 </Stragger_word>
                 <Stragger_word
                   delay={0.3}
                   as="p"
                   className="font-secondary font-body-secondary text-b-m leading-relaxed justify-center"
                 >
-                  {lookbook_transition.lookbooktoabout_paragraph2}
+                  {lookbook_transition?.paragraphs[1]}
                 </Stragger_word>
               </div>
               <Reveal_up delay={0.3}>
-                <Button link={lookbook_transition.lookbooktoabout_link}>
-                  {lookbook_transition.button_text}
+                <Button link={lookbook_transition?.button?.link}>
+                  {lookbook_transition?.button?.text}
                 </Button>
               </Reveal_up>
             </motion.div>

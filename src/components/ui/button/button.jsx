@@ -8,17 +8,24 @@ export default function Button({
   target,
   variant = "primary",
   hovered = false,
+  type = "button",
+  disable,
+  ...props
 }) {
-  const Wrapper = link ? Link : "div";
+  const Wrapper = link ? Link : "button";
 
   return (
     <Wrapper
       {...(link
         ? {
-            href: link,
-            target,
-          }
-        : {})}
+          href: link,
+          target,
+        }
+        : {
+          type,
+          disable,
+        })}
+      {...props}
     >
       {variant === "primary" && (
         <motion.div
@@ -56,10 +63,10 @@ export default function Button({
 
       {variant === "secondary" && (
         <motion.div
-        initial="rest"
-        whileHover={!hovered ? "hover" : undefined}
-        animate={hovered ? "hover" : "rest"}
-        className="relative isolate bg-n-200 p-2.5 flex flex-row sm:justify-between justify-end">
+          initial="rest"
+          whileHover={!hovered ? "hover" : undefined}
+          animate={hovered ? "hover" : "rest"}
+          className="relative isolate bg-n-200 p-2.5 flex flex-row sm:justify-between justify-end">
           <motion.div
             variants={{
               rest: { width: "0%" },
@@ -72,7 +79,7 @@ export default function Button({
             className="inset-0 z-0 absolute bg-n-500"
           ></motion.div>
           <p className="font-secondary font-body-primary text-b-m leading-tight uppercase sm:block hidden mix-blend-difference text-n-100 relative  z-10">
-            {button_text}
+            {children}
           </p>
           <img
             src="/assets/icons/arrow.svg"

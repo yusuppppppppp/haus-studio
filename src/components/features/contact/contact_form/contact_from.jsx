@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { toast } from "sonner";
+import { Button } from "../../../ui/button";
 
-export default function Contact_from() {
+export default function Contact_from({ placeholderName, placeholderEmail, placeholderMessage, process, success }) {
   const [loading, setLoading] = useState(false);
 
   const [form, setForm] = useState({
@@ -61,41 +62,45 @@ export default function Contact_from() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <div className="flex flex-row justify-stretch items-stretch gap-4 w-full">  
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        value={form.name}
-        onChange={handleChange}
-        required
-        className="border border-n-400 border-dashed p-3 w-full"
-      />
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4 border border-n-300 p-3">
+      <div className="flex flex-row justify-stretch items-stretch gap-4 w-full">
+        <input
+          type="text"
+          name="name"
+          placeholder={placeholderName}
+          value={form.name}
+          onChange={handleChange}
+          required
+          className="border border-n-400 border-dashed p-3 w-full"
+        />
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={form.email}
-        onChange={handleChange}
-        required
-        className="border border-n-400 border-dashed p-3 w-[60%]"
-      />
+        <input
+          type="email"
+          name="email"
+          placeholder={placeholderEmail}
+          value={form.email}
+          onChange={handleChange}
+          required
+          className="border border-n-400 border-dashed p-3 w-[60%]"
+        />
       </div>
 
       <textarea
         name="message"
-        placeholder="Message"
+        placeholder={placeholderMessage}
         value={form.message}
         onChange={handleChange}
         required
         className="border border-n-400 border-dashed p-3 h-40"
       />
-        
-      <button type="submit" disabled={loading} className="border p-3">
-        {loading ? "Sending..." : "Send"}
-      </button>
+
+      <Button
+        type="submit"
+        disabled={loading}
+        variant="secondary"
+      >
+        {loading ? process : success}
+      </Button>
     </form>
   );
 }

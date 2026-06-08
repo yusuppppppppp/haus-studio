@@ -40,9 +40,9 @@ export default function Navbar({ navbar }) {
               }}
               className="w-full h-full"
             >
-              {nav?.icons?.close ? (
+              {navbar?.icons?.close ? (
                 <Image
-                  src={nav.icons.close}
+                  src={navbar.icons.close}
                   alt="nav_hamburger_menu"
                   width={24}
                   height={24}
