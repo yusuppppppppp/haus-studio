@@ -11,123 +11,104 @@ import Section_preload from "../components/providers/section_preload/section_pre
 import HeroToCollection from "@/components/transitions/heroToCollection/heroToCollection";
 import { useGlobalData } from "@/context/global_data_context";
 import Section_footer from "@/components/layout/footer/section_footer/section_footer";
+import { getWebsiteData } from "@/lib/fetchers/getWebsiteData";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-  const { footer } = useGlobalData();
+  const data = useGlobalData();
+  // const { footer } = useGlobalData();
 
-  const [data, setData] = useState({
-    preload: null,
-    hero: null,
-    collection: null,
-    about: null,
-    lookbook: null,
-    lookbook_transition: null,
-    stockists: null,
-    cta: null,
-  });
+  // const [data, setData] = useState({
+  //   preload: null,
+  //   hero: null,
+  //   collection: null,
+  //   about: null,
+  //   lookbook: null,
+  //   lookbook_transition: null,
+  //   stockists: null,
+  //   cta: null,
+  // });
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const [
-          preloadRes,
-          heroRes,
-          collectionRes,
-          aboutRes,
-          lookbookRes,
-          lookbook_transitionRes,
-          stockistsRes,
-          ctaRes,
-        ] = await Promise.all([
-          supabase.from("sectionpreload").select("*").single(),
-          supabase.from("sectionhero").select("*").single(),
-          supabase.from("sectioncollection").select("*").single(),
-          supabase.from("sectionabout").select("*").single(),
-          supabase.from("sectionlookbook").select("*").single(),
-          supabase.from("lookbooktoabout").select("*").single(),
-          supabase.from("sectionstockists").select("*").single(),
-          supabase.from("sectioncta").select("*").single(),
-        ]);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       const websiteData = await getWebsiteData();
 
-        // const [sectionRes, lookbookItemsRes] = await Promise.all([
-        //   supabase.from("web_sections").select("*"),
-        //   supabase.from("lookbook_items").select("*").eq("is_published", true),
-        // ]);
+  //       setData({
+  //         preload: websiteData.preload || null,
+  //         hero: websiteData.hero || null,
+  //         collection: websiteData.collection || null,
+  //         about: websiteData.about || null,
+  //         lookbook: websiteData.lookbook || null,
+  //         lookbook_transition: websiteData.lookbook_to_about || null,
+  //         stockists: websiteData.stockists || null,
+  //         cta: websiteData.cta || null,
+  //       });
 
-        // if (sectionRes.error) throw sectionRes.error;
-        // if (lookbookItemsRes.error) throw lookbookItemsRes.error;
+  //       // const [
+  //       //   preloadRes,
+  //       //   heroRes,
+  //       //   collectionRes,
+  //       //   aboutRes,
+  //       //   lookbookRes,
+  //       //   lookbook_transitionRes,
+  //       //   stockistsRes,
+  //       //   ctaRes,
+  //       // ] = await Promise.all([
+  //       //   supabase.from("sectionpreload").select("*").single(),
+  //       //   supabase.from("sectionhero").select("*").single(),
+  //       //   supabase.from("sectioncollection").select("*").single(),
+  //       //   supabase.from("sectionabout").select("*").single(),
+  //       //   supabase.from("sectionlookbook").select("*").single(),
+  //       //   supabase.from("lookbooktoabout").select("*").single(),
+  //       //   supabase.from("sectionstockists").select("*").single(),
+  //       //   supabase.from("sectioncta").select("*").single(),
+  //       // ]);
 
-        // const sectionsData = sectionRes.data;
-        // const lookbookItems = lookbookItemsRes.data;
+  //       // if (preloadRes.error) console.log(preloadRes.error);
+  //       // if (heroRes.error) console.log(heroRes.error);
+  //       // if (collectionRes.error) console.log(collectionRes.error);
+  //       // if (aboutRes.error) console.log(aboutRes.error);
+  //       // if (lookbookRes.error) console.log(lookbookRes.error);
+  //       // if (lookbook_transitionRes.error)
+  //       //   console.log(lookbook_transitionRes.error);
+  //       // if (stockistsRes.error) console.log(lookbookRes.error);
+  //       // if (ctaRes.error) console.log(ctaRes.error);
 
-        // const sectionMap = {};
-        // sectionsData.forEach((item) => {
-        //   sectionMap[item.section_slug] = {
-        //     title: item.title,
-        //     context_text: item.context_text,
-        //     ...item.ui_payload,
-        //   };
-        // });
+  //       // setData({
+  //       //   preload: preloadRes.data,
+  //       //   hero: heroRes.data,
+  //       //   collection: collectionRes.data,
+  //       //   about: aboutRes.data,
+  //       //   lookbook: lookbookRes.data,
+  //       //   lookbook_transition: lookbook_transitionRes.data,
+  //       //   stockists: stockistsRes.data,
+  //       //   cta: ctaRes.data,
+  //       // });
 
-        // setData({
-        //   preload: sectionMap["preload"] || null,
-        //   hero: sectionMap["hero"] || null,
-        //   collection: sectionMap["collection"] || null,
-        //   about: sectionMap["about"] || null,
-        //   lookbook: sectionMap["lookbook"]
-        //     ? {...sectionMap["lookbook"], items: lookbookItems}
-        //     : null,
-        //   lookbook_transition: sectionMap["lookbook_to_about"] || null,
-        //   stockists: sectionMap["stockists"] || null,
-        //   cta: sectionMap["cta"] || null,
-        // })
+  //       setTimeout(() => {
+  //         setIsLoading(false);
+  //       }, 200);
+  //     } catch (error) {
+  //       console.log(error);
 
-        if (preloadRes.error) console.log(preloadRes.error);
-        if (heroRes.error) console.log(heroRes.error);
-        if (collectionRes.error) console.log(collectionRes.error);
-        if (aboutRes.error) console.log(aboutRes.error);
-        if (lookbookRes.error) console.log(lookbookRes.error);
-        if (lookbook_transitionRes.error)
-          console.log(lookbook_transitionRes.error);
-        if (stockistsRes.error) console.log(lookbookRes.error);
-        if (ctaRes.error) console.log(ctaRes.error);
-
-        setData({
-          preload: preloadRes.data,
-          hero: heroRes.data,
-          collection: collectionRes.data,
-          about: aboutRes.data,
-          lookbook: lookbookRes.data,
-          lookbook_transition: lookbook_transitionRes.data,
-          stockists: stockistsRes.data,
-          cta: ctaRes.data,
-        });
-
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 200);
-      } catch (error) {
-        console.log(error);
-
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 200);
-      }
-    }
-    fetchData();
-  }, []);
+  //       setTimeout(() => {
+  //         setIsLoading(false);
+  //       }, 200);
+  //     }
+  //   }
+  //   fetchData();
+  // }, []);
 
   {
     return (
       <>
         {/* section preload */}
 
-        <Section_preload isLoading={isLoading} preload={data.preload} />
+        <Section_preload isLoading={data.isLoading} preload={data.preload} />
 
         {/* section preload end */}
 
-        {!isLoading && (
+        {!data.isLoading && (
           <main>
             {/* section navbar */}
 
@@ -139,7 +120,9 @@ export default function Home() {
 
             {/* section hero end */}
 
-            <HeroToCollection hero={data.hero} collection={data.collection} />
+            {data.hero && data.collection && (
+              <HeroToCollection hero={data.hero} collection={data.collection} />
+            )}
 
             {/*  section collection */}
 
@@ -179,9 +162,7 @@ export default function Home() {
 
             {/* section footer */}
 
-            {footer && (
-              <Section_footer footer={footer}/>
-            )}
+            {data.footer && <Section_footer footer={data.footer} />}
 
             {/* section footer end */}
           </main>

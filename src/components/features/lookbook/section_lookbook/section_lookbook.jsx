@@ -18,7 +18,7 @@ export default function Section_lookbook({ lookbook }) {
                 as="h2"
                 className="font-primary font-heading text-h2 leading-tightest uppercase lg:max-w-130 md:max-w-150 sm:max-w-90 max-w-50 self-center justify-center"
               >
-                {lookbook.lookbook_heading}
+                {lookbook?.heading}
               </Stragger_heading>
               <div className="flex flex-col justify-stretch item-center gap-10 max-w-90 self-center">
                 <Stragger_word
@@ -26,14 +26,14 @@ export default function Section_lookbook({ lookbook }) {
                   as="p"
                   className="font-secondary font-body-secondary text-b-m leading-relaxed justify-center uppercase"
                 >
-                  {lookbook.lookbook_subheading}
+                  {lookbook?.subheading}
                 </Stragger_word>
                 <Stragger_word
                   delay={0.2}
                   as="p"
                   className="font-secondary font-body-secondary text-b-m leading-relaxed justify-center"
                 >
-                  {lookbook.lookbook_paragraph}
+                  {lookbook?.paragraph}
                 </Stragger_word>
               </div>
             </div>
@@ -55,7 +55,7 @@ export default function Section_lookbook({ lookbook }) {
                     lookbook_image={lookbook.lookbook_image1}
                     lookbook_name={lookbook.lookbook_name1}
                     lookbook_link={lookbook.lookbook_link1}
-                    button_text={lookbook.lookbook_button_text}
+                    button_text={lookbook?.button_text}
                   />
                 </motion.div>
                 <motion.div

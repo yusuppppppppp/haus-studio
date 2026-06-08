@@ -30,17 +30,20 @@ export default function Section_hero({ hero }) {
                 className="flex flex-row items-start"
               >
                 <h1 className=" font-primary font-display text-fd-l leading-tightest">
-                  {hero.hero_title_left}
+                  {hero?.hero_title_left}
                 </h1>
-                <div className="relative lg:w-20 md:w-15 w-10 lg:h-20 md:h-15 h-10 invert">
-                  <Image
-                    className="object-contain lg:pt-3 pt-2"
-                    src={hero.hero_title_icon}
-                    alt="®"
-                    fill
-                    sizes="(max-width: 640px) 40px,(max-width: 768px) 60px,80px"
-                  />
-                </div>
+
+                {hero?.hero_title_icon ? (
+                  <div className="relative lg:w-20 md:w-15 w-10 lg:h-20 md:h-15 h-10 invert">
+                    <Image
+                      className="object-contain lg:pt-3 pt-2"
+                      src={hero.hero_title_icon}
+                      alt="®"
+                      fill
+                      sizes="(max-width: 640px) 40px,(max-width: 768px) 60px,80px"
+                    />
+                  </div>
+                ) : null}
               </motion.div>
             </div>
             <div className="flex flex-row items-start overflow-hidden lg:h-65">
@@ -57,32 +60,34 @@ export default function Section_hero({ hero }) {
                 }}
                 className=" font-primary font-display text-fd-l leading-tightest"
               >
-                {hero.hero_title_right}
+                {hero?.hero_title_right}
               </motion.h1>
             </div>
           </div>
           <div className="absolute sm:self-center self-start md:top-75 sm:top-40 top-105">
             <div className="relative 2xl:w-107 xl:w-100 lg:w-90 md:w-80 sm:w-60 w-65 md:h-125 sm:h-80 h-120 sm:self-center self-start overflow-hidden z-10 2xl:mr-25 xl:mr-10 lg:mr-17 mr-0 sm:ml-0 ml-5">
-              <motion.div
-                initial={{ opacity: 0.1, rotate: -25, scale: 2 }}
-                whileInView={{ opacity: 1, rotate: 0, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: 2.5,
-                  duration: 1.4,
-                  ease: [0.65, 0, 0.35, 1],
-                }}
-                className="will-change-transform sm:absolute block w-full h-full"
-              >
-                <Image
-                  className="object-cover object-center"
-                  src={hero.hero_image}
-                  alt="hero_image"
-                  fill
-                  priority
-                  sizes="(max-width: 640px) 260px, (max-width: 768px) 240px, (max-width: 1024px) 400px, 520px"
-                />
-              </motion.div>
+              {hero?.hero_image ? (
+                <motion.div
+                  initial={{ opacity: 0.1, rotate: -25, scale: 2 }}
+                  whileInView={{ opacity: 1, rotate: 0, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    delay: 2.5,
+                    duration: 1.4,
+                    ease: [0.65, 0, 0.35, 1],
+                  }}
+                  className="will-change-transform sm:absolute block w-full h-full"
+                >
+                  <Image
+                    className="object-cover object-center"
+                    src={hero.hero_image}
+                    alt="hero_image"
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 260px, (max-width: 768px) 240px, (max-width: 1024px) 400px, 520px"
+                  />
+                </motion.div>
+              ) : null}
             </div>
           </div>
           <div className="max-w-400 w-full h-full mx-auto px-section lg:pt-7 md:pt-40 pt-10 z-20 text-n-100 mix-blend-difference">
@@ -95,7 +100,7 @@ export default function Section_hero({ hero }) {
                       as="p"
                       className="font-primary font-body-secondary text-b-l leading-tight uppercase md:max-w-47.5 sm:max-w-30 max-w-30"
                     >
-                      {hero.hero_subtitle}
+                      {hero?.hero_subtitle}
                     </Stragger_word>
                   </div>
                   <div className="flex flex-col justify-center sm:gap-3 gap-3 2xl:max-w-165 xl:max-w-130 lg:max-w-115 sm:max-w-73 max-w-full">
@@ -105,14 +110,14 @@ export default function Section_hero({ hero }) {
                         as="p"
                         className="font-primary font-body-secondary text-b-l leading-tight uppercase max-w-47.5 "
                       >
-                        {hero.heading_hero_description}
+                        {hero?.heading_hero?.description}
                       </Stragger_word>
                       <Stragger_word
                         delay={3}
                         as="p"
                         className="font-primary font-body-secondary text-b-l leading-tight uppercase max-w-47.5 "
                       >
-                        {hero.heading_hero_number}
+                        {hero?.heading_hero?.number}
                       </Stragger_word>
                     </div>
                     <Stragger_word
@@ -127,13 +132,13 @@ export default function Section_hero({ hero }) {
                       as="p"
                       className="font-primary font-body-secondary text-b-l leading-tight uppercase text-end md:max-w-47.5 sm:max-w-30 max-w-35 sm:hidden block sm:self-center self-end justify-end pt-10"
                     >
-                      {hero.hero_subtitle}
+                      {hero?.hero_subtitle}
                     </Stragger_word>
                   </div>
                   <div className="sm:block hidden overflow-hidden h-[1.5em]">
                     <Reveal_up delay={3.2}>
-                      <Button link={hero.button_link} target="_self">
-                        {hero.button_text}
+                      <Button link={hero?.button?.link} target="_self">
+                        {hero?.button?.text}
                       </Button>
                     </Reveal_up>
                   </div>
@@ -145,14 +150,14 @@ export default function Section_hero({ hero }) {
                   as="p"
                   className="font-primary font-body-secondary text-b-l leading-tight uppercase"
                 >
-                  {hero.about_title}
+                  {hero?.about?.title}
                 </Stragger_word>
                 <Stragger_word
                   delay={3.2}
                   as="p"
                   className="font-secondary font-body-secondary text-b-m leading-relaxed"
                 >
-                  {hero.about_description}
+                  {hero?.about?.description}
                 </Stragger_word>
               </div>
             </div>

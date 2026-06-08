@@ -36,14 +36,16 @@ export default function Lookbook_item({
               }}
               className="relative w-full h-full"
             >
-              <Image
-                src={lookbook_image}
-                alt="lookbook-item"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                loading="eager"
-              />
+              {lookbook_image && (
+                <Image
+                  src={lookbook_image}
+                  alt="lookbook-item"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="eager"
+                />
+              )}
             </motion.div>
           </div>
           <p className="font-secondary font-body-primary text-b-l leading-relaxed capitalize max-w-95">
@@ -66,13 +68,15 @@ export default function Lookbook_item({
             <p className="font-secondary font-body-primary text-b-m leading-tight uppercase sm:block hidden mix-blend-difference text-n-100 relative  z-10">
               {button_text}
             </p>
-            <img
-              src="/assets/icons/arrow.svg"
-              alt="icon-lookbook-arrow"
-              width={24}
-              height={24}
-              className="relative z-10 mix-blend-difference invert"
-            />
+            {lookbook_image && (
+              <img
+                src="/assets/icons/arrow.svg"
+                alt="icon-lookbook-arrow"
+                width={24}
+                height={24}
+                className="relative z-10 mix-blend-difference invert"
+              />
+            )}
           </div>
         </div>
       </motion.a>

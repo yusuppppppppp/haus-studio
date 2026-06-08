@@ -31,6 +31,7 @@ export default function Collection_item({ images_path, collection_name }) {
         }}
         transition={{ type: "spring", stiffness: 200, damping: 20 }}
       >
+        {images_path && (
           <Image
             className="object-contain"
             src={images_path}
@@ -38,6 +39,7 @@ export default function Collection_item({ images_path, collection_name }) {
             fill
             sizes="(max-width: 1024px) 280px, 220px"
           />
+        )}
       </motion.div>
       <motion.div
         className="absolute flex items-end justify-end ml-45 -mt-40 "

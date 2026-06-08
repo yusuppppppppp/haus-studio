@@ -36,13 +36,15 @@ export default function Stockists_card({
         >
           {label}
         </Stragger_heading>
-        <Image
-          src={number}
-          alt={numberAlt}
-          width={imageWidth}
-          height={imageHeight}
-          className={imageClassName}
-        />
+        {number ? (
+          <Image
+            src={number}
+            alt={numberAlt}
+            width={imageWidth}
+            height={imageHeight}
+            className={imageClassName}
+          />
+        ) : null}
       </div>
       <div className="flex flex-col justify-stretch items-start gap-5">
         <Stragger_word

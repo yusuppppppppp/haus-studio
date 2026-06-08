@@ -7,10 +7,10 @@ import Stragger_word from "@/animations/stagger_word/stagger_word";
 import Reveal_up from "@/animations/reveal_up/reveal_up";
 import Stragger_heading from "@/animations/stagger_heading/stagger_heading";
 import Smooth_sticky from "../../ui/smooth_sticky/smooth_sticky";
-import useImageParallax from "@/hooks/useImageParallax"
+import useImageParallax from "@/hooks/useImageParallax";
 
 export default function Section_cta({ cta }) {
-  const {ref, scrollYProgress, imageMove} = useImageParallax();
+  const { ref, scrollYProgress, imageMove } = useImageParallax();
 
   return (
     <>
@@ -37,12 +37,12 @@ export default function Section_cta({ cta }) {
                       as="p"
                       className="font-body-secondary font-secondary text-b-m leading-relaxed "
                     >
-                      {cta.cta_label}
+                      {cta?.label}
                     </Stragger_word>
                   </div>
                   <Reveal_up delay={0.4}>
-                    <Button link={cta.cta_button_link}>
-                      {cta.cta_button_text}
+                    <Button link={cta?.button?.link}>
+                      {cta?.button?.text}
                     </Button>
                   </Reveal_up>
                 </div>
@@ -52,7 +52,7 @@ export default function Section_cta({ cta }) {
                     as="p"
                     className="font-secondary font-body-secondary text-b-m leading-relaxed lg:max-w-85 max-w-60 sm:justify-start justify-center"
                   >
-                    {cta.cta_paragraph1}
+                    {cta?.paragraph?.[0]}
                   </Stragger_word>
                   <div className="sm:block hidden">
                     <Stragger_word
@@ -60,7 +60,7 @@ export default function Section_cta({ cta }) {
                       as="p"
                       className="font-secondary font-body-secondary text-b-m leading-relaxed lg:max-w-85 max-w-60 justify-end"
                     >
-                      {cta.cta_paragraph2}
+                      {cta?.paragraph?.[1]}
                     </Stragger_word>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ export default function Section_cta({ cta }) {
                   as="h2"
                   className="font-primary font-display text-fd-l leading-tightest justify-center uppercase 2xl:w-312 xl:w-full lg:w-312 w-100 self-center text-n-100 mix-blend-difference 2xl:ml-0 xl:ml-20 lg:ml-15 sm:ml-10 ml-8"
                 >
-                  {cta.cta_heading}
+                  {cta?.heading}
                 </Stragger_heading>
               </div>
               <motion.div
@@ -79,13 +79,15 @@ export default function Section_cta({ cta }) {
                 }}
                 className="relative will-change-transform w-full 2xl:h-[150vh] lg:h-[130vh] md:h-screen sm:h-[150vh] h-[110vh] z-10"
               >
-                <Image
-                  src={cta.cta_image}
-                  alt="cta-bg"
-                  fill
-                  className="object-cover sm:object-center object-[15%_50%]"
-                  sizes="100vw"
-                />
+                {cta?.image ? (
+                  <Image
+                    src={cta.image}
+                    alt="cta-bg"
+                    fill
+                    className="object-cover sm:object-center object-[15%_50%]"
+                    sizes="100vw"
+                  />
+                ) : null}
               </motion.div>
             </div>
           </div>

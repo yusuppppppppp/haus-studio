@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import Nav_link from "../nav_link/nav_link";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 export default function Navbar({ navbar }) {
@@ -40,14 +40,17 @@ export default function Navbar({ navbar }) {
               }}
               className="w-full h-full"
             >
-              <Image
-                src={navbar.nav_icon_close}
-                alt="nav_hamburger_menu"
-                width={24}
-                height={24}
-                className="sm:size-6 size-4 object-contain"
-              />
+              {nav?.icons?.close ? (
+                <Image
+                  src={nav.icons.close}
+                  alt="nav_hamburger_menu"
+                  width={24}
+                  height={24}
+                  className="sm:size-6 size-4 object-contain"
+                />
+              ) : null}
             </motion.div>
+
             <motion.div
               variants={{
                 closed: { opacity: 0, visibility: "hidden" },
@@ -59,84 +62,76 @@ export default function Navbar({ navbar }) {
               }}
               className="absolute inset-0 flex items-center justify-center"
             >
-              <Image
-                src={navbar.nav_icon_open}
-                alt="nav_hamburger_menu_x"
-                width={24}
-                height={24}
-                className="size-4 object-contain"
-              />
+              {navbar?.icons?.open ? (
+                <Image
+                  src={navbar.icons.open}
+                  alt="nav_hamburger_menu_x"
+                  width={24}
+                  height={24}
+                  className="size-4 object-contain"
+                />
+              ) : null}
             </motion.div>
           </motion.div>
+
           <div className="border border-l-2 border-n-300 h-screen p-section flex flex-col justify-between items-stretch bg-background">
+
             <div className="flex flex-col justify-start items-stretch gap-3">
-              <Nav_link
-                nav_link={navbar.nav_link1}
-                nav_text={navbar.nav_text1}
-                variant={navbar.nav_variant1}
-                setOpen={setOpen}
-              />
-              {isHome && (
-                <>
+              {navbar?.menu_links?.map((item, index) => {
+                if (!isHome && index > 0) return null;
+
+                return (
                   <Nav_link
-                    nav_link={navbar.nav_link2}
-                    nav_text={navbar.nav_text2}
-                    variant={navbar.nav_variant2}
+                    key={index}
+                    nav_link={item.link}
+                    nav_text={item.text}
+                    variant={item.variant}
                     setOpen={setOpen}
                   />
-                  <Nav_link
-                    nav_link={navbar.nav_link3}
-                    nav_text={navbar.nav_text3}
-                    variant={navbar.nav_variant3}
-                    setOpen={setOpen}
-                  />
-                  <Nav_link
-                    nav_link={navbar.nav_link4}
-                    nav_text={navbar.nav_text4}
-                    variant={navbar.nav_variant4}
-                    setOpen={setOpen}
-                  />
-                </>
-              )}
+                );
+              })}
             </div>
+
             <div className="flex flex-col justify-stretch items-start md:gap-5 sm:gap-1.5 gap-5">
               <div className="flex flex-row justify-between items-end w-full">
                 <div className="relative md:w-40 sm:w-20 w-30 md:h-15 sm:h-8 h-10">
-                  <Image
-                    src={navbar.nav_logo}
-                    alt="nav_logo"
-                    fill
-                    sizes="(max-width: 768px) 5rem, 10rem"
-                  />
+                  {navbar?.logo ? (
+                    <Image
+                      src={navbar.logo}
+                      alt="nav_logo"
+                      fill
+                      sizes="(max-width: 768px) 5rem, 10rem"
+                    />
+                  ) : null}
                 </div>
+
                 <div className="flex flex-row justify-center items-end gap-2">
-                  <Nav_link
-                    nav_link={navbar.nav_link5}
-                    nav_icon={navbar.nav_icon1}
-                    variant={navbar.nav_variant5}
-                    setOpen={setOpen}
-                  />
-                  <Nav_link
-                    nav_link={navbar.nav_link6}
-                    nav_icon={navbar.nav_icon2}
-                    variant={navbar.nav_variant6}
-                    setOpen={setOpen}
-                  />
-                  <Nav_link
-                    nav_link={navbar.nav_link7}
-                    nav_icon={navbar.nav_icon3}
-                    variant={navbar.nav_variant7}
-                    setOpen={setOpen}
-                  />
+                  {navbar?.social_links
+                    ?.filter((item) => item.variant === "icon")
+                    ?.map((item, index) => (
+                      <Nav_link
+                        key={index}
+                        nav_link={item.link}
+                        nav_icon={item.icon}
+                        variant={item.variant}
+                        setOpen={setOpen}
+                      />
+                    ))}
                 </div>
               </div>
-              <Nav_link
-                nav_link={navbar.nav_link8}
-                nav_icon={navbar.nav_icon4}
-                nav_text={navbar.nav_text5}
-                variant={navbar.nav_variant8}
-                setOpen={setOpen}
-              />
+
+              {navbar?.social_links
+                ?.filter((item) => item.variant === "text-icon")
+                ?.map((item, index) => (
+                  <Nav_link
+                    key={index}
+                    nav_link={item.link}
+                    nav_icon={item.icon}
+                    nav_text={item.text}
+                    variant={item.variant}
+                    setOpen={setOpen}
+                  />
+                ))}
             </div>
           </div>
         </div>
