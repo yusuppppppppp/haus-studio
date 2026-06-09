@@ -4,12 +4,12 @@ export default function Section_contact({ contact }) {
   return (
     <section className="bg-background overflow-hidden px-section pb-35 pt-2.5">
       <div className="w-full h-full mx-auto max-w-400">
-        <div className="flex flex-col gap-30">
+        <div className="flex flex-col md:gap-30 gap-15">
           <h1 className="text-fd-l font-primary font-display uppercase text-center leading-tightest">
             {contact?.title}
           </h1>
-          <div className="w-full flex flex-row justify-between items-start">
-            <div className="flex flex-row gap-10">
+          <div className="w-full flex sm:flex-row flex-col justify-between items-start sm:gap-0 gap-10">
+            <div className="flex lg:flex-row sm:flex-col gap-10">
               <div className="flex flex-col gap-5">
                 <h2 className="font-secondary font-body-secondary text-b-m leading-relaxed justify-center capitalize max-w-45">
                   {contact?.location}
@@ -30,7 +30,7 @@ export default function Section_contact({ contact }) {
                 {contact?.description}
               </p>
             </div>
-            <div className="w-[50%]">
+            <div className="lg:w-[50%] sm:w-[63%]">
               <Contact_from
                 placeholderName={contact?.placeholder?.name}
                 placeholderEmail={contact?.placeholder?.email}
