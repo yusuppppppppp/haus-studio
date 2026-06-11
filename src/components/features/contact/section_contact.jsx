@@ -1,4 +1,4 @@
-import Contact_from from "../contact_form/contact_from";
+import Contact_from from "./contact_from";
 
 export default function Section_contact({ contact }) {
   return (
@@ -30,7 +30,7 @@ export default function Section_contact({ contact }) {
                 {contact?.description}
               </p>
             </div>
-            <div className="lg:w-[50%] sm:w-[63%]">
+            <div className="lg:w-[50%] sm:w-[63%] w-full">
               <Contact_from
                 placeholderName={contact?.placeholder?.name}
                 placeholderEmail={contact?.placeholder?.email}

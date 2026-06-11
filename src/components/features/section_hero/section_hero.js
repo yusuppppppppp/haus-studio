@@ -1,1 +1,0 @@
-export { default as Section_hero } from "./section_hero"

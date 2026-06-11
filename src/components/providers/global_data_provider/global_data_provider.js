@@ -1,1 +1,0 @@
-export { default as Global_data_provider } from "./global_data_provider"

@@ -1,1 +1,0 @@
-export {default as Smooth_sticky} from "./smooth_sticky"

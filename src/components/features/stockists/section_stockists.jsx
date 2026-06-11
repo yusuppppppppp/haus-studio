@@ -3,8 +3,8 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Stagger_word from "@/animations/stagger_word/stagger_word";
-import Stockists_card from "../stockists_card/stockists_card";
-import Smooth_sticky from "../../../ui/smooth_sticky/smooth_sticky";
+import Stockists_card from "./stockists_card";
+import Smooth_sticky from "../../ui/smooth_sticky/smooth_sticky";
 import useStockistsAnimation from "@/hooks/useStockistsAnimation";
 import useStockistsMobileReveal from "@/hooks/useStockistsMobileReveal";
 import { getStockistsCard } from "@/data/getStockistsCard";

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "email": "bunx react-email dev --dir src/emails"
   },
   "dependencies": {
     "@react-email/components": "^1.0.12",
@@ -22,10 +23,12 @@
     "sonner": "^2.0.7"
   },
   "devDependencies": {
+    "@react-email/ui": "6.6.0",
     "@tailwindcss/postcss": "^4",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
+    "react-email": "^6.6.0",
     "tailwindcss": "^4"
   }
 }

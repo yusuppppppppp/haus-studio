@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import Nav_link from "../nav_link/nav_link";
+import Nav_link from "./nav_link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 

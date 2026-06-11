@@ -1,1 +1,0 @@
-export { default as Section_Lookbook_to_about } from "./section_lookbook_to_about"

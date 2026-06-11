@@ -1,1 +1,0 @@
-export { default as Stagger_word } from "./stagger_word"

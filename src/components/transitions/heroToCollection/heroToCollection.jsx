@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Smooth_sticky from "../../ui/smooth_sticky/smooth_sticky";
 import { useRef } from "react";
 import Section_hero from "../../features/section_hero/section_hero";
-import Section_collection from "../../features/collection/section_collection/section_collection";
+import Section_collection from "../../features/collection/section_collection";
 
 export default function HeroToCollection({ hero, collection }) {
   const ref = useRef(null);

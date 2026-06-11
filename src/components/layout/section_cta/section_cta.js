@@ -1,1 +1,0 @@
-export { default as Section_cta } from "./section_cta"

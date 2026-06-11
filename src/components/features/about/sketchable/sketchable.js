@@ -1,1 +1,0 @@
-export { default as Sketchable } from "./sketchable"

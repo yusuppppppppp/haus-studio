@@ -1,7 +1,7 @@
 "use client";
 import Stragger_word from "@/animations/stagger_word/stagger_word";
 import Stragger_heading from "@/animations/stagger_heading/stagger_heading";
-import Sketchable from "../sketchable/sketchable";
+import Sketchable from "./sketchable";
 
 export default function Section_about({ about }) {
   return (

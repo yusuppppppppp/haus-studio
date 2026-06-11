@@ -1,1 +1,0 @@
-export { default as Smooth_scroll } from "./smooth_scroll"

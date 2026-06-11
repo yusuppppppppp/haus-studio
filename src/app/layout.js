@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
             className: "font-medium",
           }}
         />
-        <Analytics/>
+        <Analytics />
       </body>
     </html>
   );

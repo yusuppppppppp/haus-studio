@@ -1,5 +1,5 @@
 "use client";
-import Collection_item from "../collection_item/collection_item";
+import Collection_item from "./collection_item";
 import Stagger_heading from "@/animations/stagger_heading/stagger_heading";
 import Stagger_word from "@/animations/stagger_word/stagger_word";
 import {

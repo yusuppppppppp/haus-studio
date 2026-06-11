@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Button } from "../../ui/button";
+import Button from "../../ui/button/button";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import Stragger_word from "@/animations/stagger_word/stagger_word";

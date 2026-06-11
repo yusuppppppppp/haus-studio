@@ -1,6 +1,6 @@
 "use client";
 
-import Lookbook_item from "../lookbook_item/lookbook_item";
+import Lookbook_item from "./lookbook_item";
 import Stragger_heading from "@/animations/stagger_heading/stagger_heading";
 import Stragger_word from "@/animations/stagger_word/stagger_word";
 

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Stragger_heading from "@/animations/stagger_heading/stagger_heading";
 import Stragger_word from "@/animations/stagger_word/stagger_word";
-import { Button } from "../../ui/button";
+import Button from "../../ui/button/button";
 import Reveal_up from "@/animations/reveal_up/reveal_up";
 
 export default function Section_hero({ hero }) {
