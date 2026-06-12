@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       data-scroll-behavior="smooth"
       className={`${anton.variable} ${archivo.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col selection:bg-amber-400">
         <Global_data_provider>{children}</Global_data_provider>
         <Toaster
           position="bottom-right"

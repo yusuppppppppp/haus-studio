@@ -74,42 +74,42 @@ export default function Section_lookbook({ lookbook }) {
             <div className="flex flex-col justify-stretch items-stretch w-full">
 
               {/* Row 1 */}
-              <div className={`${styles.row}`}>
+              <div className={styles.row}>
                 <Lookbook_item item={items[0]} variant="span-1" button_text={btn} className={`${styles.cardNormal} ${styles.card}`} />
                 <Lookbook_item item={items[1]} variant="span-1" button_text={btn} className={`${styles.cardNormal} ${styles.card}`} />
-                <div className={`${styles.spacerDesktop}`}></div>
+                <div className={styles.spacerDesktop}></div>
                 <Lookbook_item item={items[2]} variant="span-1" button_text={btn} className={`${styles.cardDesktop} ${styles.card}`} />
               </div>
 
               {/* Row 2 */}
-              <div className={`${styles.row}`}>
+              <div className={styles.row}>
                 <Lookbook_item item={items[3]} variant="span-2" button_text={btn} className={`${styles.cardWide} ${styles.card}`} />
-                <div className={`${styles.wrapperSpan2}`}>
-                  <div className={`${styles.cols2}`}>
+                <div className={styles.wrapperSpan2}>
+                  <div className={styles.cols2}>
                     <Lookbook_item item={items[4]} variant="span-1" button_text={btn} className={`${styles.responsiveSpan} ${styles.card}`} />
-                    <div className={`${styles.spacerTablet}`}></div>
-                    <div className={`${styles.spacerTablet}`}></div>
+                    <div className={styles.spacerTablet}></div>
+                    <div className={styles.spacerTablet}></div>
                     <Lookbook_item item={items[5]} variant="span-1" button_text={btn} className={`${styles.cardTablet} ${styles.card}`} />
                   </div>
                 </div>
               </div>
 
               {/* Row 3 */}
-              <div className={`${styles.row}`}>
+              <div className={styles.row}>
                 <Lookbook_item item={items[6]} variant="span-1" button_text={btn} className={`${styles.cardDesktop} ${styles.card}`} />
-                <div className={`${styles.spacerDesktop}`}></div>
+                <div className={styles.spacerDesktop}></div>
                 <Lookbook_item item={items[7]} variant="span-1" button_text={btn} className={`${styles.cardNormal} ${styles.card}`} />
                 <Lookbook_item item={items[8]} variant="span-1" button_text={btn} className={`${styles.cardNormal} ${styles.card}`} />
               </div>
 
               {/* Row 4 */}
-              <div className={`${styles.row}`}>
-                <div className={`${styles.wrapperSpan2}`}>
-                  <div className={`${styles.cols2}`}>
-                    <div className={`${styles.spacerTablet}`}></div>
+              <div className={styles.row}>
+                <div className={styles.wrapperSpan2}>
+                  <div className={styles.cols2}>
+                    <div className={styles.spacerTablet}></div>
                     <Lookbook_item item={items[9]} variant="span-1" button_text={btn} className={`${styles.responsiveSpan} ${styles.card}`} />
                     <Lookbook_item item={items[10]} variant="span-1" button_text={btn} className={`${styles.cardTablet} ${styles.card}`} />
-                    <div className={`${styles.spacerTablet}`}></div>
+                    <div className={styles.spacerTablet}></div>
                   </div>
                 </div>
                 <Lookbook_item item={items[11]} variant="span-2" button_text={btn} className={`${styles.cardWide} ${styles.card}`} />

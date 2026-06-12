@@ -4,12 +4,11 @@ import Footer_nav from "./footer_nav";
 import Stragger_word from "@/animations/stagger_word/stagger_word";
 import { motion, AnimatePresence } from "framer-motion";
 import useFooterImage from "@/hooks/useFooterImage";
-import { label, footerNav } from "@/data/sectionFooter";
 
 export default function Section_footer({ footer }) {
   const footerImage = footer?.right_images || [];
 
-  const { currentImage, setCurrentImage, setIsHovering, isHovering } =
+  const { currentImage, setCurrentImage, setIsHovering } =
     useFooterImage(footerImage);
 
   return (
