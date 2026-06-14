@@ -3,7 +3,7 @@ import Collection_item from "./collection_item";
 import Stagger_heading from "@/animations/stagger_heading/stagger_heading";
 import Stagger_word from "@/animations/stagger_word/stagger_word";
 
-const margins = [
+const MARGINS = [
   "lg:ml-[100%]",
   "lg:ml-[85%]",
   "lg:ml-[70%]",
@@ -16,6 +16,9 @@ const margins = [
   "lg:ml-[-35%]",
 ];
 
+
+const PARAGRAPH_STYLES = "font-secondary font-body-secondary text-b-m leading-relaxed"
+
 export default function Section_collection({ collection }) {
   const {
     subtitles = [],
@@ -27,8 +30,6 @@ export default function Section_collection({ collection }) {
 
   const items = [...collectionItems].reverse();
 
-  const paragraphStyles = "font-secondary font-body-secondary text-b-m leading-relaxed"
-
   return (
     <>
       <section
@@ -39,16 +40,16 @@ export default function Section_collection({ collection }) {
           <div className="max-w-205 flex flex-col lg:gap-45 sm:gap-25 gap-15 mx-auto pb-50 mix-blend-screen">
             <div className="flex flex-col justify-center">
               <div className="flex flex-col justify-center">
-                <p className={`${paragraphStyles} sm:max-w-100 max-w-65 uppercase`}>
+                <p className={`${PARAGRAPH_STYLES} sm:max-w-100 max-w-65 uppercase`}>
                   {subtitles[0]}
                 </p>
-                <p className={`${paragraphStyles} sm:max-w-150 max-w-65 uppercase sm:pl-25 pl-0`}>
+                <p className={`${PARAGRAPH_STYLES} sm:max-w-150 max-w-65 uppercase sm:pl-25 pl-0`}>
                   {subtitles[1]}
                 </p>
               </div>
             </div>
             <div className="flex sm:flex-row flex-col sm:gap-25 gap-5 justify-end sm:pl-0 pl-20">
-              <p className={`${paragraphStyles} uppercase`}>
+              <p className={`${PARAGRAPH_STYLES} uppercase`}>
                 {title_paragraph}
               </p>
               <div className="flex flex-col justify-start max-w-77 gap-6.5">
@@ -58,7 +59,7 @@ export default function Section_collection({ collection }) {
                       as="p"
                       delay={0.2 + index * 0.1}
                       key={index}
-                      className={paragraphStyles}
+                      className={PARAGRAPH_STYLES}
                     >
                       {paragraph}
                     </Stagger_word>
@@ -87,7 +88,7 @@ export default function Section_collection({ collection }) {
               item?.image_url && item?.name ? (
                 <div
                   key={item.id || index}
-                  className={`lg:absolute block items-start ${margins[index] || ""} ml-0 lg:skew-y-30 skew-y-0`}
+                  className={`lg:absolute block items-start ${MARGINS[index] || ""} ml-0 lg:skew-y-30 skew-y-0`}
                 >
                   <Collection_item
                     images_path={item.image_url}

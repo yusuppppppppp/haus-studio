@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import Stragger_heading from "@/animations/stagger_heading/stagger_heading";
 import Stragger_word from "@/animations/stagger_word/stagger_word";
 
+const PARAGRAPH_STYLES = "font-secondary font-body-secondary text-b-s leading-relaxed"
+
 export default function Stockists_card({
   y,
   label,
@@ -56,13 +58,13 @@ export default function Stockists_card({
         <div className="flex flex-col justify-stretch items-start gap-3.5">
           <Stragger_word
             as="p"
-            className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80"
+            className={`${PARAGRAPH_STYLES} text-n-100/80`}
           >
             {paragraph1}
           </Stragger_word>
           <Stragger_word
             as="p"
-            className="font-secondary font-body-secondary text-b-s leading-relaxed text-n-100/80"
+            className={`${PARAGRAPH_STYLES} text-n-100/80`}
           >
             {paragraph2}
           </Stragger_word>

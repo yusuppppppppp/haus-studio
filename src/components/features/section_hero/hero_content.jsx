@@ -4,6 +4,8 @@ import Stagger_word from "@/animations/stagger_word/stagger_word";
 import Button from "@/components/ui/button/button";
 import Reveal_up from "@/animations/reveal_up/reveal_up";
 
+const UPPERCASE_PARAGRAPH = "font-primary font-body-secondary text-b-l leading-tight uppercase"
+
 export default function Hero_content({
   subtitle,
   headingDescription,
@@ -19,7 +21,7 @@ export default function Hero_content({
           <Stagger_word
             delay={3}
             as="p"
-            className="font-primary font-body-secondary text-b-l leading-tight uppercase md:max-w-47.5 sm:max-w-30 max-w-30"
+            className={`${UPPERCASE_PARAGRAPH} md:max-w-47.5 sm:max-w-30 max-w-30`}
           >
             {subtitle}
           </Stagger_word>
@@ -29,14 +31,14 @@ export default function Hero_content({
             <Stagger_word
               delay={3}
               as="p"
-              className="font-primary font-body-secondary text-b-l leading-tight uppercase max-w-47.5 "
+              className={`${UPPERCASE_PARAGRAPH} max-w-47.5`}
             >
               {headingDescription}
             </Stagger_word>
             <Stagger_word
               delay={3}
               as="p"
-              className="font-primary font-body-secondary text-b-l leading-tight uppercase max-w-47.5 "
+              className={`${UPPERCASE_PARAGRAPH} max-w-47.5`}
             >
               {headingNumber}
             </Stagger_word>
@@ -51,7 +53,7 @@ export default function Hero_content({
           <Stagger_word
             delay={3}
             as="p"
-            className="font-primary font-body-secondary text-b-l leading-tight uppercase text-end md:max-w-47.5 sm:max-w-30 max-w-35 sm:hidden block sm:self-center self-end justify-end pt-10"
+            className={`${UPPERCASE_PARAGRAPH} text-end md:max-w-47.5 sm:max-w-30 max-w-35 sm:hidden block sm:self-center self-end justify-end pt-10`}
           >
             {subtitle}
           </Stagger_word>

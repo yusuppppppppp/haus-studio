@@ -4,42 +4,47 @@ import Lookbook_item from "./lookbook_item";
 import Stagger_heading from "@/animations/stagger_heading/stagger_heading";
 import Stagger_word from "@/animations/stagger_word/stagger_word";
 
+const STYLES = {
+  row: "grid sm:grid-cols-4 grid-cols-1",
+
+  cols2: "w-full h-full grid grid-cols-2",
+
+  card:
+    "p-2 flex flex-col gap-13 justify-between items-start border border-n-300",
+
+  cardNormal:
+    "lg:col-span-1 col-span-2",
+
+  cardWide:
+    "col-span-2",
+
+  cardDesktop:
+    "col-span-1 lg:flex hidden",
+
+  cardTablet:
+    "col-span-1 md:flex hidden",
+
+  spacerTablet:
+    "bg-background col-span-1 h-130 w-100 md:block hidden",
+
+  spacerDesktop:
+    "bg-background col-span-1 h-130 w-100 lg:block hidden",
+
+  responsiveSpan:
+    "md:col-span-1 col-span-2",
+
+  wrapperSpan2:
+    "col-span-2 flex flex-col justify-stretch items-stretch",
+}
+
 export default function Section_lookbook({ lookbook }) {
-  const items = lookbook?.items || [];
-  const btn = lookbook?.button_text;
-
-  const styles = {
-    row: "grid sm:grid-cols-4 grid-cols-1",
-
-    cols2: "w-full h-full grid grid-cols-2",
-
-    card:
-      "p-2 flex flex-col gap-13 justify-between items-start border border-n-300",
-
-    cardNormal:
-      "lg:col-span-1 col-span-2",
-
-    cardWide:
-      "col-span-2",
-
-    cardDesktop:
-      "col-span-1 lg:flex hidden",
-
-    cardTablet:
-      "col-span-1 md:flex hidden",
-
-    spacerTablet:
-      "bg-background col-span-1 h-130 w-100 md:block hidden",
-
-    spacerDesktop:
-      "bg-background col-span-1 h-130 w-100 lg:block hidden",
-
-    responsiveSpan:
-      "md:col-span-1 col-span-2",
-
-    wrapperSpan2:
-      "col-span-2 flex flex-col justify-stretch items-stretch",
-  }
+  const {
+    items = [],
+    button_text: buttonText,
+    heading,
+    subheading,
+    paragraph,
+  } = lookbook || {};
 
   return (
     <>
@@ -54,17 +59,17 @@ export default function Section_lookbook({ lookbook }) {
                 as="h2"
                 className="font-primary font-heading text-h2 leading-tightest uppercase lg:max-w-130 md:max-w-150 sm:max-w-90 max-w-50 self-center justify-center"
               >
-                {lookbook?.heading}
+                {heading}
               </Stagger_heading>
               <div className="flex flex-col justify-stretch item-center gap-10 max-w-90 self-center">
                 <Stagger_word
                   delay={0.2}
                   as="p"
                   className="font-secondary font-body-secondary text-b-m leading-relaxed justify-center uppercase">
-                  {lookbook?.subheading}
+                  {subheading}
                 </Stagger_word>
                 <Stagger_word delay={0.2} as="p" className="font-secondary font-body-secondary text-b-m leading-relaxed justify-center">
-                  {lookbook?.paragraph}
+                  {paragraph}
                 </Stagger_word>
               </div>
             </div>
@@ -74,45 +79,45 @@ export default function Section_lookbook({ lookbook }) {
             <div className="flex flex-col justify-stretch items-stretch w-full">
 
               {/* Row 1 */}
-              <div className={styles.row}>
-                <Lookbook_item item={items[0]} variant="span-1" button_text={btn} className={`${styles.cardNormal} ${styles.card}`} />
-                <Lookbook_item item={items[1]} variant="span-1" button_text={btn} className={`${styles.cardNormal} ${styles.card}`} />
-                <div className={styles.spacerDesktop}></div>
-                <Lookbook_item item={items[2]} variant="span-1" button_text={btn} className={`${styles.cardDesktop} ${styles.card}`} />
+              <div className={STYLES.row}>
+                <Lookbook_item item={items[0]} variant="span-1" button_text={buttonText} className={`${STYLES.cardNormal} ${ STYLES.card}`} />
+                <Lookbook_item item={items[1]} variant="span-1" button_text={buttonText} className={`${STYLES.cardNormal} ${ STYLES.card}`} />
+                <div className={ STYLES.spacerDesktop}></div>
+                <Lookbook_item item={items[2]} variant="span-1" button_text={buttonText} className={`${STYLES.cardDesktop} ${STYLES.card}`} />
               </div>
 
               {/* Row 2 */}
-              <div className={styles.row}>
-                <Lookbook_item item={items[3]} variant="span-2" button_text={btn} className={`${styles.cardWide} ${styles.card}`} />
-                <div className={styles.wrapperSpan2}>
-                  <div className={styles.cols2}>
-                    <Lookbook_item item={items[4]} variant="span-1" button_text={btn} className={`${styles.responsiveSpan} ${styles.card}`} />
-                    <div className={styles.spacerTablet}></div>
-                    <div className={styles.spacerTablet}></div>
-                    <Lookbook_item item={items[5]} variant="span-1" button_text={btn} className={`${styles.cardTablet} ${styles.card}`} />
+              <div className={ STYLES.row}>
+                <Lookbook_item item={items[3]} variant="span-2" button_text={buttonText} className={`${STYLES.cardWide} ${ STYLES.card}`} />
+                <div className={ STYLES.wrapperSpan2}>
+                  <div className={ STYLES.cols2}>
+                    <Lookbook_item item={items[4]} variant="span-1" button_text={buttonText} className={`${STYLES.responsiveSpan} ${ STYLES.card}`} />
+                    <div className={ STYLES.spacerTablet}></div>
+                    <div className={ STYLES.spacerTablet}></div>
+                    <Lookbook_item item={items[5]} variant="span-1" button_text={buttonText} className={`${STYLES.cardTablet} ${ STYLES.card}`} />
                   </div>
                 </div>
               </div>
 
               {/* Row 3 */}
-              <div className={styles.row}>
-                <Lookbook_item item={items[6]} variant="span-1" button_text={btn} className={`${styles.cardDesktop} ${styles.card}`} />
-                <div className={styles.spacerDesktop}></div>
-                <Lookbook_item item={items[7]} variant="span-1" button_text={btn} className={`${styles.cardNormal} ${styles.card}`} />
-                <Lookbook_item item={items[8]} variant="span-1" button_text={btn} className={`${styles.cardNormal} ${styles.card}`} />
+              <div className={ STYLES.row}>
+                <Lookbook_item item={items[6]} variant="span-1" button_text={buttonText} className={`${STYLES.cardDesktop} ${STYLES.card}`} />
+                <div className={ STYLES.spacerDesktop}></div>
+                <Lookbook_item item={items[7]} variant="span-1" button_text={buttonText} className={`${STYLES.cardNormal} ${ STYLES.card}`} />
+                <Lookbook_item item={items[8]} variant="span-1" button_text={buttonText} className={`${STYLES.cardNormal} ${ STYLES.card}`} />
               </div>
 
               {/* Row 4 */}
-              <div className={styles.row}>
-                <div className={styles.wrapperSpan2}>
-                  <div className={styles.cols2}>
-                    <div className={styles.spacerTablet}></div>
-                    <Lookbook_item item={items[9]} variant="span-1" button_text={btn} className={`${styles.responsiveSpan} ${styles.card}`} />
-                    <Lookbook_item item={items[10]} variant="span-1" button_text={btn} className={`${styles.cardTablet} ${styles.card}`} />
-                    <div className={styles.spacerTablet}></div>
+              <div className={ STYLES.row}>
+                <div className={ STYLES.wrapperSpan2}>
+                  <div className={ STYLES.cols2}>
+                    <div className={ STYLES.spacerTablet}></div>
+                    <Lookbook_item item={items[9]} variant="span-1" button_text={buttonText} className={`${STYLES.responsiveSpan} ${ STYLES.card}`} />
+                    <Lookbook_item item={items[10]} variant="span-1" button_text={buttonText} className={`${ STYLES.cardTablet} ${STYLES.card}`} />
+                    <div className={ STYLES.spacerTablet}></div>
                   </div>
                 </div>
-                <Lookbook_item item={items[11]} variant="span-2" button_text={btn} className={`${styles.cardWide} ${styles.card}`} />
+                <Lookbook_item item={items[11]} variant="span-2" button_text={buttonText} className={`${ STYLES.cardWide} ${STYLES.card}`} />
               </div>
 
             </div>

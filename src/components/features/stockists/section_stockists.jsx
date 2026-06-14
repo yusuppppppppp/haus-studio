@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import Stagger_word from "@/animations/stagger_word/stagger_word";
 import Stockists_card from "./stockists_card";
@@ -8,6 +8,13 @@ import Smooth_sticky from "../../ui/smooth_sticky/smooth_sticky";
 import useStockistsAnimation from "@/hooks/useStockistsAnimation";
 import useStockistsMobileReveal from "@/hooks/useStockistsMobileReveal";
 import { getStockistsCard } from "@/data/getStockistsCard";
+
+const PARAGRAPH_STYLES = "font-secondary font-body-secondary text-b-m leading-relaxed text-n-100"
+
+const CARD_TRANSIION = {
+  duration: 1,
+  ease: [0.65, 0, 0.35, 1],
+}
 
 function AnimatedCard({ card, index }) {
   const cardRef = useRef(null);
@@ -31,8 +38,7 @@ function AnimatedCard({ card, index }) {
       }
       initial={isMobileReady ? { y: 120, opacity: 0 } : false}
       transition={{
-        duration: 1,
-        ease: [0.65, 0, 0.35, 1],
+        ...CARD_TRANSIION,
         delay: isMobileReady ? index * 0.15 : 0,
       }}
       className="relative will-change-[transform,opacity]"
@@ -74,6 +80,10 @@ export default function Section_stockists({ stockists }) {
     stockistsCard4,
   })
 
+  const {
+    labels = [],
+  } = stockists || {};
+
   return (
     <motion.div
       ref={ref}
@@ -95,16 +105,16 @@ export default function Section_stockists({ stockists }) {
               <Stagger_word
                 delay={0.3}
                 as="p"
-                className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100 text-end 2xl:pl-23 xl:pl-10 lg:pl-0 pl-23"
+                className={`${PARAGRAPH_STYLES} text-end 2xl:pl-23 xl:pl-10 lg:pl-0 pl-23`}
               >
-                {stockists?.labels[0]}
+                {labels[0]}
               </Stagger_word>
               <Stagger_word
                 delay={0.4}
                 as="p"
-                className="font-secondary font-body-secondary text-b-m leading-relaxed text-n-100"
+                className={PARAGRAPH_STYLES}
               >
-                {stockists?.labels[1]}
+                {labels[1]}
               </Stagger_word>
             </div>
             <div className="flex md:flex-row flex-col justify-stretch items-start gap-5 sm:w-auto w-full">

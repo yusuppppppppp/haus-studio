@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const imageAnimation = {
+const IMAGE_ANIMATION = {
   initial: { opacity: 0.1, rotate: -25, scale: 2 },
   whileInView: { opacity: 1, rotate: 0, scale: 1 },
   viewport: { once: true },
@@ -20,7 +20,7 @@ export default function Hero_image({ image }) {
       <div className="relative 2xl:w-107 xl:w-100 lg:w-90 md:w-80 sm:w-60 w-65 md:h-125 sm:h-80 h-120 sm:self-center self-start overflow-hidden z-10 2xl:mr-25 xl:mr-10 lg:mr-17 mr-0 sm:ml-0 ml-5">
         {image && (
           <motion.div
-            {...imageAnimation}
+            {...IMAGE_ANIMATION}
             className="will-change-transform sm:absolute block w-full h-full"
           >
             <Image

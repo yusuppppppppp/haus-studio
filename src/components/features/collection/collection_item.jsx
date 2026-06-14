@@ -3,12 +3,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const imageVariants = {
+const IMAGE_VARIANTS = {
   rest: { x: 0, y: 0 },
   hover: { x: 80, y: -10 },
 };
 
-const labelVariants = {
+const LABEL_VARIANTS = {
   rest: { opacity: 0, y: 50 },
   hover: { opacity: 1, y: 0 },
 };
@@ -35,7 +35,7 @@ export default function Collection_item({ images_path, collection_name }) {
     >
       <motion.div
         className="relative w-full h-full"
-        variants={imageVariants}
+        variants={IMAGE_VARIANTS}
         transition={{ type: "spring", stiffness: 200, damping: 20 }}
       >
         {images_path && (
@@ -50,7 +50,7 @@ export default function Collection_item({ images_path, collection_name }) {
       </motion.div>
       <motion.div
         className="absolute flex items-end justify-end ml-45 -mt-40 "
-        variants={labelVariants}
+        variants={LABEL_VARIANTS}
         transition={{
           ease: [0.65, 0, 0.35, 1],
         }}

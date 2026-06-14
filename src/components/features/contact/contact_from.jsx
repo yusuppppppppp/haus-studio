@@ -4,6 +4,8 @@ import { useState } from "react";
 import { toast } from "sonner";
 import Button from "../../ui/button/button";
 
+const BORDER_STYLES = "border border-n-400 border-dashed";
+
 export default function Contact_from({ placeholderName, placeholderEmail, placeholderMessage, process, success }) {
   const [loading, setLoading] = useState(false);
 
@@ -61,8 +63,6 @@ export default function Contact_from({ placeholderName, placeholderEmail, placeh
     setLoading(false);
   }
 
-  const border = "border border-n-400 border-dashed";
-
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 border border-n-300 p-3 w-full">
       <div className="flex lg:flex-row flex-col justify-stretch items-stretch gap-4 w-full">
@@ -73,7 +73,7 @@ export default function Contact_from({ placeholderName, placeholderEmail, placeh
           value={form.name}
           onChange={handleChange}
           required
-          className={`${border} p-3 w-full`}
+          className={`${BORDER_STYLES} p-3 w-full`}
         />
 
         <input
@@ -83,7 +83,7 @@ export default function Contact_from({ placeholderName, placeholderEmail, placeh
           value={form.email}
           onChange={handleChange}
           required
-          className={`${border} p-3 lg:w-[60%] w-full`}
+          className={`${BORDER_STYLES} p-3 lg:w-[60%] w-full`}
         />
       </div>
 
@@ -93,7 +93,7 @@ export default function Contact_from({ placeholderName, placeholderEmail, placeh
         value={form.message}
         onChange={handleChange}
         required
-        className={`${border} p-3 h-40`}
+        className={`${BORDER_STYLES} p-3 h-40`}
       />
 
       <Button
