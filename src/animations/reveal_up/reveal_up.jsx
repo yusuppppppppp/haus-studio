@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { EASE_IN_OUT } from "../ease_in_out/ease_in_out";
 
 export default function Reveal_up({
   children,
@@ -8,7 +9,6 @@ export default function Reveal_up({
   className,
 }) {
   return (
-    <>
       <motion.div
         className={className}
         initial={{ y: "100%", opacity: 0 }}
@@ -18,12 +18,11 @@ export default function Reveal_up({
         }}
         transition={{
           delay,
-          duration: 0.7,
-          ease: [0.65, 0, 0.35, 1],
+          duration,
+          ease: EASE_IN_OUT,
         }}
       >
         {children}
       </motion.div>
-    </>
   );
 }

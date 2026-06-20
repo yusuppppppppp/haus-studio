@@ -1,0 +1,1 @@
+export const EASE_IN_OUT = [0.65, 0, 0.35, 1];

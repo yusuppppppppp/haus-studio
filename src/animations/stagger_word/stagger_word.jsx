@@ -1,5 +1,15 @@
 "use client";
 import { motion } from "framer-motion";
+import { EASE_IN_OUT } from "../ease_in_out/ease_in_out";
+
+const CHILD_VARIANT = {
+  hidden: {
+    y: "100%",
+  },
+  visible: {
+    y: "0%",
+  },
+};
 
 export default function Stagger_word({
   children,
@@ -11,9 +21,9 @@ export default function Stagger_word({
   amount = 0,
   ...props
 }) {
-  const MotionTag = 
-  
-  typeof as === "string" ? motion[as] : as;
+  const MotionTag =
+
+    typeof as === "string" ? motion[as] : as;
 
   const text = typeof children === "string" ? children : "";
 
@@ -25,19 +35,6 @@ export default function Stagger_word({
       transition: {
         staggerChildren: stragger,
         delayChildren: delay,
-      },
-    },
-  };
-
-  const child = {
-    hidden: {
-      y: "100%",
-    },
-    visible: {
-      y: "0%",
-      transition: {
-        duration,
-        ease: [0.65, 0, 0.35, 1],
       },
     },
   };
@@ -58,7 +55,11 @@ export default function Stagger_word({
         {words.map((word, index) => (
           <span key={index} className="overflow-hidden mr-[0.25em]">
             <motion.span
-              variants={child}
+              variants={CHILD_VARIANT}
+              transition={{
+                duration,
+                ease: EASE_IN_OUT,
+              }}
               className="inline-block will-change-transform"
             >
               {word}

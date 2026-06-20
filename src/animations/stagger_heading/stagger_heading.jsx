@@ -1,5 +1,19 @@
 "use client";
 import { motion } from "framer-motion";
+import { EASE_IN_OUT } from "../ease_in_out/ease_in_out";
+
+const CHILD_VARIANT = {
+  hidden: {
+    y: "130%",
+    rotate: 20,
+    opacity: 0,
+  },
+  visible: {
+    y: "0%",
+    rotate: 0,
+    opacity: 1,
+  },
+};
 
 export default function Stagger_heading({
   children,
@@ -26,46 +40,31 @@ export default function Stagger_heading({
     },
   };
 
-  const child = {
-    hidden: {
-      y: "130%",
-      rotate: 20,
-      opacity: 0,
-    },
-    visible: {
-      y: "0%",
-      rotate: 0,
-      opacity: 1,
-      transition: {
-        duration,
-        ease: [0.65, 0, 0.35, 1],
-      },
-    },
-  };
-
   return (
-    <>
-      <MotionTag
-        variants={container}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{
-          once: true,
-          amount: { amount },
-        }}
-        className={`flex flex-wrap ${className}`}
-      >
-        {words.map((word, index) => (
-          <span key={index} className="overflow-hidden mr-[0.25em]">
-            <motion.span
-              variants={child}
-              className="inline-block will-change-transform"
-            >
-              {word}
-            </motion.span>
-          </span>
-        ))}
-      </MotionTag>
-    </>
+    <MotionTag
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{
+        once: true,
+        amount,
+      }}
+      className={`flex flex-wrap ${className}`}
+    >
+      {words.map((word, index) => (
+        <span key={index} className="overflow-hidden mr-[0.25em]">
+          <motion.span
+            variants={CHILD_VARIANT}
+            transition={{
+              ease: EASE_IN_OUT,
+              duration,
+            }}
+            className="inline-block will-change-transform"
+          >
+            {word}
+          </motion.span>
+        </span>
+      ))}
+    </MotionTag>
   );
 }

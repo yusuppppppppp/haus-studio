@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import Button from "../../ui/button/button";
-import { useRef } from "react";
 import { motion } from "framer-motion";
 import Stragger_word from "@/animations/stagger_word/stagger_word";
 import Reveal_up from "@/animations/reveal_up/reveal_up";
@@ -9,16 +8,28 @@ import Stragger_heading from "@/animations/stagger_heading/stagger_heading";
 import Smooth_sticky from "../../ui/smooth_sticky/smooth_sticky";
 import useImageParallax from "@/hooks/useImageParallax";
 
+const PARAGRAPH_STYLES = "font-body-secondary font-secondary text-b-m leading-relaxed"
+
 export default function Section_cta({ cta }) {
   const { ref, scrollYProgress, imageMove } = useImageParallax();
+
+  const {
+    label,
+    heading,
+    image,
+    paragraphs = [],
+    button,
+  } = cta || {};
+
+  const {
+    link: buttonLink,
+    text: buttonText,
+  } = button || {};
 
   return (
     <>
       <motion.div
         ref={ref}
-        transition={{
-          ease: [0.65, 0, 0.35, 1],
-        }}
         className="relative h-[500vh]"
       >
         <Smooth_sticky
@@ -35,14 +46,14 @@ export default function Section_cta({ cta }) {
                     <Stragger_word
                       delay={0.4}
                       as="p"
-                      className="font-body-secondary font-secondary text-b-m leading-relaxed "
+                      className={PARAGRAPH_STYLES}
                     >
-                      {cta?.label}
+                      {label}
                     </Stragger_word>
                   </div>
                   <Reveal_up delay={0.4}>
-                    <Button link={cta?.button?.link}>
-                      {cta?.button?.text}
+                    <Button link={buttonLink}>
+                      {buttonText}
                     </Button>
                   </Reveal_up>
                 </div>
@@ -50,17 +61,17 @@ export default function Section_cta({ cta }) {
                   <Stragger_word
                     delay={0.6}
                     as="p"
-                    className="font-secondary font-body-secondary text-b-m leading-relaxed lg:max-w-85 max-w-60 sm:justify-start justify-center"
+                    className={`${PARAGRAPH_STYLES} lg:max-w-85 max-w-60 sm:justify-start justify-center`}
                   >
-                    {cta?.paragraphs?.[0]}
+                    {paragraphs[0]}
                   </Stragger_word>
                   <div className="sm:block hidden">
                     <Stragger_word
                       delay={0.6}
                       as="p"
-                      className="font-secondary font-body-secondary text-b-m leading-relaxed lg:max-w-85 max-w-60 justify-end"
+                      className={`${PARAGRAPH_STYLES} lg:max-w-85 max-w-60 justify-end`}
                     >
-                      {cta?.paragraphs?.[1]}
+                      {paragraphs[1]}
                     </Stragger_word>
                   </div>
                 </div>
@@ -69,19 +80,16 @@ export default function Section_cta({ cta }) {
                   as="h2"
                   className="font-primary font-display text-fd-l leading-tightest justify-center uppercase 2xl:w-312 xl:w-full lg:w-312 w-100 self-center text-n-100 mix-blend-difference 2xl:ml-0 xl:ml-20 lg:ml-15 sm:ml-10 ml-8"
                 >
-                  {cta?.heading}
+                  {heading}
                 </Stragger_heading>
               </div>
               <motion.div
                 style={{ y: imageMove }}
-                transition={{
-                  ease: [0.65, 0, 0.35, 1],
-                }}
                 className="relative will-change-transform w-full 2xl:h-[150vh] lg:h-[130vh] md:h-screen sm:h-[150vh] h-[110vh] z-10"
               >
-                {cta?.image ? (
+                {image ? (
                   <Image
-                    src={cta.image}
+                    src={image}
                     alt="cta-bg"
                     fill
                     className="object-cover sm:object-center object-[15%_50%]"

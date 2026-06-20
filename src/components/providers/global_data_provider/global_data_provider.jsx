@@ -1,11 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { supabase } from "@/lib/supabase";
 import Smooth_scroll from "../smooth_scroll/smooth_scroll";
 import Custom_cursor from "../custom_cursor/custom_cursor";
 import Navbar from "../../layout/section_navbar/navbar";
-import Section_footer from "../../layout/footer/section_footer";
 import { Global_data_context } from "@/context/global_data_context";
 import { getWebsiteData } from "@/services/website.service"
 
