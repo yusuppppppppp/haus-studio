@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { EASE_IN_OUT } from "@/animations/ease_in_out/ease_in_out";
+import Link from "next/link";
 
 const HOVER_VARIANT = {
   rest: { height: "0%" },
@@ -32,6 +33,8 @@ export default function Nav_link({
 }) {
   const sizeStyle = SIZE_STYLE[variant];
 
+  const MotionLink = motion.create(Link);
+
   function handleClick(e) {
     if (nav_link?.includes("#")) {
       const [path, hash] = nav_link.split("#");
@@ -49,7 +52,7 @@ export default function Nav_link({
   };
 
   return (
-    <motion.a
+    <MotionLink
       href={nav_link}
       onClick={handleClick}
       className={`${BASE_STYLE} relative flex flex-col justify-end`}
@@ -81,6 +84,6 @@ export default function Nav_link({
         variants={HOVER_VARIANT}
         transition={HOVER_TRANSITION}
       ></motion.div>
-    </motion.a>
+    </MotionLink>
   );
 }

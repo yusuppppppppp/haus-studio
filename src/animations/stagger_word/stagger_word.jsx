@@ -15,10 +15,11 @@ export default function Stagger_word({
   children,
   className = "",
   as = "div",
-  stragger = 0.01,
+  stagger = 0.01,
   duration = 0.5,
   delay = 0,
   amount = 0,
+  animate,
   ...props
 }) {
   const MotionTag =
@@ -33,11 +34,21 @@ export default function Stagger_word({
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: stragger,
+        staggerChildren: stagger,
         delayChildren: delay,
       },
     },
+
+    rest: {},
+    animate: {
+      staggerChildren: stagger,
+      delayChildren: delay,
+    }
   };
+
+  const triggerProps = animate
+    ? {animate: animate, initial: "rest"}
+    : {whileInView: "visible", viewport: {once: true, amount}};
 
   return (
     <>
@@ -50,6 +61,7 @@ export default function Stagger_word({
           amount,
         }}
         className={`flex flex-wrap ${className}`}
+        {...triggerProps}
         {...props}
       >
         {words.map((word, index) => (

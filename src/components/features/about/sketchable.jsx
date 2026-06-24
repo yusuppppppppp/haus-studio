@@ -172,17 +172,7 @@ export default function Sketchable({ children, className = "" }) {
       {/* canvas */}
       <canvas
         ref={canvasRef}
-        className="
-          absolute
-          inset-0
-          w-full
-          h-full
-          pointer-events-none
-          mix-blend-difference
-          hidden
-          lg:block
-          z-10
-        "
+        className="absolute inset-0 w-full h-full pointer-events-none mix-blend-difference hidden lg:block z-10"
         style={{
           filter: "blur(0.2px)",
         }}

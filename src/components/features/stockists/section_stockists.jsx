@@ -88,10 +88,10 @@ export default function Section_stockists({ stockists }) {
     <motion.div
       ref={ref}
       style={{ backgroundColor }}
+      id="section_stockists"
       className="relative md:h-[600vh] h-auto 2xl:pb-0 md:pb-40 pb-0"
     >
       <Smooth_sticky
-        id="section_stockists"
         scrollYProgress={scrollYProgress}
         offsetY={120}
         className="px-section pb-25 pt-8 2xl:h-[160vh] xl:h-[170vh] lg:h-[165vh] md:h-[120vh] h-auto md:sticky relative top-0"
