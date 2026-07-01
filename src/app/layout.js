@@ -1,9 +1,10 @@
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 import { Anton, Archivo } from "next/font/google";
 import "./globals.css";
 import Global_data_provider from "@/components/providers/global_data_provider/global_data_provider";
 import { Toaster } from "sonner";
-import TransitionPage from "@/components/providers/transition_page/transition_page";
+import Transition_page from "@/components/providers/transition_page/transition_page";
+import { Loading_Context } from "@/context/loading_context";
 
 const anton = Anton({
   variable: "--font-anton",
@@ -34,9 +35,11 @@ export default function RootLayout({ children }) {
       className={`${anton.variable} ${archivo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col selection:bg-amber-400">
-        <TransitionPage>
-          <Global_data_provider>{children}</Global_data_provider>
-        </TransitionPage>
+        <Loading_Context>
+          <Transition_page>
+            <Global_data_provider>{children}</Global_data_provider>
+          </Transition_page>
+        </Loading_Context>
         <Toaster
           position="bottom-right"
           richColors

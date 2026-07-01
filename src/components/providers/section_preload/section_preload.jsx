@@ -3,8 +3,11 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import { lenis } from "@/lib/lenis"
+import { usePageReady } from "@/context/loading_context";
 
 export default function Section_preload({ isLoading, preload }) {
+  const { setIsReady } = usePageReady();
+
   useEffect(() => {
     if (isLoading) {
       document.documentElement.classList.add("overflow-hidden");
@@ -21,6 +24,7 @@ export default function Section_preload({ isLoading, preload }) {
           document.documentElement.classList.remove("overflow-hidden");
           document.body.classList.remove("overflow-hidden");
           lenis?.start();
+          setIsReady(true);
         }}
       >
         {isLoading && (

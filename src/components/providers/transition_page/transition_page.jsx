@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { TransitionRouter } from "next-transition-router";
 import { EASE_IN_OUT } from "@/animations/ease_in_out/ease_in_out";
+import { usePageReady } from "@/context/loading_context";
 
 const TOTAL_ROWS = 10;
 const BLOCKS_PER_ROW = 11;
@@ -76,9 +77,12 @@ function LeaveLayer({ cycle, active, delayMap }) {
   );
 }
 
-export default function TransitionPage({ children }) {
+export default function Transition_page({ children }) {
+  const { setIsReady } = usePageReady();
+
   const [enterCycle, setEnterCycle] = useState(0);
   const [leaveCycle, setLeaveCycle] = useState(0);
+ 
   const [showEnter, setShowEnter] = useState(false);
   const [showLeave, setShowLeave] = useState(false);
 
@@ -97,9 +101,14 @@ export default function TransitionPage({ children }) {
     <TransitionRouter
       auto
       leave={(next) => {
+        setIsReady(false);
         setShowLeave(true);
         setLeaveCycle((prev) => prev + 1);
 
+        setTimeout(() => {
+          setIsReady(true);
+        }, 2000)
+        
         setTimeout(() => {
           next();
         }, totalDuration);
@@ -111,6 +120,7 @@ export default function TransitionPage({ children }) {
 
         setTimeout(() => {
           setShowEnter(false);
+          setIsReady(true);
           next();
         }, totalDuration);
       }}

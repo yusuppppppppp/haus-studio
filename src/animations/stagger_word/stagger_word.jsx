@@ -19,7 +19,8 @@ export default function Stagger_word({
   duration = 0.5,
   delay = 0,
   amount = 0,
-  animate,
+  controlled = false,
+  animate= false,
   ...props
 }) {
   const MotionTag =
@@ -38,28 +39,16 @@ export default function Stagger_word({
         delayChildren: delay,
       },
     },
-
-    rest: {},
-    animate: {
-      staggerChildren: stagger,
-      delayChildren: delay,
-    }
   };
 
-  const triggerProps = animate
-    ? {animate: animate, initial: "rest"}
-    : {whileInView: "visible", viewport: {once: true, amount}};
+  const triggerProps = controlled
+    ? { initial: "hidden", animate: animate ? "visible" : "hidden" }
+    : { initial: "hidden", whileInView : "visible", viewport: {once: true, amount} }
 
   return (
     <>
       <MotionTag
         variants={container}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{
-          once: true,
-          amount,
-        }}
         className={`flex flex-wrap ${className}`}
         {...triggerProps}
         {...props}
