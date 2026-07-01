@@ -3,7 +3,7 @@ import { Anton, Archivo } from "next/font/google";
 import "./globals.css";
 import Global_data_provider from "@/components/providers/global_data_provider/global_data_provider";
 import { Toaster } from "sonner";
-import PageTransition from "@/components/providers/transition_page/transition_page";
+import TransitionPage from "@/components/providers/transition_page/transition_page";
 
 const anton = Anton({
   variable: "--font-anton",
@@ -34,9 +34,9 @@ export default function RootLayout({ children }) {
       className={`${anton.variable} ${archivo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col selection:bg-amber-400">
-        <PageTransition>
+        <TransitionPage>
           <Global_data_provider>{children}</Global_data_provider>
-        </PageTransition>
+        </TransitionPage>
         <Toaster
           position="bottom-right"
           richColors

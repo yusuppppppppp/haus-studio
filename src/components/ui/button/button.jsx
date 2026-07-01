@@ -2,6 +2,9 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+export const V1_PARAGRAPH_STYLES =
+  "font-primary font-body-secondary text-b-l leading-tightest uppercase";
+
 export default function Button({
   children,
   link,
@@ -18,13 +21,13 @@ export default function Button({
     <Wrapper
       {...(link
         ? {
-          href: link,
-          target,
-        }
+            href: link,
+            target,
+          }
         : {
-          type,
-          disable,
-        })}
+            type,
+            disable,
+          })}
       {...props}
     >
       {variant === "primary" && (
@@ -34,11 +37,11 @@ export default function Button({
           whileHover={!hovered ? "hover" : undefined}
           animate={hovered ? "hover" : "rest"}
         >
-          <p className="font-primary font-body-secondary text-b-l leading-tightest uppercase">
+          <p className={V1_PARAGRAPH_STYLES}>
             [
           </p>
           <motion.div
-            className="flex flex-col md:gap-1 sm:gap-0.7 gap-2 -translate-y-[1.5em]"
+            className="flex flex-col md:gap-1 sm:gap-0.7 gap-2 translate-y-[-1.5em]"
             variants={{
               rest: { y: "1.5em" },
               hover: { y: "0em" },
@@ -48,14 +51,14 @@ export default function Button({
               ease: [0.645, 0.045, 0.355, 1],
             }}
           >
-            <p className="font-primary font-body-secondary text-b-l leading-tightest uppercase">
+            <p className={V1_PARAGRAPH_STYLES}>
               {children}
             </p>
-            <p className="font-primary font-body-secondary text-b-l leading-tightest uppercase">
+            <p className={V1_PARAGRAPH_STYLES}>
               {children}
             </p>
           </motion.div>
-          <p className="font-primary font-body-secondary text-b-l leading-tightest uppercase">
+          <p className={V1_PARAGRAPH_STYLES}>
             ]
           </p>
         </motion.div>
@@ -66,7 +69,8 @@ export default function Button({
           initial="rest"
           whileHover={!hovered ? "hover" : undefined}
           animate={hovered ? "hover" : "rest"}
-          className="relative isolate bg-n-200 p-2.5 flex flex-row sm:justify-between justify-end">
+          className="relative isolate bg-n-200 p-2.5 flex flex-row sm:justify-between justify-end"
+        >
           <motion.div
             variants={{
               rest: { width: "0%" },
