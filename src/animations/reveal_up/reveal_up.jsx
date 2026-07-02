@@ -7,22 +7,35 @@ export default function Reveal_up({
   delay = 0,
   duration = 0.7,
   className,
+  controlled = false,
+  animate = false,
 }) {
+
+  const REVEAL_UP = {
+    hidden: { y: "100%", opacity: 0 },
+    visible: { y: "0%", opacity: 1 },
+  };
+
+  const triggerProps = controlled
+    ? { initial: "hidden", animate: animate ? "visible" : "hidden" }
+    : {
+        initial: "hidden",
+        whileInView: "visible",
+        viewport: { once: true },
+      };
+
   return (
-      <motion.div
-        className={className}
-        initial={{ y: "100%", opacity: 0 }}
-        whileInView={{ y: "0%", opacity: 1 }}
-        viewport={{
-          once: true,
-        }}
-        transition={{
-          delay,
-          duration,
-          ease: EASE_IN_OUT,
-        }}
-      >
-        {children}
-      </motion.div>
+    <motion.div
+      className={className}
+      variants={REVEAL_UP}
+      {...triggerProps}
+      transition={{
+        delay,
+        duration,
+        ease: EASE_IN_OUT,
+      }}
+    >
+      {children}
+    </motion.div>
   );
 }

@@ -23,6 +23,8 @@ export default function Stagger_heading({
   duration = 1,
   delay = 0,
   amount = 0,
+  controlled = false,
+  animate = false,
 }) {
   const MotionTag = motion[as];
 
@@ -40,16 +42,19 @@ export default function Stagger_heading({
     },
   };
 
+  const triggerProps = controlled
+    ? { initial: "hidden", animate: animate ? "visible" : "hidden" }
+    : {
+        initial: "hidden",
+        whileInView: "visible",
+        viewport: { once: true, amount },
+      };
+
   return (
     <MotionTag
       variants={container}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{
-        once: true,
-        amount,
-      }}
       className={`flex flex-wrap ${className}`}
+      {...triggerProps}
     >
       {words.map((word, index) => (
         <span key={index} className="overflow-hidden mr-[0.25em]">

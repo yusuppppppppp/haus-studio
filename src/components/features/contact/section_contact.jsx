@@ -1,6 +1,10 @@
+import { usePageReady } from "@/context/loading_context";
 import Contact_from from "./contact_from";
+import Stagger_heading from "@/animations/stagger_heading/stagger_heading";
+import Stagger_word from "@/animations/stagger_word/stagger_word";
 
-const PARAGRAPH_STYLES = "font-secondary font-body-secondary text-b-m leading-relaxed";
+const PARAGRAPH_STYLES =
+  "font-secondary font-body-secondary text-b-m leading-relaxed";
 
 export default function Section_contact({ contact }) {
   const {
@@ -14,45 +18,73 @@ export default function Section_contact({ contact }) {
     button,
   } = contact || {};
 
-  const {
-    name,
-    email,
-    message,
-  } = placeholder || {};
+  const { name, email, message } = placeholder || {};
 
-  const {
-    loading,
-    loaded,
-  } = button || {};
+  const { loading, loaded } = button || {};
+
+  const { isReady } = usePageReady();
 
   return (
-    <section className="bg-background overflow-hidden px-section pb-35 pt-2.5">
+    <section className="bg-background overflow-hidden px-section pb-35 pt-2.5 h-screen">
       <div className="w-full h-full mx-auto max-w-400">
         <div className="flex flex-col md:gap-30 gap-15">
-          <h1 className="text-fd-l font-primary font-display uppercase text-center leading-tightest">
+          <Stagger_heading
+            as="h1"
+            delay={0.2}
+            controlled
+            animate={isReady}
+            className="text-fd-l font-primary font-display uppercase justify-center leading-tightest"
+          >
             {title}
-          </h1>
+          </Stagger_heading>
           <div className="w-full flex sm:flex-row flex-col justify-between items-start sm:gap-0 gap-10">
             <div className="flex lg:flex-row sm:flex-col gap-10">
               <div className="flex flex-col gap-5">
-                <h2 className={`${PARAGRAPH_STYLES} capitalize max-w-45`}>
+                <Stagger_word
+                  as="p"
+                  delay={0.4}
+                  controlled
+                  animate={isReady}
+                  className={`${PARAGRAPH_STYLES} capitalize max-w-45`}
+                >
                   {location}
-                </h2>
+                </Stagger_word>
                 <div className="flex flex-col">
-                  <p className={`${PARAGRAPH_STYLES} capitalize`}>
+                  <Stagger_word
+                    as="p"
+                    delay={0.5}
+                    controlled
+                    animate={isReady}
+                    className={`${PARAGRAPH_STYLES} capitalize`}
+                  >
                     {dev}
-                  </p>
-                  <p className={`${PARAGRAPH_STYLES} capitalize`}>
+                  </Stagger_word>
+                  <Stagger_word
+                    as="p"
+                    delay={0.5}
+                    controlled
+                    animate={isReady}
+                    className={`${PARAGRAPH_STYLES} capitalize`}
+                  >
                     {days}
-                  </p>
-                  <p className={`${PARAGRAPH_STYLES} capitalize`}>
+                  </Stagger_word>
+                  <Stagger_word
+                    as="p"
+                    delay={0.6}
+                    controlled
+                    animate={isReady}
+                    className={`${PARAGRAPH_STYLES} capitalize`}
+                  >
                     {hours}
-                  </p>
+                  </Stagger_word>
                 </div>
               </div>
-              <p className={`max-w-50 ${PARAGRAPH_STYLES}`}>
-                {description}
-              </p>
+              <Stagger_word
+              as="p"
+              delay={0.6}
+              controlled
+              animate={isReady} 
+              className={`max-w-50 ${PARAGRAPH_STYLES}`}>{description}</Stagger_word>
             </div>
             <div className="lg:w-[50%] sm:w-[63%] w-full">
               <Contact_from
