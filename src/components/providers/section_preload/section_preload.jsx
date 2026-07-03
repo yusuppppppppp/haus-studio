@@ -54,7 +54,7 @@ export default function Section_preload({ isLoading, preload }) {
                   <Image
                     src={
                       preload?.preload_logo_normal ||
-                      "/assets/icons/preload_logo_normal.svg"
+                      "/assets/images/preload_logo_normal.svg"
                     }
                     alt="preload_logo"
                     width={60}
@@ -75,7 +75,7 @@ export default function Section_preload({ isLoading, preload }) {
                     <Image
                       src={
                         preload?.preload_logo_fill ||
-                        "/assets/icons/preload_logo_animate.svg"
+                        "/assets/images/preload_logo_animate.svg"
                       }
                       alt="preload_logo_fill"
                       width={60}

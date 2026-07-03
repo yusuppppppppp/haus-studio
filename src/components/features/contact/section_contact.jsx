@@ -25,7 +25,7 @@ export default function Section_contact({ contact }) {
   const { isReady } = usePageReady();
 
   return (
-    <section className="bg-background overflow-hidden px-section pb-35 pt-2.5 h-screen">
+    <section className="bg-background px-section pb-35 pt-2.5 h-screen">
       <div className="w-full h-full mx-auto max-w-400">
         <div className="flex flex-col md:gap-30 gap-15">
           <Stagger_heading
