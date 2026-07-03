@@ -9,7 +9,7 @@ export async function POST(req) {
 
     const data = await resend.emails.send({
       from: "Haus Studio <onboarding@resend.dev>",
-      to: ["yusupppp181008@gmail.com"],
+      to: [process.env.EMAIL],
       subject: "New Massage by Haus Studio",
 
       react: Contact_email({
