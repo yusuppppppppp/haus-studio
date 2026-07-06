@@ -10,8 +10,6 @@
     "email": "bunx react-email dev --dir src/emails"
   },
   "dependencies": {
-    "@react-email/components": "^1.0.12",
-    "@react-email/render": "^2.0.8",
     "@supabase/supabase-js": "^2.105.4",
     "@vercel/analytics": "^2.0.1",
     "framer-motion": "^12.38.0",
@@ -20,7 +18,6 @@
     "next-transition-router": "^0.2.11",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "resend": "^6.12.4",
     "sonner": "^2.0.7"
   },
   "devDependencies": {

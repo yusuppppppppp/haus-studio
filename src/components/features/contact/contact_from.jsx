@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import Button from "../../ui/button/button";
+import { sendContact } from "@/services/email.service";
 
 const BORDER_STYLES = "border border-n-400 border-dashed";
 
@@ -30,19 +31,11 @@ export default function Contact_from({ placeholderName, placeholderEmail, placeh
     const loadingToast = toast.loading("Sending Message...");
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-
-      const data = await res.json();
+      const data = await sendContact(form);
 
       toast.dismiss(loadingToast);
 
-      if (data.success) {
+      if (!data.error) {
         toast.success("Email sent successfully!");
 
         setForm({
@@ -51,15 +44,16 @@ export default function Contact_from({ placeholderName, placeholderEmail, placeh
           message: "",
         });
       } else {
-        toast.error("Failed to send email");
+        toast.error("Failed to send email")
       }
     } catch (error) {
       console.log(error);
 
       toast.dismiss(loadingToast);
 
-      toast.error("An error occurred");
+      toast.error("An error occurred")
     }
+
     setLoading(false);
   }
 
